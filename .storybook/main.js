@@ -7,6 +7,7 @@ module.exports = {
     'storybook-dark-mode',
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "storybook-zeplin/register"
   ],
   "framework": "@storybook/react"
 }
