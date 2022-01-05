@@ -1,76 +1,90 @@
 import styled, { css } from 'styled-components';
-
+import { theme } from '../../styles/theme';
 import { Props } from './index';
 
 const buttonTheme = {
-  blue: () => css`
-    background: #215aff;
-    color: #fff;
-  `,
-  white: () => css`
-    background: #fff;
-    color: #215aff;
-    border: 2px solid #215aff;
+  primary: () => css`
+    background: transparent;
+    color: ${theme.colors.secondaryB};
+    border: none;
+    border-radius: 10px;
 
-    &:hover {
-      color: #0f194b !important;
-      background: #fff !important;
-      border: 2px solid #0f194b !important;
+    &:not([disabled]):hover {
+      background: #ebecee;
+    }
+    &:not([disabled]):focus {
+      background: #d8dae0;
+    }
+    &:not([disabled]):active {
+      background: #e3e4e8;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: #a8a8a8;
     }
   `,
-  gray: () => css`
-    color: #fff;
-    background: #c8c8c8;
+
+  secondary: () => css`
+    background: ${theme.colors.secondaryB};
+    color: ${theme.colors.white};
+    border: none;
+    border-radius: 10px;
+
+    &:not([disabled]):hover {
+      background: #182252;
+    }
+    &:not([disabled]):focus {
+      background: #2c3561;
+    }
+    &:not([disabled]):active {
+      background: #161758;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: ${theme.colors.white};
+      background: #a8a8a8;
+    }
   `,
 
-  darkblue: () => css`
-    color: #fff;
-    background: #0f194b;
+  outline: () => css`
+    background: ${theme.colors.white};
+    color: ${theme.colors.secondaryB};
+    border: 2px solid ${theme.colors.secondaryB};
+    border-radius: 10px;
 
-    &:hover {
-      color: #fff !important;
-      background: #c8c8c8 !important;
+    &:not([disabled]):hover {
+      background: #ebecee;
+    }
+    &:not([disabled]):focus {
+      background: #d8dae0;
+    }
+    &:not([disabled]):active {
+      background: #e3e4e8;
+      border-color: #cdcfd5;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: #a8a8a8;
+      border-color: #a8a8a8;
     }
   `,
 };
 
 export const Button = styled.button<Props>`
-  ${({ backgroundColor, outlined, themeButton, color }) => css`
-    background-color: ${outlined ? 'transparent' : backgroundColor};
-    color: ${outlined ? backgroundColor : color};
-    border: ${outlined ? `2px solid ${backgroundColor}` : 'none'};
-    border-radius: 5px;
-    padding: 15px 20px;
-    font-weight: 400;
-    font-size: 1.8rem;
+  ${({ btnType }) => css`
+    padding: 8px 16px;
+    font-weight: 600;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
     transition: background 0.3s;
     cursor: pointer;
-    ${buttonTheme[themeButton || 'blue']()}
-    /* ${backgroundColor === '' &&
-    color === '' &&
-    buttonTheme[themeButton || 'blue']()} */
+    ${buttonTheme[btnType || 'primary']()}
 
-    &:hover {
-      color: #fff;
-      background: #0f194b;
-      border: 0;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.7;
-      color: #fff;
-      background: #c8c8c8;
-
-      &:hover {
-        color: #fff;
-        background: #c8c8c8;
-      }
+    svg {
+      margin-right: 5px;
+      //font-size: 17px;
     }
   `}
 `;

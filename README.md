@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/ThiagoBrolly/design-system-pl">
-    <img src="#" alt="⚡️" width="300" />
+    <img src="#" alt="Logo Pl" width="300" />
   </a>
 </p>
 
@@ -28,12 +28,13 @@ $ npm i design-system-pl
 ```jsx
 import { Button } from "design-system-pl"
 function Example() {
-  return <Button
-            disabled
-            outlined
-            themeButton="blue"
-            children="Teste"
-          />
+  return (
+    <>
+      <Button btnType="primary" children="Click" />
+      <Button btnType="secondary" children="Click" iconPlus />
+      <Button btnType="outline" children="Click" disabled />
+    </>
+  )
 }
 ```
 ## Contributors ✨

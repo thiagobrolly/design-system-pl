@@ -56,7 +56,8 @@
           "namedComponents": ["arrow-function", "function-declaration", "function-expression"],
           "unnamedComponents": ["function-expression", "arrow-function"]
         }
-      ]
+      ],
+      "react/jsx-no-useless-fragment": "off"
     },
     "settings": {
       "import/resolver": {

@@ -1,17 +1,30 @@
-import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Button, Props } from '.';
 
 export default {
   title: 'Components/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  args: {
+    disabled: false,
+    iconPlus: false,
   },
 } as Meta;
 
-export const Template: Story<Props> = (args) => <Button {...args} />;
+export const Primary: Story<Props> = (args) => <Button {...args} />;
+export const Secondary: Story<Props> = (args) => <Button {...args} />;
+export const Outline: Story<Props> = (args) => <Button {...args} />;
 
-Template.args = {
-  children: 'Click',
+Primary.args = {
+  children: 'Primary',
+  btnType: 'primary',
+};
+
+Secondary.args = {
+  children: 'Secondary',
+  btnType: 'secondary',
+};
+
+Outline.args = {
+  children: 'Outline',
+  btnType: 'outline',
 };
