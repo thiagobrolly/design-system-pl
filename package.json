@@ -1,6 +1,6 @@
 {
   "name": "design-system-pl",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
