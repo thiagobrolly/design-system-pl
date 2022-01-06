@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { HiPlus } from 'react-icons/hi';
 import * as Styled from './styles';
 
 export interface Props {
@@ -17,7 +17,7 @@ export const Button: React.FC<Props> = ({
   ...props
 }) => (
   <Styled.Button btnType={btnType} iconPlus={iconPlus} {...props}>
-    {iconPlus ? <FaPlus /> : <></>}
+    {iconPlus ? <HiPlus /> : <></>}
     {children}
   </Styled.Button>
 );

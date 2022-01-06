@@ -4,10 +4,10 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
-    'storybook-dark-mode',
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "storybook-zeplin/register"
+    "storybook-zeplin/register",
+    'storybook-dark-mode',
   ],
   "framework": "@storybook/react"
 }
