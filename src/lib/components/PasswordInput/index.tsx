@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as Styled from './styles';
 import { PasswordInputProps } from './types';
-
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export const PasswordInput: React.FC<PasswordInputProps> = ({
   width = '320px',
@@ -44,9 +43,9 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         {...props}
       />
       <Styled.Label
-        id={labelId} 
-        htmlFor={inputId} 
-        aria-label={labelArialabel} 
+        id={labelId}
+        htmlFor={inputId}
+        aria-label={labelArialabel}
         errorMessage={errorMessage}
       >
         {label}

@@ -1,8 +1,7 @@
 import { Meta, Story } from '@storybook/react';
+import { FaEnvelope } from 'react-icons/fa';
 import { GenericInput } from '.';
 import { GenericInputProps } from './types';
-
-import { FaEnvelope } from 'react-icons/fa';
 
 export default {
   title: 'Components/GenericInput',

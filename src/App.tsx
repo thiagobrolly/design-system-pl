@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
-
 import { FaEnvelope } from 'react-icons/fa';
+import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
 
 const App: React.FC = () => {
   return (
