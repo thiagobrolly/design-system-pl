@@ -2,11 +2,11 @@ import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
 import { InputProps, LabelProps } from './types';
 
-const genericInputTheme = {
+const passwordInputTheme = {
   filled: (errorMessage: string | undefined) => css`
     background-color: ${theme.colors.white};
     color: rgba(0, 0, 0, 0.87);
-    padding: 22px 16px 12px 16px;
+    padding: 22px 52px 12px 16px;
     outline: none;
     border: ${errorMessage ? `1px solid ${theme.colors.errorRed}` : 'none'};
 
@@ -43,7 +43,7 @@ const genericInputTheme = {
   outlined: (errorMessage: string | undefined, width: string) => css`
     background-color: transparent;
     color: rgba(0, 0, 0, 0.74);
-    padding: 18px 16px;
+    padding: 18px 52px 18px 16px;
     outline: none;
 
     &:not([disabled], .hasContent) {
@@ -81,7 +81,7 @@ const genericInputTheme = {
     &:disabled {
       cursor: not-allowed;
       color: #a8a8a8;
-      border-color: #a8a8a8;
+      border: 1px solid #a8a8a8;
       border-top: none;
     }
     &:not(.hasContent):disabled {
@@ -94,11 +94,10 @@ const genericInputTheme = {
       cursor: not-allowed;
     }
 
-    // rule for the label behavior
+    // rules for the label behavior
     &.hasContent + label {
       padding: 0 4px;
       top: -7px;
-      margin-left: 0px;
       font-size: 12px;
       color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
       &:before,
@@ -121,7 +120,6 @@ const genericInputTheme = {
     &:not([disabled]):focus + label {
       padding: 0 4px;
       top: -7px;
-      margin-left: 0px;
       font-size: 12px;
       color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
       &:before,
@@ -144,14 +142,12 @@ const genericInputTheme = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ genericInputType, width, leftIcon, rightIcon, errorMessage }) => css`
-    ${genericInputTheme[genericInputType || 'filled'](errorMessage, width)}
+  ${({ passwordInputType, width, errorMessage }) => css`
+    ${passwordInputTheme[passwordInputType || 'filled'](errorMessage, width)}
     box-sizing: border-box;
     width: ${width};
     height: 56px;
     border-radius: 10px;
-    padding-left: ${leftIcon ? '52px' : '16px'};
-    padding-right: ${rightIcon ? '52px' : '16px'};
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
@@ -165,24 +161,18 @@ export const Container = styled.div`
   position: sticky;
 `;
 
-export const LeftIconContainer = styled.div`
-  max-width: max-content;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: rgba(168, 168, 168, 0.47);
-  transition: 0.1s;
-  pointer-events: none;
-`;
-
 export const RightIconContainer = styled.div`
-  max-width: max-content;
+  width: 48px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
   color: rgba(168, 168, 168, 0.47);
   transition: 0.1s;
-  pointer-events: none;
+  cursor: pointer;
 `;
 
 export const Label = styled.label<LabelProps>`
@@ -193,7 +183,6 @@ export const Label = styled.label<LabelProps>`
   font-size: 16px;
   color: ${(props) =>
     props.errorMessage ? theme.colors.errorRed : 'rgba(168, 168, 168, 0.47)'};
-  margin-left: ${(props) => props.leftIcon && '36px'};
   transition: 0.1s;
   pointer-events: none;
 `;

@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 
 import { GenericInput } from '.';
 
-describe('Button', () => {
-  test('renders the Button component', () => {
+describe('GenericInput', () => {
+  test('renders the GenericInput component', () => {
     render(
       <GenericInput
         inputType="text"

@@ -1,16 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as Styled from './styles';
-import { GenericInputProps } from './types';
+import { PasswordInputProps } from './types';
 
-export const GenericInput: React.FC<GenericInputProps> = ({
-  inputType = 'text',
+export const PasswordInput: React.FC<PasswordInputProps> = ({
   width = '320px',
-  genericInputType = 'outlined',
+  passwordInputType = 'outlined',
   label,
-  leftIcon = undefined,
-  rightIcon = undefined,
   errorMessage,
-  readyOnly,
   inputId,
   inputArialabel,
   inputName,
@@ -18,6 +15,8 @@ export const GenericInput: React.FC<GenericInputProps> = ({
   labelArialabel,
   ...props
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value) {
       e.target.classList.add('hasContent');
@@ -26,27 +25,27 @@ export const GenericInput: React.FC<GenericInputProps> = ({
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <Styled.Container>
       <Styled.Input
         id={inputId}
         aria-label={inputArialabel}
         name={inputName}
-        type={inputType}
+        type={showPassword ? 'text' : 'password'}
         width={width}
-        genericInputType={genericInputType}
-        leftIcon={leftIcon}
-        rightIcon={rightIcon}
+        passwordInputType={passwordInputType}
         onBlur={handleBlur}
         errorMessage={errorMessage}
-        readOnly={readyOnly}
         {...props}
       />
       <Styled.Label
         id={labelId}
         htmlFor={inputId}
         aria-label={labelArialabel}
-        leftIcon={leftIcon}
         errorMessage={errorMessage}
       >
         {label}
@@ -54,11 +53,11 @@ export const GenericInput: React.FC<GenericInputProps> = ({
       {errorMessage && (
         <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage>
       )}
-      <Styled.LeftIconContainer className="iconDiv">
-        {leftIcon}
-      </Styled.LeftIconContainer>
-      <Styled.RightIconContainer className="iconDiv">
-        {rightIcon}
+      <Styled.RightIconContainer
+        className="iconDiv"
+        onClick={togglePasswordVisibility}
+      >
+        {showPassword ? <FaEye /> : <FaEyeSlash />}
       </Styled.RightIconContainer>
     </Styled.Container>
   );
