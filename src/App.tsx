@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Button, Separator, Heading } from './lib';
+import { Button, Separator, Heading, GenericInput } from './lib';
+
+import { FaEnvelope } from 'react-icons/fa';
 
 const App: React.FC = () => {
   return (
@@ -44,6 +46,28 @@ const App: React.FC = () => {
       </div>
       <Separator />
       <Heading children="teste" uppercase />
+      <h3>Teste InputText</h3>
+      <GenericInput
+        inputType="text"
+        width="520px"
+        label="Seu nome completo"
+        genericInputType="outlined"
+        inputId="form_fullNameInput"
+        inputArialabel="input-fullName"
+        labelId="form_fullNameInput-label"
+        labelArialabel="label-fullName"
+      />
+      <GenericInput
+        inputType="email"
+        width="520px"
+        label="Seu email"
+        genericInputType="outlined"
+        inputId="form_emailInput"
+        inputArialabel="input-email"
+        labelId="form_emailInput-label"
+        labelArialabel="label-email"
+        leftIcon={<FaEnvelope />}
+      />
     </>
   );
 };

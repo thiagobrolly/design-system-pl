@@ -5,6 +5,7 @@ export const theme = {
     secondaryB: '#0f194b',
     secondaryC: '#4e5872',
     red: '#f00',
+    errorRed: '#fe5454',
     white: '#fff',
   },
 
