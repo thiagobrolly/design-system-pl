@@ -40,52 +40,110 @@ const passwordInputTheme = {
     }
   `,
 
-  outlined: (errorMessage: string | undefined) => css`
+  outlined: (errorMessage: string | undefined, width: string) => css`
     background-color: transparent;
     color: rgba(0, 0, 0, 0.74);
     padding: 18px 52px 18px 16px;
-    border: none;
-    outline: ${errorMessage
-      ? `1px solid ${theme.colors.errorRed}`
-      : '1px solid #e6e7e9'};
+    outline: none;
+
+    &:not([disabled], .hasContent) {
+      border: ${errorMessage
+        ? `1px solid ${theme.colors.errorRed}`
+        : '1px solid #e6e7e9'};
+    }
+    &.hasContent {
+      border: ${errorMessage
+        ? `1px solid ${theme.colors.errorRed}`
+        : '1px solid #e6e7e9'};
+      border-top: none;
+    }
 
     &:not([disabled]):hover {
-      outline: ${`1px solid rgba(0, 0, 0, 0.12)`};
+      border: ${`1px solid rgba(0, 0, 0, 0.12)`};
+      border-top: none;
+    }
+    &:not([disabled], .hasContent):hover {
+      border: ${`1px solid rgba(0, 0, 0, 0.12)`};
     }
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
     }
+
     &:not([disabled]):focus {
-      outline: 1px solid ${theme.colors.secondaryB};
+      border: 1px solid ${theme.colors.secondaryB};
+      border-top: none;
     }
     &:not([disabled]):focus ~ .iconDiv {
       color: #707070;
     }
+
     &:disabled {
       cursor: not-allowed;
       color: #a8a8a8;
-      border-color: #a8a8a8;
+      border: 1px solid #a8a8a8;
+      border-top: none;
+    }
+    &:not(.hasContent):disabled {
+      cursor: not-allowed;
+      color: #a8a8a8;
+      border: 1px solid #a8a8a8;
     }
     &:disabled + label,
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
     }
-    // rule for the label behavior
-    &.hasContent + label,
-    &:not([disabled]):focus + label {
-      background: #f5f5f5;
+
+    // rules for the label behavior
+    &.hasContent + label {
       padding: 0 4px;
-      top: -8px;
+      top: -7px;
       font-size: 12px;
       color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid
+          ${errorMessage ? theme.colors.errorRed : '#e6e7e9'};
+        top: 50%;
+      }
+      &:before {
+        width: 9px;
+        left: -9px;
+      }
+      &:after {
+        width: calc(${width} - 100% - 24px);
+        right: calc(100% + 24px - ${width});
+      }
+    }
+    &:not([disabled]):focus + label {
+      padding: 0 4px;
+      top: -7px;
+      font-size: 12px;
+      color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid ${theme.colors.secondaryB};
+        top: 50%;
+      }
+      &:before {
+        width: 9px;
+        left: -9px;
+      }
+      &:after {
+        width: calc(${width} - 100% - 24px);
+        right: calc(100% + 24px - ${width});
+      }
     }
   `,
 };
 
 export const Input = styled.input<InputProps>`
   ${({ passwordInputType, width, errorMessage }) => css`
-    ${passwordInputTheme[passwordInputType || 'filled'](errorMessage)}
+    ${passwordInputTheme[passwordInputType || 'filled'](errorMessage, width)}
     box-sizing: border-box;
     width: ${width};
     height: 56px;
@@ -93,7 +151,7 @@ export const Input = styled.input<InputProps>`
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
-    transition: 0.3s;
+    transition: 0.1s;
     cursor: pointer;
   `}
 `;
@@ -113,7 +171,7 @@ export const RightIconContainer = styled.div`
   top: 0px;
   right: 0px;
   color: rgba(168, 168, 168, 0.47);
-  transition: 0.4s;
+  transition: 0.1s;
   cursor: pointer;
 `;
 
@@ -125,7 +183,7 @@ export const Label = styled.label<LabelProps>`
   font-size: 16px;
   color: ${(props) =>
     props.errorMessage ? theme.colors.errorRed : 'rgba(168, 168, 168, 0.47)'};
-  transition: 0.4s;
+  transition: 0.1s;
   pointer-events: none;
 `;
 

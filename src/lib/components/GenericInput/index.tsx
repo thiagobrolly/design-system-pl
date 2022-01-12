@@ -10,6 +10,7 @@ export const GenericInput: React.FC<GenericInputProps> = ({
   leftIcon = undefined,
   rightIcon = undefined,
   errorMessage,
+  readyOnly,
   inputId,
   inputArialabel,
   inputName,
@@ -38,6 +39,7 @@ export const GenericInput: React.FC<GenericInputProps> = ({
         rightIcon={rightIcon}
         onBlur={handleBlur}
         errorMessage={errorMessage}
+        readOnly={readyOnly}
         {...props}
       />
       <Styled.Label

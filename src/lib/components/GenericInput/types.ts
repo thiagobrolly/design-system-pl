@@ -7,6 +7,7 @@ export interface GenericInputProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   errorMessage?: string;
+  readyOnly?: boolean;
   inputId: string;
   inputArialabel: string;
   inputName?: string;
