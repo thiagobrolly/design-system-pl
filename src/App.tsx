@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Separator, Heading, GenericInput } from './lib';
+import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
 
 import { FaEnvelope } from 'react-icons/fa';
 
@@ -67,6 +67,15 @@ const App: React.FC = () => {
         labelId="form_emailInput-label"
         labelArialabel="label-email"
         leftIcon={<FaEnvelope />}
+      />
+      <PasswordInput
+        width="320px"
+        label="Sua senha"
+        passwordInputType="outlined"
+        inputId="form_passwordInput"
+        inputArialabel="input-password"
+        labelId="form_passwordInput-label"
+        labelArialabel="label-password"
       />
     </>
   );
