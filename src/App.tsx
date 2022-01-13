@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { FaEnvelope } from 'react-icons/fa';
 import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
 
 const App: React.FC = () => {
@@ -45,7 +43,7 @@ const App: React.FC = () => {
       </div>
       <Separator />
       <Heading children="teste" uppercase />
-      <h3>Teste InputText</h3>
+      <h3>Teste Inputs</h3>
       <GenericInput
         inputType="text"
         width="520px"
@@ -55,6 +53,8 @@ const App: React.FC = () => {
         inputArialabel="input-fullName"
         labelId="form_fullNameInput-label"
         labelArialabel="label-fullName"
+        leftIcon
+        leftIconType="userIcon"
       />
       <GenericInput
         inputType="email"
@@ -65,7 +65,8 @@ const App: React.FC = () => {
         inputArialabel="input-email"
         labelId="form_emailInput-label"
         labelArialabel="label-email"
-        leftIcon={<FaEnvelope />}
+        leftIcon
+        leftIconType="envelopeIcon"
       />
       <PasswordInput
         width="320px"
