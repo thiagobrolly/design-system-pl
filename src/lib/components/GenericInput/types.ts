@@ -10,6 +10,7 @@ export interface GenericInputProps {
   rightIconType?: IconType;
   errorMessage?: string;
   readyOnly?: boolean;
+  autocomplete?: boolean;
   inputId: string;
   inputArialabel: string;
   inputName?: string;

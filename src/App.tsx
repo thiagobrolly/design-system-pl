@@ -1,7 +1,25 @@
 import React from 'react';
-import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
+import {
+  Button,
+  Separator,
+  Heading,
+  GenericInput,
+  PasswordInput,
+  SearchInput,
+} from './lib';
 
 const App: React.FC = () => {
+  const userList = [
+    'Manoel Peraira',
+    'Diego Arend',
+    'Hugo Gitz',
+    'Derickson Loss',
+    'Thiago Sousa',
+    'Tatiani da Silva',
+    'Mateus Junges',
+    'Matheus Morais',
+  ];
+
   return (
     <>
       <h1>Teste</h1>
@@ -43,7 +61,7 @@ const App: React.FC = () => {
       </div>
       <Separator />
       <Heading children="teste" uppercase />
-      <h3>Teste Inputs</h3>
+      <h3>GenericInput Test</h3>
       <GenericInput
         inputType="text"
         width="520px"
@@ -59,7 +77,7 @@ const App: React.FC = () => {
       <GenericInput
         inputType="email"
         width="520px"
-        label="Seu email"
+        label="Email do usuário"
         genericInputType="outlined"
         inputId="form_emailInput"
         inputArialabel="input-email"
@@ -68,6 +86,7 @@ const App: React.FC = () => {
         leftIcon
         leftIconType="envelopeIcon"
       />
+      <h3>PasswordInput Test</h3>
       <PasswordInput
         width="320px"
         label="Sua senha"
@@ -76,6 +95,18 @@ const App: React.FC = () => {
         inputArialabel="input-password"
         labelId="form_passwordInput-label"
         labelArialabel="label-password"
+      />
+      <h3>SearchInput Test</h3>
+      <SearchInput
+        searchInputType="outlined"
+        width="600px"
+        label="Buscar"
+        options={userList}
+        inputId="form_searchInput"
+        inputArialabel="input-search"
+        labelId="form_search-label"
+        labelArialabel="label-search"
+        autocomplete={false}
       />
     </>
   );

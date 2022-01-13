@@ -13,6 +13,7 @@ export const GenericInput: React.FC<GenericInputProps> = ({
   rightIcon = undefined,
   rightIconType = undefined,
   errorMessage,
+  autocomplete,
   readyOnly,
   inputId,
   inputArialabel,
@@ -63,6 +64,7 @@ export const GenericInput: React.FC<GenericInputProps> = ({
         onBlur={handleBlur}
         errorMessage={errorMessage}
         readOnly={readyOnly}
+        autoComplete={autocomplete ? 'on' : 'off'}
         {...props}
       />
       <Styled.Label

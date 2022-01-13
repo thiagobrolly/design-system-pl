@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
-import { InputProps, LabelProps, ResultsContainerProps } from './types';
+import { InputProps, LabelProps } from './types';
 
 const searchInputTheme = {
   filled: (errorMessage: string | undefined) => css`
@@ -158,7 +158,11 @@ export const Input = styled.input<InputProps>`
   `}
 `;
 
-export const Container = styled.div`
+export const MainContainer = styled.div`
+  position: relative;
+`;
+
+export const InputContainer = styled.div`
   max-width: max-content;
   position: sticky;
 `;
@@ -194,28 +198,4 @@ export const ErrorMessage = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: ${theme.colors.errorRed};
-`;
-
-export const ResultsContainer = styled.ul<ResultsContainerProps>`
-  position: absolute;
-  top: 72px;
-  z-index: 2;
-  width: ${(props) => props.width};
-  max-height: 300px;
-  overflow-x: scroll;
-  overflow-y: scroll;
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px 16px;
-  box-shadow: 0 3px 10px 0 rgba(112, 112, 112, 0.16);
-`;
-
-export const ResultItem = styled.li`
-  padding: 10px 0;
-  color: ${theme.colors.secondaryB};
-  font-size: 16px;
-  line-height: 20px;
-  list-style-type: none;
-  cursor: pointer;
-  white-space: nowrap;
 `;

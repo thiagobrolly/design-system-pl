@@ -14,6 +14,7 @@ describe('SearchInput', () => {
         inputArialabel="input-fullName"
         labelId="form_fullNameInput-label"
         labelArialabel="label-fullName"
+        options={['A', 'B']}
       />,
     );
   });

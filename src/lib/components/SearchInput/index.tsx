@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import * as Styled from './styles';
 import { SearchInputProps } from './types';
+import ResultsContainer from './ResultContainer';
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-  inputType = 'text',
   width = '320px',
   searchInputType = 'outlined',
   label,
   errorMessage,
   readyOnly,
+  autocomplete,
   inputId,
   inputArialabel,
   inputName,
@@ -43,19 +44,20 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-    <>
-      <Styled.Container>
+    <Styled.MainContainer>
+      <Styled.InputContainer>
         <Styled.Input
           id={inputId}
           aria-label={inputArialabel}
           name={inputName}
-          type={inputType}
+          type="search"
           width={width}
           searchInputType={searchInputType}
           onBlur={handleBlur}
           onChange={handleChange}
           errorMessage={errorMessage}
           readOnly={readyOnly}
+          autoComplete={autocomplete ? 'on' : 'off'}
           {...props}
         />
         <Styled.Label
@@ -72,16 +74,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <Styled.LeftIconContainer className="iconDiv">
           <FaSearch />
         </Styled.LeftIconContainer>
-      </Styled.Container>
-      {resultList.length > 0 && (
-        <Styled.ResultsContainer width={width}>
-          {resultList.map((element) => (
-            <Styled.ResultItem>{element}</Styled.ResultItem>
-          ))}
-        </Styled.ResultsContainer>
-      )}
-      <p>teste aqui</p>
-      <p>teste 2</p>
-    </>
+      </Styled.InputContainer>
+      <ResultsContainer width={width} resultList={resultList} />
+    </Styled.MainContainer>
   );
 };
