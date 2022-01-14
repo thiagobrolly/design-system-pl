@@ -10,7 +10,7 @@ import {
 
 const App: React.FC = () => {
   const userList = [
-    'Manoel Peraira',
+    'Manoel Pereira',
     'Diego Arend',
     'Hugo Gitz',
     'Derickson Loss',

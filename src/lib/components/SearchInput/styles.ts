@@ -154,6 +154,9 @@ export const Input = styled.input<InputProps>`
     letter-spacing: 0.15px;
     transition: 0.1s;
     cursor: pointer;
+    ::-webkit-search-cancel-button {
+      cursor: pointer;
+    }
   `}
 `;
 
