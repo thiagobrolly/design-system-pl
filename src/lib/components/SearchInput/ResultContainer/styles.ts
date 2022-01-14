@@ -27,7 +27,7 @@ export const Container = styled.ul<ContainerProps>`
     cursor: pointer;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: ${theme.colors.secondaryC};
+    background: ${theme.color.secondary_400};
   }
   ::-webkit-scrollbar-corner {
     border-radius: 10px;
@@ -36,7 +36,7 @@ export const Container = styled.ul<ContainerProps>`
 
 export const ResultItem = styled.li<ResultItemProps>`
   padding: 10px 16px;
-  color: ${theme.colors.secondaryB};
+  color: ${theme.color.secondary_400};
   font-size: 16px;
   line-height: 20px;
   list-style-type: none;
