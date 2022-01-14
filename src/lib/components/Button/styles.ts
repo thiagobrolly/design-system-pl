@@ -5,7 +5,7 @@ import { Props } from './index';
 const buttonTheme = {
   primary: () => css`
     background: transparent;
-    color: ${theme.colors.secondaryB};
+    color: ${theme.color.secondary};
     border: none;
     border-radius: 10px;
 
@@ -25,8 +25,8 @@ const buttonTheme = {
   `,
 
   secondary: () => css`
-    background: ${theme.colors.secondaryB};
-    color: ${theme.colors.white};
+    background: ${theme.color.secondary};
+    color: ${theme.color.white};
     border: none;
     border-radius: 10px;
 
@@ -41,15 +41,15 @@ const buttonTheme = {
     }
     &:disabled {
       cursor: not-allowed;
-      color: ${theme.colors.white};
+      color: ${theme.color.white};
       background: #a8a8a8;
     }
   `,
 
   outline: () => css`
-    background: ${theme.colors.white};
-    color: ${theme.colors.secondaryB};
-    border: 2px solid ${theme.colors.secondaryB};
+    background: ${theme.color.white};
+    color: ${theme.color.secondary};
+    border: 2px solid ${theme.color.secondary};
     border-radius: 10px;
 
     &:not([disabled]):hover {
@@ -84,7 +84,6 @@ export const Button = styled.button<Props>`
 
     svg {
       margin-right: 5px;
-      //font-size: 17px;
     }
   `}
 `;

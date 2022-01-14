@@ -4,19 +4,19 @@ import { InputProps, LabelProps } from './types';
 
 const genericInputTheme = {
   filled: (errorMessage: string | undefined) => css`
-    background-color: ${theme.colors.white};
+    background-color: ${theme.color.white};
     color: rgba(0, 0, 0, 0.87);
     padding: 22px 16px 12px 16px;
     outline: none;
-    border: ${errorMessage ? `1px solid ${theme.colors.errorRed}` : 'none'};
+    border: ${errorMessage ? `1px solid ${theme.color.error}` : 'none'};
 
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
     }
     &:not([disabled]):focus {
-      background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.secondaryB};
+      background-color: ${theme.color.white};
+      border: 1px solid ${theme.color.secondary};
     }
     &:not([disabled]):focus ~ .iconDiv {
       color: #707070;
@@ -24,19 +24,19 @@ const genericInputTheme = {
     &:disabled {
       background-color: #a8a8a8;
       cursor: not-allowed;
-      color: ${theme.colors.white};
+      color: ${theme.color.white};
     }
     &:disabled + label,
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
-      color: ${theme.colors.white};
+      color: ${theme.color.white};
     }
     // rule for the label behavior
     &.hasContent + label,
     &:not([disabled]):focus + label {
       top: 8px;
       font-size: 12px;
-      color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
+      color: ${errorMessage ? theme.color.error : theme.color.secondary};
     }
   `,
 
@@ -48,12 +48,12 @@ const genericInputTheme = {
 
     &:not([disabled], .hasContent) {
       border: ${errorMessage
-        ? `1px solid ${theme.colors.errorRed}`
+        ? `1px solid ${theme.color.error}`
         : '1px solid #e6e7e9'};
     }
     &.hasContent {
       border: ${errorMessage
-        ? `1px solid ${theme.colors.errorRed}`
+        ? `1px solid ${theme.color.error}`
         : '1px solid #e6e7e9'};
       border-top: none;
     }
@@ -71,7 +71,7 @@ const genericInputTheme = {
     }
 
     &:not([disabled]):focus {
-      border: 1px solid ${theme.colors.secondaryB};
+      border: 1px solid ${theme.color.secondary};
       border-top: none;
     }
     &:not([disabled]):focus ~ .iconDiv {
@@ -100,13 +100,12 @@ const genericInputTheme = {
       top: -7px;
       margin-left: 0px;
       font-size: 12px;
-      color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
+      color: ${errorMessage ? theme.color.error : theme.color.secondary};
       &:before,
       &:after {
         content: '';
         position: absolute;
-        border-bottom: 1px solid
-          ${errorMessage ? theme.colors.errorRed : '#e6e7e9'};
+        border-bottom: 1px solid ${errorMessage ? theme.color.error : '#e6e7e9'};
         top: 50%;
       }
       &:before {
@@ -123,12 +122,12 @@ const genericInputTheme = {
       top: -7px;
       margin-left: 0px;
       font-size: 12px;
-      color: ${errorMessage ? theme.colors.errorRed : theme.colors.secondaryB};
+      color: ${errorMessage ? theme.color.error : theme.color.secondary};
       &:before,
       &:after {
         content: '';
         position: absolute;
-        border-bottom: 1px solid ${theme.colors.secondaryB};
+        border-bottom: 1px solid ${theme.color.secondary};
         top: 50%;
       }
       &:before {
@@ -192,7 +191,7 @@ export const Label = styled.label<LabelProps>`
   left: 16px;
   font-size: 16px;
   color: ${(props) =>
-    props.errorMessage ? theme.colors.errorRed : 'rgba(168, 168, 168, 0.47)'};
+    props.errorMessage ? theme.color.error : 'rgba(168, 168, 168, 0.47)'};
   margin-left: ${(props) => props.leftIcon && '36px'};
   transition: 0.1s;
   pointer-events: none;
@@ -205,5 +204,5 @@ export const ErrorMessage = styled.span`
   left: 16px;
   font-size: 12px;
   line-height: 16px;
-  color: ${theme.colors.errorRed};
+  color: ${theme.color.error};
 `;

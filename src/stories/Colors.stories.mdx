@@ -1,0 +1,79 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+import { theme } from '../lib/styles/theme';
+
+
+<Meta title="Colors" />
+
+<style>{`
+  .subheading {
+    font-weight: 900;
+    font-size: 14px;
+    color: #565e6d;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Colors
+<hr />
+<div className="subheading">Color Scheme</div>
+
+<ColorPalette>
+  <ColorItem title="theme.color.primary" subtitle="Primary" colors={[theme.color.primary]} />
+  <ColorItem title="theme.color.primary_variant" subtitle="Primary Variant" colors={[theme.color.primary_variant]} />
+  <ColorItem title="theme.color.secondary" subtitle="Secondary" colors={[theme.color.secondary]} />
+  <ColorItem title="theme.color.secondary_variant" subtitle="Secondary Variant" colors={[theme.color.secondary_variant]} />
+  <ColorItem title="theme.color.background" subtitle="Background" colors={[theme.color.background]} />
+  <ColorItem title="theme.color.white" subtitle="Surface" colors={[theme.color.white]} />
+  <ColorItem title="theme.color.error" subtitle="Error" colors={[theme.color.error]} />
+  <ColorItem title="theme.color.success" subtitle="Success" colors={[theme.color.success]} />
+</ColorPalette>
+
+<div className="subheading">Primary</div>
+
+<ColorPalette>
+  <ColorItem title="theme.color.primary_050" subtitle="Blue 050" colors={[theme.color.primary_050]} />
+  <ColorItem title="theme.color.primary_100" subtitle="Blue 100" colors={[theme.color.primary_100]} />
+  <ColorItem title="theme.color.primary_200" subtitle="Blue 200" colors={[theme.color.primary_200]} />
+  <ColorItem title="theme.color.primary_300" subtitle="Blue 300" colors={[theme.color.primary_300]} />
+  <ColorItem title="theme.color.primary_400" subtitle="Blue 400" colors={[theme.color.primary_400]} />
+  <ColorItem title="theme.color.primary_500" subtitle="Blue 500" colors={[theme.color.primary_500]} />
+  <ColorItem title="theme.color.primary_600" subtitle="Blue 600" colors={[theme.color.primary_600]} />
+  <ColorItem title="theme.color.primary_700" subtitle="Blue 700" colors={[theme.color.primary_700]} />
+  <ColorItem title="theme.color.primary_800" subtitle="Blue 800" colors={[theme.color.primary_800]} />
+  <ColorItem title="theme.color.primary_900" subtitle="Blue 900" colors={[theme.color.primary_900]} />
+</ColorPalette>
+
+<div className="subheading">Secondary</div>
+
+<ColorPalette>
+  <ColorItem title="theme.color.secondary_050" subtitle="Blue 050" colors={[theme.color.secondary_050]} />
+  <ColorItem title="theme.color.secondary_100" subtitle="Blue 100" colors={[theme.color.secondary_100]} />
+  <ColorItem title="theme.color.secondary_200" subtitle="Blue 200" colors={[theme.color.secondary_200]} />
+  <ColorItem title="theme.color.secondary_300" subtitle="Blue 300" colors={[theme.color.secondary_300]} />
+  <ColorItem title="theme.color.secondary_400" subtitle="Blue 400" colors={[theme.color.secondary_400]} />
+  <ColorItem title="theme.color.secondary_500" subtitle="Blue 500" colors={[theme.color.secondary_500]} />
+  <ColorItem title="theme.color.secondary_600" subtitle="Blue 600" colors={[theme.color.secondary_600]} />
+  <ColorItem title="theme.color.secondary_700" subtitle="Blue 700" colors={[theme.color.secondary_700]} />
+  <ColorItem title="theme.color.secondary_800" subtitle="Blue 800" colors={[theme.color.secondary_800]} />
+  <ColorItem title="theme.color.secondary_900" subtitle="Blue 900" colors={[theme.color.secondary_900]} />
+</ColorPalette>
+
+<div className="subheading">Neutral</div>
+
+<ColorPalette>
+  <ColorItem title="theme.color.white" subtitle="White" colors={[theme.color.white]} />
+  <ColorItem title="theme.color.gray_500" subtitle="Gray 500" colors={[theme.color.gray_500]} />
+  <ColorItem title="theme.color.gray_600" subtitle="Gray 600" colors={[theme.color.gray_600]} />
+  <ColorItem title="theme.color.gray_700" subtitle="Gray 700" colors={[theme.color.gray_700]} />
+  <ColorItem title="theme.color.gray_800" subtitle="Gray 800" colors={[theme.color.gray_800]} />
+  <ColorItem title="theme.color.gray_900" subtitle="Gray 900" colors={[theme.color.gray_900]} />
+  <ColorItem title="theme.color.black_500" subtitle="Black 500" colors={[theme.color.black_500]} />
+  <ColorItem title="theme.color.black_600" subtitle="Black 600" colors={[theme.color.black_600]} />
+  <ColorItem title="theme.color.black_700" subtitle="Black 700" colors={[theme.color.black_700]} />
+  <ColorItem title="theme.color.black_800" subtitle="Black 800" colors={[theme.color.black_800]} />
+  <ColorItem title="theme.color.black_900" subtitle="Black 900" colors={[theme.color.black_900]} />
+  <ColorItem title="theme.color.black" subtitle="Black" colors={[theme.color.black]} />
+</ColorPalette>
