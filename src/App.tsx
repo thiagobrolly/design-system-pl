@@ -102,6 +102,7 @@ const App: React.FC = () => {
         width="600px"
         label="Buscar"
         options={userList}
+        defaultErrorMessage="Registro não encontrado"
         inputId="form_searchInput"
         inputArialabel="input-search"
         labelId="form_search-label"

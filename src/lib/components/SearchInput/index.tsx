@@ -8,7 +8,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   width = '320px',
   searchInputType = 'outlined',
   label,
-  errorMessage,
+  defaultErrorMessage,
   readyOnly,
   autocomplete,
   inputId,
@@ -20,6 +20,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   ...props
 }) => {
   const [resultList, setResultList] = useState<Array<string>>([]);
+  const [wordSearched, setWordSearched] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value) {
@@ -36,10 +38,19 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setWordSearched(e.target.value);
     if (e.target.value.length >= 3) {
-      setResultList(filterResult(e.target.value));
+      const searchResponse = filterResult(e.target.value);
+      if (searchResponse.length > 0) {
+        setResultList(searchResponse);
+        setErrorMessage('');
+      } else {
+        setErrorMessage(defaultErrorMessage);
+        setResultList([]);
+      }
     } else {
       setResultList([]);
+      setErrorMessage('');
     }
   };
 
@@ -55,6 +66,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           searchInputType={searchInputType}
           onBlur={handleBlur}
           onChange={handleChange}
+          value={wordSearched}
           errorMessage={errorMessage}
           readOnly={readyOnly}
           autoComplete={autocomplete ? 'on' : 'off'}
@@ -75,7 +87,12 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           <FaSearch />
         </Styled.LeftIconContainer>
       </Styled.InputContainer>
-      <ResultsContainer width={width} resultList={resultList} />
+      <ResultsContainer
+        width={width}
+        resultList={resultList}
+        setWordSearched={setWordSearched}
+        setResultList={setResultList}
+      />
     </Styled.MainContainer>
   );
 };

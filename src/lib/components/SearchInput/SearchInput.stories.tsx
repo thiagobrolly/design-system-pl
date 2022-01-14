@@ -51,6 +51,7 @@ Filled.args = {
   label: 'Buscar usuário',
   width: '500px',
   inputId: 'searchInput-filled',
+  defaultErrorMessage: 'Registro não encontrado',
   options: userList,
 };
 
@@ -59,5 +60,6 @@ Outlined.args = {
   label: 'Buscar usuário',
   width: '320px',
   inputId: 'searchInput-outlined',
+  defaultErrorMessage: 'Registro não encontrado',
   options: userList,
 };

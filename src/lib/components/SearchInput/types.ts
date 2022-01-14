@@ -3,7 +3,7 @@ export interface SearchInputProps {
   searchInputType: 'filled' | 'outlined';
   disabled?: boolean;
   label?: string;
-  errorMessage?: string;
+  defaultErrorMessage: string;
   readyOnly?: boolean;
   autocomplete?: boolean;
   inputId: string;

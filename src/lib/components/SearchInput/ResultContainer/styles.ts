@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/theme';
-import { ContainerProps } from './types';
+import { ContainerProps, ResultItemProps } from './types';
 
 export const Container = styled.ul<ContainerProps>`
   position: absolute;
@@ -10,7 +10,8 @@ export const Container = styled.ul<ContainerProps>`
   max-height: 300px;
   background-color: white;
   border-radius: 10px;
-  padding: 10px 16px 0px 16px;
+  padding-top: 10px;
+  padding-bottom: 4px;
   box-shadow: 0 3px 10px 0 rgba(112, 112, 112, 0.16);
   transition: 0.8s;
   overflow-x: scroll;
@@ -19,8 +20,6 @@ export const Container = styled.ul<ContainerProps>`
     width: 6px;
     height: 6px;
     border-radius: 10px;
-  }
-  ::-webkit-scrollbar-track:hover {
   }
   ::-webkit-scrollbar-thumb {
     background: lightgray;
@@ -35,8 +34,8 @@ export const Container = styled.ul<ContainerProps>`
   }
 `;
 
-export const ResultItem = styled.li`
-  padding: 10px 0;
+export const ResultItem = styled.li<ResultItemProps>`
+  padding: 10px 16px;
   color: ${theme.colors.secondaryB};
   font-size: 16px;
   line-height: 20px;
@@ -45,4 +44,7 @@ export const ResultItem = styled.li`
   white-space: nowrap;
   display: flex;
   justify-content: space-between;
+  :hover {
+    background-color: lightgray;
+  }
 `;
