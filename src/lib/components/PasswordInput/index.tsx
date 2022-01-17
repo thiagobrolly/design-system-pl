@@ -40,6 +40,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         passwordInputType={passwordInputType}
         onBlur={handleBlur}
         errorMessage={errorMessage}
+        autoComplete="off"
         {...props}
       />
       <Styled.Label

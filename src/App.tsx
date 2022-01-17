@@ -1,9 +1,25 @@
 import React from 'react';
-
-import { FaEnvelope } from 'react-icons/fa';
-import { Button, Separator, Heading, GenericInput, PasswordInput } from './lib';
+import {
+  Button,
+  Separator,
+  Heading,
+  GenericInput,
+  PasswordInput,
+  SearchInput,
+} from './lib';
 
 const App: React.FC = () => {
+  const userList = [
+    'Manoel Pereira',
+    'Diego Arend',
+    'Hugo Gitz',
+    'Derickson Loss',
+    'Thiago Sousa',
+    'Tatiani da Silva',
+    'Mateus Junges',
+    'Matheus Morais',
+  ];
+
   return (
     <>
       <h1>Teste</h1>
@@ -45,7 +61,7 @@ const App: React.FC = () => {
       </div>
       <Separator />
       <Heading children="teste" uppercase />
-      <h3>Teste InputText</h3>
+      <h3>GenericInput Test</h3>
       <GenericInput
         inputType="text"
         width="520px"
@@ -55,18 +71,22 @@ const App: React.FC = () => {
         inputArialabel="input-fullName"
         labelId="form_fullNameInput-label"
         labelArialabel="label-fullName"
+        leftIcon
+        leftIconType="userIcon"
       />
       <GenericInput
         inputType="email"
         width="520px"
-        label="Seu email"
+        label="Email do usuário"
         genericInputType="outlined"
         inputId="form_emailInput"
         inputArialabel="input-email"
         labelId="form_emailInput-label"
         labelArialabel="label-email"
-        leftIcon={<FaEnvelope />}
+        leftIcon
+        leftIconType="envelopeIcon"
       />
+      <h3>PasswordInput Test</h3>
       <PasswordInput
         width="320px"
         label="Sua senha"
@@ -75,6 +95,19 @@ const App: React.FC = () => {
         inputArialabel="input-password"
         labelId="form_passwordInput-label"
         labelArialabel="label-password"
+      />
+      <h3>SearchInput Test</h3>
+      <SearchInput
+        searchInputType="outlined"
+        width="600px"
+        label="Buscar"
+        options={userList}
+        defaultErrorMessage="Registro não encontrado"
+        inputId="form_searchInput"
+        inputArialabel="input-search"
+        labelId="form_search-label"
+        labelArialabel="label-search"
+        autocomplete={false}
       />
     </>
   );

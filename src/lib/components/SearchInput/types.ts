@@ -1,14 +1,9 @@
-export interface GenericInputProps {
-  inputType?: 'text' | 'number' | 'email';
+export interface SearchInputProps {
   width: string;
-  genericInputType: 'filled' | 'outlined';
+  searchInputType: 'filled' | 'outlined';
   disabled?: boolean;
   label?: string;
-  leftIcon?: boolean;
-  leftIconType?: IconType;
-  rightIcon?: boolean;
-  rightIconType?: IconType;
-  errorMessage?: string;
+  defaultErrorMessage: string;
   readyOnly?: boolean;
   autocomplete?: boolean;
   inputId: string;
@@ -16,20 +11,16 @@ export interface GenericInputProps {
   inputName?: string;
   labelId: string;
   labelArialabel: string;
+  options: string[];
 }
-
-export type IconType = 'searchIcon' | 'envelopeIcon' | 'userIcon';
 
 export interface InputProps {
   id?: string;
   name?: string;
   arialabel?: string;
-  type: 'text' | 'number' | 'email';
   width: string;
-  genericInputType: 'filled' | 'outlined';
+  searchInputType: 'filled' | 'outlined';
   disabled?: boolean;
-  leftIcon?: boolean;
-  rightIcon?: boolean;
   errorMessage?: string;
 }
 
@@ -37,6 +28,5 @@ export interface LabelProps {
   id?: string;
   arialabel?: string;
   htmlfor?: string;
-  leftIcon?: React.ReactNode;
   errorMessage?: string;
 }

@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import { FaEnvelope } from 'react-icons/fa';
 import { GenericInput } from '.';
 import { GenericInputProps } from './types';
 
@@ -23,7 +22,8 @@ Filled.args = {
   genericInputType: 'filled',
   label: 'Label aqui',
   width: '500px',
-  leftIcon: <FaEnvelope />,
+  leftIcon: true,
+  leftIconType: 'userIcon',
   inputId: 'genericInput-filled',
 };
 
@@ -32,7 +32,8 @@ Outlined.args = {
   genericInputType: 'outlined',
   label: 'Label aqui',
   width: '320px',
-  leftIcon: <FaEnvelope />,
-  rightIcon: <FaEnvelope />,
+  leftIcon: true,
+  leftIconType: 'searchIcon',
+  rightIcon: true,
   inputId: 'genericInput-outlined',
 };
