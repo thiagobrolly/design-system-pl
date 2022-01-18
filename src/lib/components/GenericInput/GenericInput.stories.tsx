@@ -3,7 +3,7 @@ import { GenericInput } from '.';
 import { GenericInputProps } from './types';
 
 export default {
-  title: 'Components/GenericInput',
+  title: 'Form/GenericInput',
   component: GenericInput,
   args: {
     disabled: false,
