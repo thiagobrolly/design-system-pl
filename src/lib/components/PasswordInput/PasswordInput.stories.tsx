@@ -3,7 +3,7 @@ import { PasswordInput } from '.';
 import { PasswordInputProps } from './types';
 
 export default {
-  title: 'Components/PasswordInput',
+  title: 'Form/PasswordInput',
   component: PasswordInput,
   args: {
     disabled: false,

@@ -55,10 +55,15 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage>
       )}
       <Styled.RightIconContainer
+        aria-label="togglePasswordBtn"
         className="iconDiv"
         onClick={togglePasswordVisibility}
       >
-        {showPassword ? <FaEye /> : <FaEyeSlash />}
+        {showPassword ? (
+          <FaEye aria-label="hidePasswordIcon" />
+        ) : (
+          <FaEyeSlash aria-label="showPasswordIcon" />
+        )}
       </Styled.RightIconContainer>
     </Styled.Container>
   );

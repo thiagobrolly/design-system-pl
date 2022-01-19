@@ -3,7 +3,7 @@ import { SearchInput } from '.';
 import { SearchInputProps } from './types';
 
 export default {
-  title: 'Components/SearchInput',
+  title: 'Form/SearchInput',
   component: SearchInput,
   args: {
     disabled: false,
