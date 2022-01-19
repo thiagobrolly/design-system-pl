@@ -18,7 +18,7 @@ export interface GenericInputProps {
   labelArialabel: string;
 }
 
-export type IconType = 'searchIcon' | 'envelopeIcon' | 'userIcon';
+export type IconType = 'searchIcon' | 'lockIcon' | 'userIcon';
 
 export interface InputProps {
   id?: string;

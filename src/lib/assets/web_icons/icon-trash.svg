@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+    </style>
+  </defs>
+  <g id="icon-trash" transform="translate(-676 -291)">
+    <rect id="Retângulo_436" data-name="Retângulo 436" class="cls-1" width="38.48" height="38.48" rx="19" transform="translate(676 291)"/>
+    <g id="trash-2" transform="translate(686 301)">
+      <path id="Caminho_3804" data-name="Caminho 3804" class="cls-2" d="M3058.815,1046.786a2.292,2.292,0,0,1-2.288-2.289v-9.918h-.764a.763.763,0,0,1,0-1.527h3.052v-.762a2.292,2.292,0,0,1,2.289-2.29h3.053a2.292,2.292,0,0,1,2.289,2.29v.762h3.052a.764.764,0,0,1,.763.763h0a.764.764,0,0,1-.764.763h-.762v9.918a2.292,2.292,0,0,1-2.289,2.289Zm-.762-2.289a.763.763,0,0,0,.762.763h7.63a.763.763,0,0,0,.763-.763v-9.918h-9.155Zm6.866-11.445v-.762a.764.764,0,0,0-.762-.764H3061.1a.764.764,0,0,0-.763.764v.762Z" transform="translate(-3053 -1029)"/>
+      <path id="Linha_68" data-name="Linha 68" class="cls-2" d="M-.237,5.1A.763.763,0,0,1-1,4.341V-.237A.763.763,0,0,1-.237-1a.763.763,0,0,1,.763.763V4.341A.763.763,0,0,1-.237,5.1Z" transform="translate(8.341 8.867)"/>
+      <path id="Linha_69" data-name="Linha 69" class="cls-2" d="M-.237,5.1A.763.763,0,0,1-1,4.341V-.237A.763.763,0,0,1-.237-1a.763.763,0,0,1,.763.763V4.341A.763.763,0,0,1-.237,5.1Z" transform="translate(11.393 8.867)"/>
+    </g>
+  </g>
+</svg>
