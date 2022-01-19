@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+    </style>
+  </defs>
+  <g id="icon-invoice-filled" transform="translate(-452 -403)">
+    <g id="Grupo_3941" data-name="Grupo 3941">
+      <rect id="Retângulo_440" data-name="Retângulo 440" class="cls-1" width="38.48" height="38.48" rx="19" transform="translate(452 403)"/>
+      <g id="icon-invoice" transform="translate(463.201 414.252)">
+        <g id="Grupo_3227" data-name="Grupo 3227" transform="translate(2.719 14.794)">
+          <g id="Grupo_3226" data-name="Grupo 3226">
+            <rect id="Retângulo_194" data-name="Retângulo 194" class="cls-2" width="10.402" height="1.182"/>
+          </g>
+        </g>
+        <g id="Grupo_3229" data-name="Grupo 3229" transform="translate(5.555 5.28)">
+          <g id="Grupo_3228" data-name="Grupo 3228" transform="translate(0 0)">
+            <path id="Caminho_3325" data-name="Caminho 3325" class="cls-2" d="M181.177,169.726h-3.644a.591.591,0,1,0,0,1.182h3.644a.591.591,0,1,0,0-1.182Z" transform="translate(-176.941 -169.726)"/>
+          </g>
+        </g>
+        <g id="Grupo_3231" data-name="Grupo 3231" transform="translate(5.555 8.037)">
+          <g id="Grupo_3230" data-name="Grupo 3230">
+            <path id="Caminho_3326" data-name="Caminho 3326" class="cls-2" d="M183.934,257.569h-6.4a.591.591,0,1,0,0,1.182h6.4a.591.591,0,0,0,0-1.182Z" transform="translate(-176.941 -257.569)"/>
+          </g>
+        </g>
+        <g id="Grupo_3233" data-name="Grupo 3233" transform="translate(0 0)">
+          <g id="Grupo_3232" data-name="Grupo 3232" transform="translate(0 0)">
+            <path id="Caminho_3327" data-name="Caminho 3327" class="cls-2" d="M15.727,1.639a.592.592,0,0,0-.634.1L13.438,3.2,11.781,1.718a.591.591,0,0,0-.788,0L9.338,3.2,7.683,1.718a.591.591,0,0,0-.788,0L5.238,3.2,3.583,1.736a.591.591,0,0,0-.983.443V12.7H.591A.591.591,0,0,0,0,13.289v1.438a2.82,2.82,0,0,0,2.817,2.817V16.362a1.637,1.637,0,0,1-1.635-1.635V13.88h9.259v.847a2.817,2.817,0,0,0,5.634,0V2.178A.591.591,0,0,0,15.727,1.639Zm-.834,13.087a1.635,1.635,0,0,1-3.27,0V13.289a.591.591,0,0,0-.591-.591H3.782V3.49l1.066.943a.591.591,0,0,0,.785,0l1.655-1.48,1.655,1.48a.591.591,0,0,0,.788,0l1.655-1.48,1.655,1.48a.591.591,0,0,0,.785,0l1.066-.943Z" transform="translate(0 -1.568)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,7 +1,11 @@
 import React from 'react';
-import { FaEnvelope, FaSearch, FaUser, FaQuestion } from 'react-icons/fa';
 import * as Styled from './styles';
 import { GenericInputProps, IconType } from './types';
+
+import { ReactComponent as IconUser } from '../../assets/web_icons/icon-user.svg';
+import { ReactComponent as IconSearch } from '../../assets/web_icons/icon-search.svg';
+import { ReactComponent as IconLock } from '../../assets/web_icons/icon-lock.svg';
+import { ReactComponent as IconAlertTriangle } from '../../assets/web_icons/icon-alert-triangle.svg';
 
 export const GenericInput: React.FC<GenericInputProps> = ({
   inputType = 'text',
@@ -31,10 +35,38 @@ export const GenericInput: React.FC<GenericInputProps> = ({
   };
 
   const iconOptions = {
-    searchIcon: <FaSearch />,
-    envelopeIcon: <FaEnvelope />,
-    userIcon: <FaUser />,
-    undefined: <FaQuestion />,
+    searchIcon: (
+      <IconSearch
+        viewBox="10 10 24 24"
+        width="24px"
+        height="24px"
+        fill="rgba(168, 168, 168, 0.47)"
+      />
+    ),
+    lockIcon: (
+      <IconLock
+        viewBox="10 10 24 24"
+        width="24px"
+        height="24px"
+        fill="rgba(168, 168, 168, 0.47)"
+      />
+    ),
+    userIcon: (
+      <IconUser
+        viewBox="10 10 24 24"
+        width="24px"
+        height="24px"
+        fill="rgba(168, 168, 168, 0.47)"
+      />
+    ),
+    undefined: (
+      <IconAlertTriangle
+        viewBox="10 10 24 24"
+        width="24px"
+        height="24px"
+        fill="rgba(168, 168, 168, 0.47)"
+      />
+    ),
   };
 
   const renderIcon = (
@@ -45,7 +77,7 @@ export const GenericInput: React.FC<GenericInputProps> = ({
       return iconOptions[type];
     }
     if (active && !type) {
-      return <FaQuestion />;
+      return iconOptions.undefined;
     }
     return null;
   };

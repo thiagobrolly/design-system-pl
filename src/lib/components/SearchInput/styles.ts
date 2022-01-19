@@ -13,13 +13,20 @@ const searchInputTheme = {
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+        transition: 0.1s;
+      }
     }
     &:not([disabled]):focus {
       background-color: ${theme.color.white};
       border: 1px solid ${theme.color.secondary_400};
     }
     &:not([disabled]):focus ~ .iconDiv {
-      color: #707070;
+      svg {
+        fill: #707070;
+        transition: 0.1s;
+      }
     }
     &:disabled {
       background-color: #a8a8a8;
@@ -30,6 +37,10 @@ const searchInputTheme = {
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
       color: ${theme.color.white};
+      svg {
+        fill: ${theme.color.white};
+        transition: 0.1s;
+      }
     }
     // rule for the label behavior
     &.hasContent + label,
@@ -68,6 +79,10 @@ const searchInputTheme = {
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+        transition: 0.1s;
+      }
     }
 
     &:not([disabled]):focus {
@@ -75,7 +90,10 @@ const searchInputTheme = {
       border-top: none;
     }
     &:not([disabled]):focus ~ .iconDiv {
-      color: #707070;
+      svg {
+        fill: #707070;
+        transition: 0.1s;
+      }
     }
 
     &:disabled {
@@ -92,6 +110,7 @@ const searchInputTheme = {
     &:disabled + label,
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
+      transition: 0.1s;
     }
 
     // rule for the label behavior
@@ -174,8 +193,6 @@ export const LeftIconContainer = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
-  color: rgba(168, 168, 168, 0.47);
-  transition: 0.1s;
   pointer-events: none;
 `;
 

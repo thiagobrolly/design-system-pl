@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+        stroke: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-select-outline" transform="translate(-60 -291)">
+    <g id="Retângulo_447" data-name="Retângulo 447" class="cls-1" transform="translate(60 291)">
+      <rect class="cls-3" width="38.48" height="38.48" rx="19"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="37.48" height="37.48" rx="18.5"/>
+    </g>
+    <g id="select" transform="translate(71.001 302.762)">
+      <path id="Caminho_2942" data-name="Caminho 2942" class="cls-2" d="M36.536,15.389a.708.708,0,0,0-1,0L29.18,21.745l-2.927-2.927a.708.708,0,0,0-1,1l3.428,3.428a.708.708,0,0,0,1,0l6.855-6.857A.708.708,0,0,0,36.536,15.389Z" transform="translate(-20.608 -14.263)"/>
+      <path id="Caminho_2943" data-name="Caminho 2943" class="cls-2" d="M14.143,11.944a.812.812,0,0,0-.812.812v6.019H1.625V7.07h9.269a.812.812,0,0,0,0-1.625H.812A.812.812,0,0,0,0,6.257v13.33a.812.812,0,0,0,.812.812h13.33a.812.812,0,0,0,.812-.812V12.756A.812.812,0,0,0,14.143,11.944Z" transform="translate(0 -5.445)"/>
+    </g>
+  </g>
+</svg>

@@ -84,7 +84,7 @@ const App: React.FC = () => {
         labelId="form_emailInput-label"
         labelArialabel="label-email"
         leftIcon
-        leftIconType="envelopeIcon"
+        leftIconType="lockIcon"
       />
       <h3>PasswordInput Test</h3>
       <PasswordInput

@@ -8,6 +8,9 @@ const buttonTheme = {
     color: ${theme.color.secondary};
     border: none;
     border-radius: 10px;
+    svg {
+      fill: ${theme.color.secondary};
+    }
 
     &:not([disabled]):hover {
       background: #ebecee;
@@ -21,6 +24,9 @@ const buttonTheme = {
     &:disabled {
       cursor: not-allowed;
       color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+      }
     }
   `,
 
@@ -29,6 +35,9 @@ const buttonTheme = {
     color: ${theme.color.white};
     border: none;
     border-radius: 10px;
+    svg {
+      fill: ${theme.color.white};
+    }
 
     &:not([disabled]):hover {
       background: #182252;
@@ -51,6 +60,9 @@ const buttonTheme = {
     color: ${theme.color.secondary};
     border: 2px solid ${theme.color.secondary};
     border-radius: 10px;
+    svg {
+      fill: ${theme.color.secondary};
+    }
 
     &:not([disabled]):hover {
       background: #ebecee;
@@ -66,6 +78,9 @@ const buttonTheme = {
       cursor: not-allowed;
       color: #a8a8a8;
       border-color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+      }
     }
   `,
 };

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import * as Styled from './styles';
 import { PasswordInputProps } from './types';
+
+import { ReactComponent as IconEye } from '../../assets/web_icons/icon-eye.svg';
+import { ReactComponent as IconClosedEye } from '../../assets/web_icons/icon-closed-eye.svg';
 
 export const PasswordInput: React.FC<PasswordInputProps> = ({
   width = '320px',
@@ -60,9 +62,21 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         onClick={togglePasswordVisibility}
       >
         {showPassword ? (
-          <FaEye aria-label="hidePasswordIcon" />
+          <IconEye
+            aria-label="hidePasswordIcon"
+            viewBox="5 3 29.3 29.3"
+            width="24px"
+            height="24px"
+            fill="rgba(168, 168, 168, 0.47)"
+          />
         ) : (
-          <FaEyeSlash aria-label="showPasswordIcon" />
+          <IconClosedEye
+            aria-label="showPasswordIcon"
+            viewBox="5 3 29.3 29.3"
+            width="24px"
+            height="24px"
+            fill="rgba(168, 168, 168, 0.47)"
+          />
         )}
       </Styled.RightIconContainer>
     </Styled.Container>

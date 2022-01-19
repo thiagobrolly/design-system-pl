@@ -1,6 +1,7 @@
 import React from 'react';
-import { HiPlus } from 'react-icons/hi';
 import * as Styled from './styles';
+
+import { ReactComponent as IconPlusCircle } from '../../assets/web_icons/icon-plus-circle.svg';
 
 export interface Props {
   disabled?: boolean;
@@ -17,7 +18,9 @@ export const Button: React.FC<Props> = ({
   ...props
 }) => (
   <Styled.Button btnType={btnType} iconPlus={iconPlus} {...props}>
-    {iconPlus ? <HiPlus /> : <></>}
+    {iconPlus && (
+      <IconPlusCircle viewBox="11 11 16 16" width="16px" height="16px" />
+    )}
     {children}
   </Styled.Button>
 );

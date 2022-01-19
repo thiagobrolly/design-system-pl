@@ -13,13 +13,20 @@ const passwordInputTheme = {
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+        transition: 0.1s;
+      }
     }
     &:not([disabled]):focus {
       background-color: ${theme.color.white};
       border: 1px solid ${theme.color.secondary};
     }
     &:not([disabled]):focus ~ .iconDiv {
-      color: #707070;
+      svg {
+        fill: #707070;
+        transition: 0.1s;
+      }
     }
     &:disabled {
       background-color: #a8a8a8;
@@ -30,6 +37,10 @@ const passwordInputTheme = {
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
       color: ${theme.color.white};
+      svg {
+        fill: ${theme.color.white};
+        transition: 0.1s;
+      }
     }
     // rule for the label behavior
     &.hasContent + label,
@@ -68,6 +79,10 @@ const passwordInputTheme = {
     &:not([disabled], .hasContent):hover + label,
     &:not([disabled]):hover ~ .iconDiv {
       color: #a8a8a8;
+      svg {
+        fill: #a8a8a8;
+        transition: 0.1s;
+      }
     }
 
     &:not([disabled]):focus {
@@ -75,7 +90,10 @@ const passwordInputTheme = {
       border-top: none;
     }
     &:not([disabled]):focus ~ .iconDiv {
-      color: #707070;
+      svg {
+        fill: #707070;
+        transition: 0.1s;
+      }
     }
 
     &:disabled {
@@ -92,6 +110,7 @@ const passwordInputTheme = {
     &:disabled + label,
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
+      transition: 0.1s;
     }
 
     // rules for the label behavior
@@ -169,8 +188,6 @@ export const RightIconContainer = styled.div`
   position: absolute;
   top: 0px;
   right: 0px;
-  color: rgba(168, 168, 168, 0.47);
-  transition: 0.1s;
   cursor: pointer;
 `;
 

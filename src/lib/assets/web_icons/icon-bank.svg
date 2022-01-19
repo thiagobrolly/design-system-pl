@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+    </style>
+  </defs>
+  <g id="icon-bank" transform="translate(-676 -291)">
+    <rect id="Retângulo_436" data-name="Retângulo 436" class="cls-1" width="38.48" height="38.48" rx="19" transform="translate(676 291)"/>
+    <g id="Grupo_3984" data-name="Grupo 3984" transform="translate(3724 1622.684)">
+      <path id="Caminho_3796" data-name="Caminho 3796" class="cls-2" d="M10.129,1.42l-5.8,4.164H15.932l-5.8-4.164m0-1.194a.6.6,0,0,1,.346.11l7.394,5.248a.6.6,0,0,1-.346,1.086H2.734a.6.6,0,0,1-.346-1.086L9.783.337A.6.6,0,0,1,10.129.226Z" transform="translate(-3039.135 -1320.91)"/>
+      <path id="Caminho_3796-2" data-name="Caminho 3796" class="cls-2" d="M12.674,1.077H.538A.538.538,0,0,1,.538,0H15.527a.538.538,0,0,1,0,1.077Z" transform="translate(-3037 -1306.069)"/>
+      <g id="Grupo_3339" data-name="Grupo 3339" transform="translate(-3035.206 -1313.337)">
+        <path id="Caminho_3797" data-name="Caminho 3797" class="cls-2" d="M2.974,1.077H.538A.538.538,0,1,1,.538,0H5.827a.538.538,0,0,1,0,1.077Z" transform="translate(0 6.365) rotate(-90)"/>
+        <path id="Caminho_3798" data-name="Caminho 3798" class="cls-2" d="M2.974,1.077H.538A.538.538,0,1,1,.538,0H5.827a.538.538,0,0,1,0,1.077Z" transform="translate(5.783 6.365) rotate(-90)"/>
+        <path id="Caminho_3799" data-name="Caminho 3799" class="cls-2" d="M2.974,1.077H.538A.538.538,0,1,1,.538,0H5.827a.538.538,0,0,1,0,1.077Z" transform="translate(11.507 6.365) rotate(-90)"/>
+      </g>
+    </g>
+  </g>
+</svg>

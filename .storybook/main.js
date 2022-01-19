@@ -1,4 +1,8 @@
 module.exports = {
+  babel: async (options) => {
+    options.plugins.push('babel-plugin-inline-react-svg');
+    return options;
+  },
   "stories": [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
@@ -9,5 +13,6 @@ module.exports = {
     "storybook-zeplin/register",
     'storybook-dark-mode',
   ],
-  "framework": "@storybook/react"
+  "framework": "@storybook/react",
 }
+

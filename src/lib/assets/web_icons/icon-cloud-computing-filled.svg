@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+    </style>
+  </defs>
+  <g id="icon-cloud-computing-filled" transform="translate(-396 -575)">
+    <rect id="Retângulo_447" data-name="Retângulo 447" class="cls-1" width="38.48" height="38.48" rx="19" transform="translate(396 575)"/>
+    <g id="cloud-computing" transform="translate(406 531.969)">
+      <g id="Grupo_3154" data-name="Grupo 3154" transform="translate(0 55.032)">
+        <g id="Grupo_3153" data-name="Grupo 3153" transform="translate(0 0)">
+          <path id="Caminho_3322" data-name="Caminho 3322" class="cls-2" d="M15.8,59.965A6.519,6.519,0,0,0,2.978,61.079a3.556,3.556,0,0,0,.593,7.064H6.533V66.958H3.57a2.37,2.37,0,0,1,0-4.741.593.593,0,0,0,.593-.593,5.334,5.334,0,0,1,10.566-1.037.593.593,0,0,0,.5.474,2.963,2.963,0,0,1-.4,5.9h-2.37v1.185h2.37a4.148,4.148,0,0,0,.972-8.178Z" transform="translate(0 -55.032)"/>
+          <path id="Caminho_3323" data-name="Caminho 3323" class="cls-2" d="M183.405,249.183l-2.37,2.37.836.836,1.363-1.357v5.683h1.185v-5.683l1.357,1.357.836-.836-2.37-2.37A.593.593,0,0,0,183.405,249.183Z" transform="translate(-174.33 -241.826)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

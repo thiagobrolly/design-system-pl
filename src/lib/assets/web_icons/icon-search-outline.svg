@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+        stroke: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-search-outline" transform="translate(-284 -519)">
+    <g id="Retângulo_447" data-name="Retângulo 447" class="cls-1" transform="translate(284 519)">
+      <rect class="cls-3" width="38.48" height="38.48" rx="19"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="37.48" height="37.48" rx="18.5"/>
+    </g>
+    <path id="search" class="cls-2" d="M16.111,14.492l-3.787-3.938a6.421,6.421,0,1,0-4.917,2.294,6.355,6.355,0,0,0,3.68-1.162L14.9,15.654a.838.838,0,1,0,1.208-1.162ZM7.408,1.676A4.748,4.748,0,1,1,2.66,6.424,4.753,4.753,0,0,1,7.408,1.676Z" transform="translate(295.016 530)"/>
+  </g>
+</svg>

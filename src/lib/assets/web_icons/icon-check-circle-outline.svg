@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+        stroke: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-check-circle-outline" transform="translate(-172 -958)">
+    <g id="Retângulo_437" data-name="Retângulo 437" class="cls-1" transform="translate(172 958)">
+      <rect class="cls-3" width="38.48" height="38.48" rx="19"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="37.48" height="37.48" rx="18.5"/>
+    </g>
+    <g id="check-circle" transform="translate(182.23 968.48)">
+      <path id="Caminho_3802" data-name="Caminho 3802" class="cls-2" d="M9,17.014A8.011,8.011,0,0,1,7.244,1.19a7.951,7.951,0,0,1,5.025.5.728.728,0,0,1-.593,1.33,6.553,6.553,0,0,0-8.164,9.552,6.553,6.553,0,0,0,12.05-3.563V8.337a.728.728,0,0,1,1.456,0v.67A8.021,8.021,0,0,1,9,17.014Z" transform="translate(0 0)"/>
+      <path id="Caminho_3803" data-name="Caminho 3803" class="cls-2" d="M10.913,11.744a.728.728,0,0,1-.515-.213L8.213,9.347a.728.728,0,0,1,1.03-1.03l1.669,1.669,6.766-6.773a.728.728,0,0,1,1.03,1.029l-7.281,7.288A.728.728,0,0,1,10.913,11.744Z" transform="translate(-1.904 -0.546)"/>
+    </g>
+  </g>
+</svg>

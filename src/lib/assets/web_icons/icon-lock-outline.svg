@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+        stroke: #e6e7e9;
+      }
+
+      .cls-2 {
+        fill: #215aff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="icon-lock-outline" transform="translate(-172 -790)">
+    <g id="Retângulo_437" data-name="Retângulo 437" class="cls-1" transform="translate(172 790)">
+      <rect class="cls-3" width="38.48" height="38.48" rx="19"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="37.48" height="37.48" rx="18.5"/>
+    </g>
+    <g id="lock" transform="translate(181 799)">
+      <path id="Retângulo_261" data-name="Retângulo 261" class="cls-2" d="M1.4-1H12.6A2.4,2.4,0,0,1,15,1.4V7a2.4,2.4,0,0,1-2.4,2.4H1.4A2.4,2.4,0,0,1-1,7V1.4A2.4,2.4,0,0,1,1.4-1ZM12.6,7.8a.8.8,0,0,0,.8-.8V1.4a.8.8,0,0,0-.8-.8H1.4a.8.8,0,0,0-.8.8V7a.8.8,0,0,0,.8.8Z" transform="translate(3 9.199)"/>
+      <path id="Caminho_3761" data-name="Caminho 3761" class="cls-2" d="M14.8,9.8A.8.8,0,0,1,14,9V5.8a3.2,3.2,0,1,0-6.4,0V9A.8.8,0,0,1,6,9V5.8a4.8,4.8,0,0,1,9.6,0V9A.8.8,0,0,1,14.8,9.8Z" transform="translate(-0.8)"/>
+    </g>
+  </g>
+</svg>
