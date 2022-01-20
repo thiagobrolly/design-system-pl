@@ -6,6 +6,7 @@ import {
   GenericInput,
   PasswordInput,
   SearchInput,
+  IconPaylivre,
 } from './lib';
 
 const App: React.FC = () => {
@@ -109,6 +110,8 @@ const App: React.FC = () => {
         labelArialabel="label-search"
         autocomplete={false}
       />
+      <h3>Icons</h3>
+      <IconPaylivre iconType="searchIcon" size={70} color="#f00" />
     </>
   );
 };
