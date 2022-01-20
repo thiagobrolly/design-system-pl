@@ -13,7 +13,7 @@ export default {
 export const Filled: Story<GenericInputProps> = (args) => (
   <GenericInput {...args} />
 );
-export const Outlined: Story<GenericInputProps> = (args) => (
+export const Outline: Story<GenericInputProps> = (args) => (
   <GenericInput {...args} />
 );
 
@@ -27,13 +27,13 @@ Filled.args = {
   inputId: 'genericInput-filled',
 };
 
-Outlined.args = {
+Outline.args = {
   inputType: 'number',
-  genericInputType: 'outlined',
+  genericInputType: 'outline',
   label: 'Label aqui',
   width: '320px',
   leftIcon: true,
   leftIconType: 'searchIcon',
   rightIcon: true,
-  inputId: 'genericInput-outlined',
+  inputId: 'genericInput-outline',
 };

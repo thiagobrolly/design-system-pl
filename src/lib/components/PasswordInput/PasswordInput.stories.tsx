@@ -13,7 +13,7 @@ export default {
 export const Filled: Story<PasswordInputProps> = (args) => (
   <PasswordInput {...args} />
 );
-export const Outlined: Story<PasswordInputProps> = (args) => (
+export const Outline: Story<PasswordInputProps> = (args) => (
   <PasswordInput {...args} />
 );
 
@@ -24,9 +24,9 @@ Filled.args = {
   inputId: 'passwordInput-filled',
 };
 
-Outlined.args = {
-  passwordInputType: 'outlined',
+Outline.args = {
+  passwordInputType: 'outline',
   label: 'Label aqui',
   width: '320px',
-  inputId: 'passwordInput-outlined',
+  inputId: 'passwordInput-outline',
 };

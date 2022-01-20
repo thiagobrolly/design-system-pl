@@ -3,11 +3,11 @@ import * as Styled from './styles';
 import { SearchInputProps } from './types';
 import ResultsContainer from './ResultContainer';
 
-import { ReactComponent as IconSearch } from '../../assets/web_icons/icon-search.svg';
+import { ReactComponent as IconSearch } from '../../../assets/icons/icon-search.svg';
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   width = '320px',
-  searchInputType = 'outlined',
+  searchInputType = 'outline',
   label,
   defaultErrorMessage,
   readyOnly,

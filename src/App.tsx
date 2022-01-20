@@ -66,7 +66,7 @@ const App: React.FC = () => {
         inputType="text"
         width="520px"
         label="Seu nome completo"
-        genericInputType="outlined"
+        genericInputType="outline"
         inputId="form_fullNameInput"
         inputArialabel="input-fullName"
         labelId="form_fullNameInput-label"
@@ -78,7 +78,7 @@ const App: React.FC = () => {
         inputType="email"
         width="520px"
         label="Email do usuário"
-        genericInputType="outlined"
+        genericInputType="outline"
         inputId="form_emailInput"
         inputArialabel="input-email"
         labelId="form_emailInput-label"
@@ -90,7 +90,7 @@ const App: React.FC = () => {
       <PasswordInput
         width="320px"
         label="Sua senha"
-        passwordInputType="outlined"
+        passwordInputType="outline"
         inputId="form_passwordInput"
         inputArialabel="input-password"
         labelId="form_passwordInput-label"
@@ -98,7 +98,7 @@ const App: React.FC = () => {
       />
       <h3>SearchInput Test</h3>
       <SearchInput
-        searchInputType="outlined"
+        searchInputType="outline"
         width="600px"
         label="Buscar"
         options={userList}

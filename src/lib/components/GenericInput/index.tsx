@@ -2,15 +2,15 @@ import React from 'react';
 import * as Styled from './styles';
 import { GenericInputProps, IconType } from './types';
 
-import { ReactComponent as IconUser } from '../../assets/web_icons/icon-user.svg';
-import { ReactComponent as IconSearch } from '../../assets/web_icons/icon-search.svg';
-import { ReactComponent as IconLock } from '../../assets/web_icons/icon-lock.svg';
-import { ReactComponent as IconAlertTriangle } from '../../assets/web_icons/icon-alert-triangle.svg';
+import { ReactComponent as IconUser } from '../../../assets/icons/icon-user.svg';
+import { ReactComponent as IconSearch } from '../../../assets/icons/icon-search.svg';
+import { ReactComponent as IconLock } from '../../../assets/icons/icon-lock.svg';
+import { ReactComponent as IconAlertTriangle } from '../../../assets/icons/icon-alert-triangle.svg';
 
 export const GenericInput: React.FC<GenericInputProps> = ({
   inputType = 'text',
   width = '320px',
-  genericInputType = 'outlined',
+  genericInputType = 'outline',
   label,
   leftIcon = undefined,
   leftIconType = undefined,
@@ -33,40 +33,17 @@ export const GenericInput: React.FC<GenericInputProps> = ({
       e.target.classList.remove('hasContent');
     }
   };
-
+  const iconProps = {
+    viewBox: '10 10 24 24',
+    width: '24px',
+    height: '24px',
+    fill: 'rgba(168, 168, 168, 0.47)',
+  };
   const iconOptions = {
-    searchIcon: (
-      <IconSearch
-        viewBox="10 10 24 24"
-        width="24px"
-        height="24px"
-        fill="rgba(168, 168, 168, 0.47)"
-      />
-    ),
-    lockIcon: (
-      <IconLock
-        viewBox="10 10 24 24"
-        width="24px"
-        height="24px"
-        fill="rgba(168, 168, 168, 0.47)"
-      />
-    ),
-    userIcon: (
-      <IconUser
-        viewBox="10 10 24 24"
-        width="24px"
-        height="24px"
-        fill="rgba(168, 168, 168, 0.47)"
-      />
-    ),
-    undefined: (
-      <IconAlertTriangle
-        viewBox="10 10 24 24"
-        width="24px"
-        height="24px"
-        fill="rgba(168, 168, 168, 0.47)"
-      />
-    ),
+    searchIcon: <IconSearch {...iconProps} />,
+    lockIcon: <IconLock {...iconProps} />,
+    userIcon: <IconUser {...iconProps} />,
+    undefined: <IconAlertTriangle {...iconProps} />,
   };
 
   const renderIcon = (

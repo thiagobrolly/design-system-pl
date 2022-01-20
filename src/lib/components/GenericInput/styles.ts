@@ -51,7 +51,7 @@ const genericInputTheme = {
     }
   `,
 
-  outlined: (errorMessage: string | undefined, width: string) => css`
+  outline: (errorMessage: string | undefined, width: string) => css`
     background-color: transparent;
     color: rgba(0, 0, 0, 0.74);
     padding: 18px 16px;

@@ -19,12 +19,12 @@ describe('PasswordInput', () => {
     expect(screen.getByLabelText(/sua senha/i));
   });
 
-  test('renders the PasswordInput: outlined correct styles', () => {
+  test('renders the PasswordInput: outline correct styles', () => {
     render(
       <PasswordInput
         width="520px"
         label="Sua senha"
-        passwordInputType="outlined"
+        passwordInputType="outline"
         inputId="form_passwordInput"
         inputArialabel="input-password"
         labelId="form_passwordInput-label"

@@ -1,6 +1,6 @@
 export interface SearchInputProps {
   width: string;
-  searchInputType: 'filled' | 'outlined';
+  searchInputType: 'filled' | 'outline';
   disabled?: boolean;
   label?: string;
   defaultErrorMessage: string;
@@ -19,7 +19,7 @@ export interface InputProps {
   name?: string;
   arialabel?: string;
   width: string;
-  searchInputType: 'filled' | 'outlined';
+  searchInputType: 'filled' | 'outline';
   disabled?: boolean;
   errorMessage?: string;
 }
