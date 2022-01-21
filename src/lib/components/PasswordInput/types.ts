@@ -1,6 +1,6 @@
 export interface PasswordInputProps {
   width?: string;
-  passwordInputType?: 'filled' | 'outlined';
+  passwordInputType?: 'filled' | 'outline';
   disabled?: boolean;
   label?: string;
   errorMessage?: string;
@@ -16,7 +16,7 @@ export interface InputProps {
   name?: string;
   arialabel?: string;
   width: string;
-  passwordInputType: 'filled' | 'outlined';
+  passwordInputType: 'filled' | 'outline';
   disabled?: boolean;
   errorMessage?: string;
 }

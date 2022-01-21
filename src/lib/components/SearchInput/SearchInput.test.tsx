@@ -9,7 +9,7 @@ describe('SearchInput', () => {
       <SearchInput
         width="520px"
         label="Seu nome completo"
-        searchInputType="outlined"
+        searchInputType="outline"
         inputId="form_fullNameInput"
         inputArialabel="input-fullName"
         labelId="form_fullNameInput-label"

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import * as Styled from './styles';
 import { PasswordInputProps } from './types';
 
-import { ReactComponent as IconEye } from '../../assets/web_icons/icon-eye.svg';
-import { ReactComponent as IconClosedEye } from '../../assets/web_icons/icon-closed-eye.svg';
+import { ReactComponent as IconEye } from '../../../assets/icons/icon-eye.svg';
+import { ReactComponent as IconClosedEye } from '../../../assets/icons/icon-closed-eye.svg';
 
 export const PasswordInput: React.FC<PasswordInputProps> = ({
   width = '320px',
-  passwordInputType = 'outlined',
+  passwordInputType = 'outline',
   label,
   errorMessage,
   inputId,

@@ -1,7 +1,7 @@
 export interface GenericInputProps {
   inputType?: 'text' | 'number' | 'email';
   width: string;
-  genericInputType: 'filled' | 'outlined';
+  genericInputType: 'filled' | 'outline';
   disabled?: boolean;
   label?: string;
   leftIcon?: boolean;
@@ -26,7 +26,7 @@ export interface InputProps {
   arialabel?: string;
   type: 'text' | 'number' | 'email';
   width: string;
-  genericInputType: 'filled' | 'outlined';
+  genericInputType: 'filled' | 'outline';
   disabled?: boolean;
   leftIcon?: boolean;
   rightIcon?: boolean;

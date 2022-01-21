@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './styles';
 
-import { ReactComponent as IconPlusCircle } from '../../assets/web_icons/icon-plus-circle.svg';
+import { ReactComponent as IconPlusCircle } from '../../../assets/icons/icon-plus-circle.svg';
 
 export interface Props {
   disabled?: boolean;

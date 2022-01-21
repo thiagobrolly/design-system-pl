@@ -15,7 +15,7 @@ const passwordInputTheme = {
       color: #a8a8a8;
       svg {
         fill: #a8a8a8;
-        transition: 0.1s;
+        transition: 0.4s;
       }
     }
     &:not([disabled]):focus {
@@ -25,7 +25,7 @@ const passwordInputTheme = {
     &:not([disabled]):focus ~ .iconDiv {
       svg {
         fill: #707070;
-        transition: 0.1s;
+        transition: 0.4s;
       }
     }
     &:disabled {
@@ -39,7 +39,7 @@ const passwordInputTheme = {
       color: ${theme.color.white};
       svg {
         fill: ${theme.color.white};
-        transition: 0.1s;
+        transition: 0.4s;
       }
     }
     // rule for the label behavior
@@ -51,27 +51,17 @@ const passwordInputTheme = {
     }
   `,
 
-  outlined: (errorMessage: string | undefined, width: string) => css`
+  outline: (errorMessage: string | undefined) => css`
     background-color: transparent;
     color: rgba(0, 0, 0, 0.74);
     padding: 18px 52px 18px 16px;
     outline: none;
-
-    &:not([disabled], .hasContent) {
-      border: ${errorMessage
-        ? `1px solid ${theme.color.error}`
-        : '1px solid #e6e7e9'};
-    }
-    &.hasContent {
-      border: ${errorMessage
-        ? `1px solid ${theme.color.error}`
-        : '1px solid #e6e7e9'};
-      border-top: none;
-    }
+    border: ${errorMessage
+      ? `1px solid ${theme.color.error}`
+      : '1px solid #e6e7e9'};
 
     &:not([disabled]):hover {
       border: ${`1px solid rgba(0, 0, 0, 0.12)`};
-      border-top: none;
     }
     &:not([disabled], .hasContent):hover {
       border: ${`1px solid rgba(0, 0, 0, 0.12)`};
@@ -81,87 +71,44 @@ const passwordInputTheme = {
       color: #a8a8a8;
       svg {
         fill: #a8a8a8;
-        transition: 0.1s;
+        transition: 0.4s;
       }
     }
 
     &:not([disabled]):focus {
       border: 1px solid ${theme.color.secondary};
-      border-top: none;
     }
     &:not([disabled]):focus ~ .iconDiv {
       svg {
         fill: #707070;
-        transition: 0.1s;
+        transition: 0.4s;
       }
     }
 
     &:disabled {
       cursor: not-allowed;
       color: #a8a8a8;
-      border: 1px solid #a8a8a8;
-      border-top: none;
-    }
-    &:not(.hasContent):disabled {
-      cursor: not-allowed;
-      color: #a8a8a8;
-      border: 1px solid #a8a8a8;
+      border-color: #a8a8a8;
     }
     &:disabled + label,
     &:disabled ~ .iconDiv {
       cursor: not-allowed;
-      transition: 0.1s;
+      transition: 0.4s;
     }
 
     // rules for the label behavior
-    &.hasContent + label {
-      padding: 0 4px;
-      top: -7px;
-      font-size: 12px;
-      color: ${errorMessage ? theme.color.error : theme.color.secondary};
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        border-bottom: 1px solid ${errorMessage ? theme.color.error : '#e6e7e9'};
-        top: 50%;
-      }
-      &:before {
-        width: 9px;
-        left: -9px;
-      }
-      &:after {
-        width: calc(${width} - 100% - 24px);
-        right: calc(100% + 24px - ${width});
-      }
-    }
+    &.hasContent + label,
     &:not([disabled]):focus + label {
-      padding: 0 4px;
-      top: -7px;
+      top: -14px;
       font-size: 12px;
       color: ${errorMessage ? theme.color.error : theme.color.secondary};
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        border-bottom: 1px solid ${theme.color.secondary};
-        top: 50%;
-      }
-      &:before {
-        width: 9px;
-        left: -9px;
-      }
-      &:after {
-        width: calc(${width} - 100% - 24px);
-        right: calc(100% + 24px - ${width});
-      }
     }
   `,
 };
 
 export const Input = styled.input<InputProps>`
   ${({ passwordInputType, width, errorMessage }) => css`
-    ${passwordInputTheme[passwordInputType || 'filled'](errorMessage, width)}
+    ${passwordInputTheme[passwordInputType || 'filled'](errorMessage)}
     box-sizing: border-box;
     width: ${width};
     height: 56px;
@@ -169,12 +116,13 @@ export const Input = styled.input<InputProps>`
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
-    transition: 0.1s;
+    transition: 0.4s;
     cursor: pointer;
   `}
 `;
 
 export const Container = styled.div`
+  margin-top: 16px;
   max-width: max-content;
   position: sticky;
 `;
@@ -199,7 +147,7 @@ export const Label = styled.label<LabelProps>`
   font-size: 16px;
   color: ${(props) =>
     props.errorMessage ? theme.color.error : 'rgba(168, 168, 168, 0.47)'};
-  transition: 0.1s;
+  transition: 0.4s;
   pointer-events: none;
 `;
 

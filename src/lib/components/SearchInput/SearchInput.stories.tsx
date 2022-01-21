@@ -42,7 +42,7 @@ const userList = [
 export const Filled: Story<SearchInputProps> = (args) => (
   <SearchInput {...args} />
 );
-export const Outlined: Story<SearchInputProps> = (args) => (
+export const Outline: Story<SearchInputProps> = (args) => (
   <SearchInput {...args} />
 );
 
@@ -55,11 +55,11 @@ Filled.args = {
   options: userList,
 };
 
-Outlined.args = {
-  searchInputType: 'outlined',
+Outline.args = {
+  searchInputType: 'outline',
   label: 'Buscar usuário',
   width: '320px',
-  inputId: 'searchInput-outlined',
+  inputId: 'searchInput-outline',
   defaultErrorMessage: 'Registro não encontrado',
   options: userList,
 };
