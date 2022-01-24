@@ -95,7 +95,7 @@ export const Button = styled.button<Props>`
     justify-content: center;
     transition: background 0.3s;
     cursor: pointer;
-    ${buttonTheme[btnType || 'primary']()}
+    ${buttonTheme[btnType!]()}
 
     svg {
       margin-right: 5px;

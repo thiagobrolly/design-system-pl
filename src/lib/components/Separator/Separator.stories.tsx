@@ -1,10 +1,16 @@
-import { Meta } from '@storybook/react';
-import React from 'react';
-import { Separator } from '.';
+import { Meta, Story } from '@storybook/react';
+import { Separator, SeparatorProps } from '.';
 
 export default {
   title: 'Components/Separator',
   component: Separator,
+  argTypes: {
+    color: { control: 'color' },
+  },
+  args: {
+    marginTop: '',
+    marginBottom: '',
+  },
 } as Meta;
 
-export const Template = () => <Separator />;
+export const Default: Story<SeparatorProps> = (args) => <Separator {...args} />;

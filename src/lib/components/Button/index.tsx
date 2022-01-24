@@ -1,7 +1,6 @@
 import React from 'react';
 import * as Styled from './styles';
-
-import { ReactComponent as IconPlusCircle } from '../../../assets/icons/icon-plus-circle.svg';
+import { IconPlusCircle } from '../Icons';
 
 export interface Props {
   disabled?: boolean;
@@ -18,9 +17,7 @@ export const Button: React.FC<Props> = ({
   ...props
 }) => (
   <Styled.Button btnType={btnType} iconPlus={iconPlus} {...props}>
-    {iconPlus && (
-      <IconPlusCircle viewBox="11 11 16 16" width="16px" height="16px" />
-    )}
+    {iconPlus && <IconPlusCircle size={20} color="CurrentColor" />}
     {children}
   </Styled.Button>
 );

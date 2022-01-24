@@ -2,10 +2,10 @@ import React from 'react';
 import * as Styled from './styles';
 import { GenericInputProps, IconType } from './types';
 
-import { ReactComponent as IconUser } from '../../../assets/icons/icon-user.svg';
-import { ReactComponent as IconSearch } from '../../../assets/icons/icon-search.svg';
-import { ReactComponent as IconLock } from '../../../assets/icons/icon-lock.svg';
-import { ReactComponent as IconAlertTriangle } from '../../../assets/icons/icon-alert-triangle.svg';
+// import IconUser from '../../../assets/icons/icon-user.svg';
+// import IconSearch from '../../../assets/icons/icon-search.svg';
+// import IconLock from '../../../assets/icons/icon-lock.svg';
+// import IconAlertTriangle from '../../../assets/icons/icon-alert-triangle.svg';
 
 export const GenericInput: React.FC<GenericInputProps> = ({
   inputType = 'text',
@@ -33,17 +33,17 @@ export const GenericInput: React.FC<GenericInputProps> = ({
       e.target.classList.remove('hasContent');
     }
   };
-  const iconProps = {
-    viewBox: '10 10 24 24',
-    width: '24px',
-    height: '24px',
-    fill: 'rgba(168, 168, 168, 0.47)',
-  };
+  // const iconProps = {
+  //   viewBox: '10 10 24 24',
+  //   width: '24px',
+  //   height: '24px',
+  //   fill: 'rgba(168, 168, 168, 0.47)',
+  // };
   const iconOptions = {
-    searchIcon: <IconSearch {...iconProps} />,
-    lockIcon: <IconLock {...iconProps} />,
-    userIcon: <IconUser {...iconProps} />,
-    undefined: <IconAlertTriangle {...iconProps} />,
+    searchIcon: 'IconSearch',
+    lockIcon: '<IconLock />',
+    userIcon: '<IconUser />',
+    undefined: '<IconAlertTriangle />',
   };
 
   const renderIcon = (

@@ -4,6 +4,10 @@
       .cls-1 {
         fill: rgba(255,255,255,0);
       }
+
+      .cls-2 {
+        fill: #215aff;
+      }
     </style>
   </defs>
   <g id="icon-closed-eye" transform="translate(-564 -291)">

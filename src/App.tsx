@@ -1,28 +1,39 @@
 import React from 'react';
 import {
+  ExampleDefault,
+  IconPlusCircle,
+  IconPlusCircleFilled,
+  IconPlusCircleOutline,
+} from './lib/components/Icons';
+import {
   Button,
   Separator,
   Heading,
-  GenericInput,
-  PasswordInput,
-  SearchInput,
+  // GenericInput,
+  // PasswordInput,
+  // SearchInput,
+  Dropdown,
 } from './lib';
 
 const App: React.FC = () => {
-  const userList = [
-    'Manoel Pereira',
-    'Diego Arend',
-    'Hugo Gitz',
-    'Derickson Loss',
-    'Thiago Sousa',
-    'Tatiani da Silva',
-    'Mateus Junges',
-    'Matheus Morais',
-  ];
+  // const userList = [
+  //   'Manoel Pereira',
+  //   'Diego Arend',
+  //   'Hugo Gitz',
+  //   'Derickson Loss',
+  //   'Thiago Sousa',
+  //   'Tatiani da Silva',
+  //   'Mateus Junges',
+  //   'Matheus Morais',
+  // ];
 
   return (
     <>
       <h1>Teste</h1>
+
+      <Dropdown title={<h1>Dropdown</h1>} position="left">
+        <span>Content</span>
+      </Dropdown>
       <div
         style={{
           display: 'flex',
@@ -59,10 +70,18 @@ const App: React.FC = () => {
         <Button btnType="secondary" children="Secondary" iconPlus />
         <Button btnType="secondary" children="Secondary" disabled />
       </div>
+
+      <div style={{ color: '#00ff0d' }}>
+        <ExampleDefault size={100} color="green" />
+        <IconPlusCircle size={25} color="green" />
+        <IconPlusCircleFilled size={50} color="red" background="blue" />
+        <IconPlusCircleOutline size={50} circleStrokeColor="blue" />
+      </div>
+
       <Separator />
       <Heading children="teste" uppercase />
       <h3>GenericInput Test</h3>
-      <GenericInput
+      {/* <GenericInput
         inputType="text"
         width="520px"
         label="Seu nome completo"
@@ -85,8 +104,8 @@ const App: React.FC = () => {
         labelArialabel="label-email"
         leftIcon
         leftIconType="lockIcon"
-      />
-      <h3>PasswordInput Test</h3>
+      /> */}
+      {/* <h3>PasswordInput Test</h3>
       <PasswordInput
         width="320px"
         label="Sua senha"
@@ -108,7 +127,7 @@ const App: React.FC = () => {
         labelId="form_search-label"
         labelArialabel="label-search"
         autocomplete={false}
-      />
+      /> */}
     </>
   );
 };

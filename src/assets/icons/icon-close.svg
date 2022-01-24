@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+    <defs>
+        <style>
+            .cls-2{fill:#215aff}
+        </style>
+    </defs>
+    <g id="icon-close" transform="translate(-60 -291)">
+        <rect id="Retângulo_447" data-name="Retângulo 447" width="38.48" height="38.48" rx="19" transform="translate(60 291)" style="fill:transparent"/>
+        <g id="icon-close-2" data-name="icon-close" transform="translate(66 297)">
+            <path id="Linha_115" data-name="Linha 115" class="cls-2" d="M.143 15a1.139 1.139 0 0 1-.808-.335 1.143 1.143 0 0 1 0-1.616L13.049-.665A1.143 1.143 0 0 1 14.665.951L.951 14.665A1.139 1.139 0 0 1 .143 15z" transform="translate(6 6)"/>
+            <path id="Linha_116" data-name="Linha 116" class="cls-2" d="M13.857 15a1.139 1.139 0 0 1-.808-.335L-.665.951A1.143 1.143 0 0 1 .951-.665l13.714 13.714A1.143 1.143 0 0 1 13.857 15z" transform="translate(6 6)"/>
+        </g>
+    </g>
+</svg>

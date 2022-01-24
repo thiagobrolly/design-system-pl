@@ -1,8 +1,15 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import * as S from './styles';
 
-export const Separator = styled.hr`
-  width: 100%;
-  height: 2px;
-  background-color: ${theme.color.secondary_variant};
-`;
+export interface SeparatorProps {
+  color?: string;
+  marginTop?: string;
+  marginBottom?: string;
+}
+
+export const Separator = ({
+  color,
+  marginTop,
+  marginBottom,
+}: SeparatorProps) => (
+  <S.Wrapper color={color} marginTop={marginTop} marginBottom={marginBottom} />
+);
