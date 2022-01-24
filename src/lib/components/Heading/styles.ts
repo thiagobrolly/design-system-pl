@@ -3,23 +3,23 @@ import { HeadingProps } from '.';
 import { theme } from '../../styles/theme';
 
 const mediaFont = () => css`
-  @media ${theme.media.lteMedium} {
-    font-size: ${theme.font.size.l3};
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    font-size: ${theme.font.size.xxlarge};
   }
 `;
 
 const titleSize = {
   small: () => css`
-    font-size: ${theme.font.size.s1};
+    font-size: ${theme.font.size.small};
   `,
   medium: () => css`
-    font-size: ${theme.font.size.m1};
+    font-size: ${theme.font.size.medium};
   `,
   big: () => css`
-    font-size: ${theme.font.size.l1};
+    font-size: ${theme.font.size.large};
   `,
   huge: () => css`
-    font-size: ${theme.font.size.l3};
+    font-size: ${theme.font.size.xxlarge};
     ${mediaFont()};
   `,
 };
@@ -32,7 +32,7 @@ export const Title = styled.h1<HeadingProps>`
   ${({ colorDark, size, uppercase }) => css`
     color: ${colorDark ? theme.color.secondary_variant : theme.color.white};
     line-height: 1.2;
-    ${titleSize[size || 'small']()};
-    ${titleCase(uppercase || false)};
+    ${titleSize[size!]()};
+    ${titleCase(uppercase!)};
   `}
 `;

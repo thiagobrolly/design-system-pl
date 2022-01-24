@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.48" height="38.48" viewBox="0 0 38.48 38.48">
+    <defs>
+        <style>
+            .cls-2{fill:#215aff}
+        </style>
+    </defs>
+    <g id="icon-bell" transform="translate(-60 -291)">
+        <rect id="Retângulo_447" data-name="Retângulo 447" width="38.48" height="38.48" rx="19" transform="translate(60 291)" style="fill:transparent"/>
+        <g id="bell" transform="translate(70.015 301.999)">
+            <path id="Caminho_3844" data-name="Caminho 3844" class="cls-2" d="M15.132 12.754H2.687a.7.7 0 0 1-.674-.5.678.678 0 0 1 .287-.764 3.508 3.508 0 0 0 .873-1.157 9.71 9.71 0 0 0 .9-4.493 4.84 4.84 0 1 1 9.68 0 9.71 9.71 0 0 0 .9 4.493 3.508 3.508 0 0 0 .873 1.157.678.678 0 0 1 .286.768.7.7 0 0 1-.68.496zM4.173 11.371h9.473q-.079-.129-.158-.274a10.963 10.963 0 0 1-1.122-5.257 3.457 3.457 0 1 0-6.914 0 10.963 10.963 0 0 1-1.121 5.26q-.079.142-.158.271z"/>
+            <path id="Caminho_3845" data-name="Caminho 3845" class="cls-2" d="M11.157 22.072a2.081 2.081 0 0 1-1.794-1.033.691.691 0 0 1 1.2-.694.691.691 0 0 0 1.2 0 .691.691 0 0 1 1.2.694 2.081 2.081 0 0 1-1.806 1.033z" transform="translate(-2.248 -5.863)"/>
+        </g>
+    </g>
+</svg>

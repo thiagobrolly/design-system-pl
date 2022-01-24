@@ -54,20 +54,54 @@ export const theme = {
       primary: "'Open Sans', sans-serif",
       secondary: "'Montserrat', sans-serif",
     },
+    weight: {
+      light: '300',
+      regular: '400',
+      bold: '700',
+      extrabold: '800',
+      black: '900',
+    },
     size: {
-      s1: '12px',
-      s2: '14px',
-      s3: '16px',
-      m1: '20px',
-      m2: '24px',
-      m3: '28px',
-      l1: '32px',
-      l2: '40px',
-      l3: '48px',
+      xsmall: '1.2rem',
+      small: '1.4rem',
+      medium: '1.6rem',
+      large: '2.0rem',
+      xlarge: '2.4rem',
+      xxlarge: '2.8rem',
+      big: '3.2rem',
+      xbig: '4.0rem',
+      xxbig: '4.8rem',
     },
   },
 
-  media: {
-    lteMedium: '(max-width: 768px)',
+  spacings: {
+    xxsmall: '0.8rem',
+    xsmall: '1.6rem',
+    small: '2.4rem',
+    medium: '3.2rem',
+    large: '4.0rem',
+    xlarge: '4.8rem',
+    xxlarge: '5.6rem',
   },
-};
+
+  breakpoints: {
+    xmodile: '320px',
+    modile: '425px',
+    tablet: '768px',
+    desktop: '1024px',
+    hd: '1440px',
+  },
+
+  layers: {
+    base: 10,
+    menu: 20,
+    overlay: 30,
+    modal: 40,
+    alwayOnTop: 50,
+  },
+
+  transition: {
+    default: '0.3s ease-in-out',
+    fast: '0.1s ease-in-out',
+  },
+} as const;
