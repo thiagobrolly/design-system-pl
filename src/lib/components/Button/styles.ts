@@ -1,13 +1,32 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
-import { Props } from './index';
+import { ButtonProps } from './index';
+
+const buttonSize = {
+  small: () => css`
+    height: 3rem;
+    font-size: ${theme.font.size.xsmall};
+  `,
+  medium: () => css`
+    height: 4rem;
+    font-size: ${theme.font.size.small};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
+  `,
+  large: () => css`
+    height: 5rem;
+    font-size: ${theme.font.size.medium};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
+  `,
+  fullWidth: () => css`
+    width: 100%;
+  `,
+};
 
 const buttonTheme = {
   primary: () => css`
     background: transparent;
     color: ${theme.color.secondary};
     border: none;
-    border-radius: 10px;
     svg {
       fill: ${theme.color.secondary};
     }
@@ -34,7 +53,6 @@ const buttonTheme = {
     background: ${theme.color.secondary};
     color: ${theme.color.white};
     border: none;
-    border-radius: 10px;
     svg {
       fill: ${theme.color.white};
     }
@@ -59,7 +77,6 @@ const buttonTheme = {
     background: ${theme.color.white};
     color: ${theme.color.secondary};
     border: 2px solid ${theme.color.secondary};
-    border-radius: 10px;
     svg {
       fill: ${theme.color.secondary};
     }
@@ -85,17 +102,20 @@ const buttonTheme = {
   `,
 };
 
-export const Button = styled.button<Props>`
-  ${({ btnType }) => css`
-    padding: 8px 16px;
-    font-weight: 600;
+export const Button = styled.button<ButtonProps>`
+  ${({ btnType, size, fullWidth }) => css`
+    padding: ${theme.spacings.xxsmall};
+    font-weight: ${theme.font.weight.regular};
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
+    border-radius: ${theme.border.radius};
     cursor: pointer;
     ${buttonTheme[btnType!]()}
+    ${buttonSize[size!]()}
+    ${!!fullWidth && buttonSize.fullWidth()}
 
     svg {
       margin-right: 5px;

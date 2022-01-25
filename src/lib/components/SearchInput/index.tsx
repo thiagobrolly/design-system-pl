@@ -3,7 +3,7 @@ import * as Styled from './styles';
 import { SearchInputProps } from './types';
 import ResultsContainer from './ResultContainer';
 
-// import IconSearch from '../../../assets/icons/icon-search.svg';
+import { IconSearch } from '../Icons';
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   width = '320px',
@@ -85,8 +85,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage>
         )}
         <Styled.LeftIconContainer className="iconDiv">
-          {/* <IconSearch /> */}
-          <b>IconSearch</b>
+          <IconSearch size={20} color="rgba(168, 168, 168, 0.47)" />
         </Styled.LeftIconContainer>
       </Styled.InputContainer>
       <ResultsContainer

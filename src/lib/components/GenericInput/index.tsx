@@ -2,10 +2,7 @@ import React from 'react';
 import * as Styled from './styles';
 import { GenericInputProps, IconType } from './types';
 
-// import IconUser from '../../../assets/icons/icon-user.svg';
-// import IconSearch from '../../../assets/icons/icon-search.svg';
-// import IconLock from '../../../assets/icons/icon-lock.svg';
-// import IconAlertTriangle from '../../../assets/icons/icon-alert-triangle.svg';
+import { IconLock, IconSearch, IconUser, IconAlertTriangle } from '../Icons';
 
 export const GenericInput: React.FC<GenericInputProps> = ({
   inputType = 'text',
@@ -40,10 +37,10 @@ export const GenericInput: React.FC<GenericInputProps> = ({
   //   fill: 'rgba(168, 168, 168, 0.47)',
   // };
   const iconOptions = {
-    searchIcon: 'IconSearch',
-    lockIcon: '<IconLock />',
-    userIcon: '<IconUser />',
-    undefined: '<IconAlertTriangle />',
+    searchIcon: <IconSearch size={20} />,
+    lockIcon: <IconLock size={20} />,
+    userIcon: <IconUser size={20} />,
+    undefined: <IconAlertTriangle size={20} />,
   };
 
   const renderIcon = (

@@ -8,6 +8,7 @@ export const theme = {
     error: '#fe5454',
     success: '#48c88f',
     background: '#f0eff4',
+    title: '#707070',
 
     // Primary
     primary_050: '#b7c9ff',
@@ -103,5 +104,9 @@ export const theme = {
   transition: {
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out',
+  },
+  border: {
+    radius: '0.8rem',
+    circle: '50%',
   },
 } as const;

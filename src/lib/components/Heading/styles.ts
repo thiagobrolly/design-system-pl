@@ -15,12 +15,27 @@ const titleSize = {
   medium: () => css`
     font-size: ${theme.font.size.medium};
   `,
-  big: () => css`
+  large: () => css`
     font-size: ${theme.font.size.large};
   `,
-  huge: () => css`
-    font-size: ${theme.font.size.xxlarge};
+  xlarge: () => css`
+    font-size: ${theme.font.size.xlarge};
+  `,
+  big: () => css`
+    font-size: ${theme.font.size.big};
     ${mediaFont()};
+  `,
+};
+
+const titleColor = {
+  white: () => css`
+    color: ${theme.color.white};
+  `,
+  gray: () => css`
+    color: ${theme.color.title};
+  `,
+  black: () => css`
+    color: ${theme.color.black};
   `,
 };
 
@@ -29,9 +44,9 @@ const titleCase = (uppercase: boolean) => css`
 `;
 
 export const Title = styled.h1<HeadingProps>`
-  ${({ colorDark, size, uppercase }) => css`
-    color: ${colorDark ? theme.color.secondary_variant : theme.color.white};
-    line-height: 1.2;
+  ${({ color, size, uppercase, bold }) => css`
+    font-weight: ${bold ? theme.font.weight.bold : theme.font.weight.regular};
+    ${titleColor[color!]()};
     ${titleSize[size!]()};
     ${titleCase(uppercase!)};
   `}
