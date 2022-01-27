@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
 import { ButtonProps } from './index';
 
-const buttonSize = {
+const buttonModifiers = {
   small: () => css`
     height: 3rem;
     font-size: ${theme.font.size.xsmall};
@@ -20,6 +20,15 @@ const buttonSize = {
   fullWidth: () => css`
     width: 100%;
   `,
+  withIcon: () => css`
+    > svg {
+      width: 1.8rem;
+
+      & + span {
+        margin-left: ${theme.spacings.xxsmall};
+      }
+    }
+  `,
 };
 
 const buttonTheme = {
@@ -27,25 +36,17 @@ const buttonTheme = {
     background: transparent;
     color: ${theme.color.secondary};
     border: none;
-    svg {
-      fill: ${theme.color.secondary};
-    }
 
     &:not([disabled]):hover {
-      background: #ebecee;
-    }
-    &:not([disabled]):focus {
-      background: #d8dae0;
+      background: ${theme.color.gray_500};
     }
     &:not([disabled]):active {
-      background: #e3e4e8;
+      background: ${theme.color.gray_700};
     }
+
     &:disabled {
       cursor: not-allowed;
-      color: #a8a8a8;
-      svg {
-        fill: #a8a8a8;
-      }
+      color: ${theme.color.gray_800};
     }
   `,
 
@@ -53,23 +54,17 @@ const buttonTheme = {
     background: ${theme.color.secondary};
     color: ${theme.color.white};
     border: none;
-    svg {
-      fill: ${theme.color.white};
-    }
 
     &:not([disabled]):hover {
-      background: #182252;
-    }
-    &:not([disabled]):focus {
-      background: #2c3561;
+      background: ${theme.color.secondary_300};
     }
     &:not([disabled]):active {
-      background: #161758;
+      background: ${theme.color.secondary_100};
     }
     &:disabled {
       cursor: not-allowed;
       color: ${theme.color.white};
-      background: #a8a8a8;
+      background: ${theme.color.gray_800};
     }
   `,
 
@@ -77,48 +72,74 @@ const buttonTheme = {
     background: ${theme.color.white};
     color: ${theme.color.secondary};
     border: 2px solid ${theme.color.secondary};
-    svg {
-      fill: ${theme.color.secondary};
-    }
 
     &:not([disabled]):hover {
-      background: #ebecee;
-    }
-    &:not([disabled]):focus {
-      background: #d8dae0;
+      background: ${theme.color.gray_500};
     }
     &:not([disabled]):active {
-      background: #e3e4e8;
-      border-color: #cdcfd5;
+      background: ${theme.color.gray_700};
+      border-color: ${theme.color.gray_800};
     }
     &:disabled {
       cursor: not-allowed;
-      color: #a8a8a8;
-      border-color: #a8a8a8;
-      svg {
-        fill: #a8a8a8;
-      }
+      color: ${theme.color.gray_800};
+      border-color: ${theme.color.gray_800};
+    }
+  `,
+
+  approve: () => css`
+    background: ${theme.color.success};
+    color: ${theme.color.white};
+    border: none;
+
+    &:not([disabled]):hover {
+      filter: brightness(90%);
+    }
+    &:not([disabled]):active {
+      filter: brightness(100%); // color default
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: ${theme.color.white};
+      background: ${theme.color.gray_800};
+    }
+  `,
+
+  cancel: () => css`
+    background: ${theme.color.error};
+    color: ${theme.color.white};
+    border: none;
+
+    &:not([disabled]):hover {
+      filter: brightness(90%);
+    }
+    &:not([disabled]):active {
+      filter: brightness(100%); // color default
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: ${theme.color.white};
+      background: ${theme.color.gray_800};
     }
   `,
 };
 
 export const Button = styled.button<ButtonProps>`
-  ${({ btnType, size, fullWidth }) => css`
-    padding: ${theme.spacings.xxsmall};
-    font-weight: ${theme.font.weight.regular};
-    text-align: center;
-    display: flex;
+  ${({ appearance, size, fullWidth, icon }) => css`
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    padding: ${theme.spacings.xsmall};
+    font-weight: ${theme.font.weight.regular};
+    text-align: center;
+    transition: background 0.3s, filter 0.3s;
     border-radius: ${theme.border.radius};
-    cursor: pointer;
-    ${buttonTheme[btnType!]()}
-    ${buttonSize[size!]()}
-    ${!!fullWidth && buttonSize.fullWidth()}
+    text-decoration: none;
 
-    svg {
-      margin-right: 5px;
-    }
+    cursor: pointer;
+    ${buttonTheme[appearance!]()}
+    ${buttonModifiers[size!]()}
+    ${!!fullWidth && buttonModifiers.fullWidth()}
+    ${!!icon && buttonModifiers.withIcon()}
   `}
 `;

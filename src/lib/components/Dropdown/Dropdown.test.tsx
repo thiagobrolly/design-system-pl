@@ -45,3 +45,16 @@ describe('<Dropdown />', () => {
     expect(overlay!.getAttribute('aria-hidden')).toBe('true');
   });
 });
+
+describe('<Dropdown position/>', () => {
+  it('should position the dropdown to the right', () => {
+    render(
+      <Dropdown title="click" position="right">
+        <span>Content</span>
+      </Dropdown>,
+    );
+    const content = screen.getByText(/content/i).parentElement!;
+
+    expect(content).toHaveStyle({ right: 0 });
+  });
+});

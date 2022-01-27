@@ -55,9 +55,9 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="primary" children="Primary" />
-        <Button btnType="primary" children="Primary" iconPlus />
-        <Button btnType="primary" children="Primary" disabled />
+        <Button appearance="primary" children="Primary" />
+        <Button appearance="primary" children="Primary" icon />
+        <Button appearance="primary" children="Primary" disabled />
       </div>
       <div
         style={{
@@ -67,9 +67,9 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="outline" children="Outline" />
-        <Button btnType="outline" children="Outline" iconPlus />
-        <Button btnType="outline" children="Outline" disabled />
+        <Button appearance="outline" children="Outline" />
+        <Button appearance="outline" children="Outline" icon />
+        <Button appearance="outline" children="Outline" disabled />
       </div>
       <div
         style={{
@@ -79,9 +79,27 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="secondary" children="Secondary" />
-        <Button btnType="secondary" children="Secondary" iconPlus />
-        <Button btnType="secondary" children="Secondary" disabled />
+        <Button appearance="secondary" children="Secondary" />
+        <Button appearance="secondary" children="Secondary" icon />
+        <Button appearance="secondary" children="Secondary" disabled />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          width: '400px',
+          marginBottom: '10px',
+        }}
+      >
+        <Button appearance="approve" disabled>
+          <div>Approve</div>
+        </Button>
+        <Button appearance="approve">
+          <div>Approve</div>
+        </Button>
+        <Button appearance="cancel" disabled children="Cancel" />
+        <Button appearance="cancel" children="Cancel" />
       </div>
 
       <Separator />
