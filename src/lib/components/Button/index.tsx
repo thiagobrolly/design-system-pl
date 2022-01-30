@@ -1,23 +1,36 @@
-import React from 'react';
-import * as Styled from './styles';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import * as S from './styles';
 import { IconPlusCircle } from '../Icons';
 
-export interface Props {
-  disabled?: boolean;
-  children: React.ReactNode;
-  btnType?: 'primary' | 'secondary' | 'outline';
-  iconPlus?: boolean;
-  onClick?: () => void;
-}
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLAnchorElement>;
 
-export const Button: React.FC<Props> = ({
+export type ButtonProps = {
+  disabled?: boolean;
+  appearance?: 'primary' | 'secondary' | 'outline' | 'approve' | 'cancel';
+  size?: 'small' | 'medium' | 'large';
+  icon?: boolean;
+  fullWidth?: boolean;
+  as?: React.ElementType;
+} & ButtonTypes;
+
+export const Button = ({
   children,
-  btnType = 'primary',
-  iconPlus = false,
+  appearance = 'primary',
+  icon = false,
+  fullWidth = false,
+  size = 'medium',
   ...props
-}) => (
-  <Styled.Button btnType={btnType} iconPlus={iconPlus} {...props}>
-    {iconPlus && <IconPlusCircle size={20} color="CurrentColor" />}
-    {children}
-  </Styled.Button>
+}: ButtonProps) => (
+  <S.Button
+    fullWidth={fullWidth}
+    size={size}
+    appearance={appearance}
+    icon={icon}
+    {...props}
+  >
+    {icon && <IconPlusCircle aria-label="icon plus" color="CurrentColor" />}
+    <span>{children}</span>
+  </S.Button>
 );

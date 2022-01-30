@@ -1,35 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  ExampleDefault,
+  IconLock,
   IconPlusCircle,
-  IconPlusCircleFilled,
-  IconPlusCircleOutline,
+  IconSearch,
+  IconUser,
+  IconAlertTriangle,
+  IconEye,
+  IconClosedEye,
 } from './lib/components/Icons';
 import {
   Button,
   Separator,
   Heading,
-  // GenericInput,
-  // PasswordInput,
-  // SearchInput,
+  GenericInput,
+  PasswordInput,
+  SearchInput,
   Dropdown,
+  Modal,
+  Checkbox,
 } from './lib';
 
 const App: React.FC = () => {
-  // const userList = [
-  //   'Manoel Pereira',
-  //   'Diego Arend',
-  //   'Hugo Gitz',
-  //   'Derickson Loss',
-  //   'Thiago Sousa',
-  //   'Tatiani da Silva',
-  //   'Mateus Junges',
-  //   'Matheus Morais',
-  // ];
+  const userList = [
+    'Manoel Pereira',
+    'Diego Arend',
+    'Hugo Gitz',
+    'Derickson Loss',
+    'Thiago Sousa',
+    'Tatiani da Silva',
+    'Mateus Junges',
+    'Matheus Morais',
+  ];
+
+  const [handleOpen, setHandleOpen] = useState(false);
 
   return (
     <>
       <h1>Teste</h1>
+
+      <div style={{ color: '#00ff0d' }}>
+        <IconPlusCircle size={25} color="green" />
+        <IconUser size={25} color="green" />
+        <IconSearch size={25} color="green" />
+        <IconLock size={25} color="green" />
+        <IconAlertTriangle size={25} color="green" />
+        <IconEye size={25} color="green" />
+        <IconClosedEye size={25} color="green" />
+      </div>
+
+      <>
+        <div style={{ padding: 10 }}>
+          <Checkbox
+            name="category"
+            label="Action"
+            labelFor="action"
+            isChecked
+          />
+        </div>
+        <div style={{ padding: 10 }}>
+          <Checkbox name="category" label="Adventure" labelFor="adventure" />
+        </div>
+        <div style={{ padding: 10 }}>
+          <Checkbox name="category" label="Strategy" labelFor="strategy" />
+        </div>
+      </>
 
       <Dropdown title={<h1>Dropdown</h1>} position="left">
         <span>Content</span>
@@ -42,9 +76,9 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="primary" children="Primary" />
-        <Button btnType="primary" children="Primary" iconPlus />
-        <Button btnType="primary" children="Primary" disabled />
+        <Button appearance="primary" children="Primary" />
+        <Button appearance="primary" children="Primary" icon />
+        <Button appearance="primary" children="Primary" disabled />
       </div>
       <div
         style={{
@@ -54,9 +88,9 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="outline" children="Outline" />
-        <Button btnType="outline" children="Outline" iconPlus />
-        <Button btnType="outline" children="Outline" disabled />
+        <Button appearance="outline" children="Outline" />
+        <Button appearance="outline" children="Outline" icon />
+        <Button appearance="outline" children="Outline" disabled />
       </div>
       <div
         style={{
@@ -66,22 +100,43 @@ const App: React.FC = () => {
           marginBottom: '10px',
         }}
       >
-        <Button btnType="secondary" children="Secondary" />
-        <Button btnType="secondary" children="Secondary" iconPlus />
-        <Button btnType="secondary" children="Secondary" disabled />
+        <Button appearance="secondary" children="Secondary" />
+        <Button appearance="secondary" children="Secondary" icon />
+        <Button appearance="secondary" children="Secondary" disabled />
       </div>
 
-      <div style={{ color: '#00ff0d' }}>
-        <ExampleDefault size={100} color="green" />
-        <IconPlusCircle size={25} color="green" />
-        <IconPlusCircleFilled size={50} color="red" background="blue" />
-        <IconPlusCircleOutline size={50} circleStrokeColor="blue" />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          width: '400px',
+          marginBottom: '10px',
+        }}
+      >
+        <Button appearance="approve" disabled>
+          <div>Approve</div>
+        </Button>
+        <Button appearance="approve">
+          <div>Approve</div>
+        </Button>
+        <Button appearance="cancel" disabled children="Cancel" />
+        <Button appearance="cancel" children="Cancel" />
       </div>
+
+      <Button onClick={() => setHandleOpen(true)}>Open modal</Button>
+      <Modal
+        shouldCloseOnOverlayClick
+        isOpen={handleOpen}
+        onRequestClose={setHandleOpen}
+        viewCloseButton
+      >
+        Teste Modal
+      </Modal>
 
       <Separator />
       <Heading children="teste" uppercase />
       <h3>GenericInput Test</h3>
-      {/* <GenericInput
+      <GenericInput
         inputType="text"
         width="520px"
         label="Seu nome completo"
@@ -104,8 +159,8 @@ const App: React.FC = () => {
         labelArialabel="label-email"
         leftIcon
         leftIconType="lockIcon"
-      /> */}
-      {/* <h3>PasswordInput Test</h3>
+      />
+      <h3>PasswordInput Test</h3>
       <PasswordInput
         width="320px"
         label="Sua senha"
@@ -127,7 +182,7 @@ const App: React.FC = () => {
         labelId="form_search-label"
         labelArialabel="label-search"
         autocomplete={false}
-      /> */}
+      />
     </>
   );
 };

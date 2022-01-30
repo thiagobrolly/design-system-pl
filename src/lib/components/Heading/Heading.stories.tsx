@@ -5,14 +5,17 @@ export default {
   title: 'Components/Heading',
   component: Heading,
   args: {
-    children: 'O texto está escuro',
+    children: 'Title Black',
+    uppercase: false,
+    bold: false,
+    color: 'gray',
   },
   argTypes: {
     children: { type: 'string' },
   },
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: 'light',
     },
   },
 } as Meta;
@@ -20,13 +23,13 @@ export default {
 export const Light: Story<HeadingProps> = (args) => <Heading {...args} />;
 export const Dark: Story<HeadingProps> = (args) => <Heading {...args} />;
 
-Light.parameters = {
+Dark.parameters = {
   backgrounds: {
-    default: 'light',
+    default: 'dark',
   },
 };
 
 Dark.args = {
-  children: 'O texto está claro',
-  colorDark: false,
+  children: 'Title White',
+  color: 'white',
 };

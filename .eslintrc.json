@@ -59,7 +59,8 @@
       "react/jsx-no-useless-fragment": "off",
       "react/destructuring-assignment": "off",
       "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/no-non-null-assertion": "off"
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "jsx-a11y/label-has-associated-control": "off"
     },
     "settings": {
       "import/resolver": {

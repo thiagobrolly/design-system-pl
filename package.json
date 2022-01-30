@@ -91,5 +91,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/lib/components/**/*.tsx",
+      "src/**/{!(types),}.ts",
+      "!src/**/*.stories.tsx",
+      "!src/lib/*.ts",
+      "!src/*.ts",
+      "!src/lib/components/Icons/*.tsx",
+      "!src/lib/components/Icons/*.ts"
+    ]
   }
 }
