@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   IconLock,
   IconPlusCircle,
@@ -16,6 +16,8 @@ import {
   PasswordInput,
   SearchInput,
   Dropdown,
+  Modal,
+  Checkbox,
 } from './lib';
 
 const App: React.FC = () => {
@@ -30,6 +32,8 @@ const App: React.FC = () => {
     'Matheus Morais',
   ];
 
+  const [handleOpen, setHandleOpen] = useState(false);
+
   return (
     <>
       <h1>Teste</h1>
@@ -43,6 +47,23 @@ const App: React.FC = () => {
         <IconEye size={25} color="green" />
         <IconClosedEye size={25} color="green" />
       </div>
+
+      <>
+        <div style={{ padding: 10 }}>
+          <Checkbox
+            name="category"
+            label="Action"
+            labelFor="action"
+            isChecked
+          />
+        </div>
+        <div style={{ padding: 10 }}>
+          <Checkbox name="category" label="Adventure" labelFor="adventure" />
+        </div>
+        <div style={{ padding: 10 }}>
+          <Checkbox name="category" label="Strategy" labelFor="strategy" />
+        </div>
+      </>
 
       <Dropdown title={<h1>Dropdown</h1>} position="left">
         <span>Content</span>
@@ -101,6 +122,16 @@ const App: React.FC = () => {
         <Button appearance="cancel" disabled children="Cancel" />
         <Button appearance="cancel" children="Cancel" />
       </div>
+
+      <Button onClick={() => setHandleOpen(true)}>Open modal</Button>
+      <Modal
+        shouldCloseOnOverlayClick
+        isOpen={handleOpen}
+        onRequestClose={setHandleOpen}
+        viewCloseButton
+      >
+        Teste Modal
+      </Modal>
 
       <Separator />
       <Heading children="teste" uppercase />
