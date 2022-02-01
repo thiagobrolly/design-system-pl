@@ -52,7 +52,7 @@ const passwordInputTheme = {
   `,
 
   outline: (errorMessage: string | undefined) => css`
-    background-color: transparent;
+    background-color: ${theme.color.white};
     color: rgba(0, 0, 0, 0.74);
     padding: 18px 52px 18px 16px;
     outline: none;
@@ -122,7 +122,7 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const Container = styled.div`
-  margin-top: 16px;
+  //margin-top: 16px;
   max-width: max-content;
   position: sticky;
 `;

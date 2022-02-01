@@ -1,4 +1,4 @@
-export interface DropdownProps {
+export interface TooltipProps {
   title: React.ReactNode;
   children: React.ReactNode;
   position?: 'right' | 'left';

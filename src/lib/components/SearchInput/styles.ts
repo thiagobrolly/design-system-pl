@@ -52,7 +52,7 @@ const searchInputTheme = {
   `,
 
   outline: (errorMessage: string | undefined) => css`
-    background-color: transparent;
+    background-color: ${theme.color.white};
     color: rgba(0, 0, 0, 0.74);
     padding: 18px 16px 18px 52px;
     outline: none;
@@ -126,7 +126,7 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const MainContainer = styled.div`
-  margin-top: 16px;
+  //margin-top: 16px;
   position: relative;
 `;
 
