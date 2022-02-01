@@ -135,6 +135,7 @@ export const Button = styled.button<ButtonProps>`
     transition: background 0.3s, filter 0.3s;
     border-radius: ${theme.border.radius};
     text-decoration: none;
+    width: fit-content;
 
     cursor: pointer;
     ${buttonTheme[appearance!]()}

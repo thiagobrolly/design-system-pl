@@ -15,7 +15,7 @@ import {
   GenericInput,
   PasswordInput,
   SearchInput,
-  Dropdown,
+  Tooltip,
   Modal,
   Checkbox,
 } from './lib';
@@ -65,9 +65,9 @@ const App: React.FC = () => {
         </div>
       </>
 
-      <Dropdown title={<h1>Dropdown</h1>} position="left">
+      <Tooltip title={<h1>Tooltip</h1>} position="left">
         <span>Content</span>
-      </Dropdown>
+      </Tooltip>
       <div
         style={{
           display: 'flex',

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import * as S from './styles';
 
-import { DropdownProps } from './types';
+import { TooltipProps } from './types';
 
-export const Dropdown = ({
+export const Tooltip = ({
   title,
   children,
   position = 'left',
-}: DropdownProps) => {
+}: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

@@ -16,7 +16,7 @@ export const Heading: React.FC<HeadingProps> = ({
   size = 'medium',
   uppercase = false,
   bold = false,
-  color = 'black',
+  color = 'gray',
 }) => {
   return (
     <Styled.Title
