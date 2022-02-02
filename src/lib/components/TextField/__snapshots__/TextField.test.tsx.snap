@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> Renders with error 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ecedef;
+  border-radius: 0.2rem;
+  padding: 0 1.6rem;
+  border: 0.2rem solid;
+  border-color: #ecedef;
+}
+
+.c4:focus-within {
+  box-shadow: 0 0 0.5rem #215aff;
+}
+
+.c8 {
+  color: #000000;
+  font-size: 1.6rem;
+  padding: 0.8rem 0;
+  padding-left: 0.8rem;
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.c2 {
+  font-size: 1.4rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2.5rem;
+  color: #ecedef;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c6 > svg {
+  width: 100%;
+}
+
+.c9 {
+  color: #fe5454;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.c0 .c3 {
+  border-color: #fe5454;
+}
+
+.c0 .c5 svg {
+  fill: #fe5454;
+}
+
+.c0 .c7,
+.c0 .c1 {
+  color: #fe5454;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+  >
+    TextField
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="c5 c6"
+    >
+      <svg
+        data-testid="icon"
+        fill="#215aff"
+        viewBox="0 0 20.5 18"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.6 20.4a.8.8 0 0 1-.8-.8V18a2.4 2.4 0 0 0-2.4-2.4H7A2.4 2.4 0 0 0 4.6 18v1.6a.8.8 0 1 1-1.6 0V18a4 4 0 0 1 4-4h6.4a4 4 0 0 1 4 4v1.6a.8.8 0 0 1-.8.8Z"
+          data-name="Caminho 3761"
+          id="icon-user_svg__Caminho_3761"
+          transform="translate(0 -2.4)"
+        />
+        <path
+          d="M3-1a4 4 0 1 1-4 4 4 4 0 0 1 4-4Zm0 6.4A2.4 2.4 0 1 0 .6 3 2.4 2.4 0 0 0 3 5.4Z"
+          data-name="Elipse 41"
+          id="icon-user_svg__Elipse_41"
+          transform="translate(7.2 3)"
+        />
+      </svg>
+    </div>
+    <input
+      class="c7 c8"
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    class="c9"
+  >
+    Error message
+  </p>
+</div>
+`;
