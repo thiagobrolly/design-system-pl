@@ -1,3 +1,4 @@
+export { theme } from './styles/theme';
 export { Separator } from './components/Separator';
 export { Button } from './components/Button';
 export { Heading } from './components/Heading';
@@ -7,4 +8,5 @@ export { SearchInput } from './components/SearchInput';
 export { Tooltip } from './components/Tooltip';
 export { Modal } from './components/Modal';
 export { Checkbox } from './components/Checkbox';
-export { theme } from './styles/theme';
+export { Card } from './components/Card';
+export { Spinner } from './components/Spinner';
