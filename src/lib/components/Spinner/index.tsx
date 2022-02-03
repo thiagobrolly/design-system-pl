@@ -4,7 +4,7 @@ export type SpinnerProps = {
   size?: number;
 };
 
-const Spinner = ({ size = 38 }: SpinnerProps) => (
+export const Spinner = ({ size = 38 }: SpinnerProps) => (
   <S.Wrapper
     width={size}
     height={size}
@@ -30,5 +30,3 @@ const Spinner = ({ size = 38 }: SpinnerProps) => (
     </g>
   </S.Wrapper>
 );
-
-export default Spinner;

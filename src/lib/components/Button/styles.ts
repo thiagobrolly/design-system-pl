@@ -10,12 +10,12 @@ const buttonModifiers = {
   medium: () => css`
     height: 4rem;
     font-size: ${theme.font.size.small};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.small};
   `,
   large: () => css`
     height: 5rem;
     font-size: ${theme.font.size.medium};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
   `,
   fullWidth: () => css`
     width: 100%;

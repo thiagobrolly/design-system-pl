@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import Spinner, { SpinnerProps } from '.';
+import { Spinner, SpinnerProps } from '.';
 
 export default {
   title: 'Components/Spinner',
