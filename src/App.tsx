@@ -20,6 +20,7 @@ import {
   Checkbox,
   Card,
   Spinner,
+  TextField,
 } from './lib';
 
 const App: React.FC = () => {
@@ -39,6 +40,69 @@ const App: React.FC = () => {
   return (
     <Card fullWidth>
       <h1>Teste</h1>
+
+      <Card fullWidth>
+        <TextField
+          label="Email"
+          name="email"
+          inputType="email"
+          iconDefault
+          outline
+        />
+        <TextField
+          label="Email"
+          name="email"
+          inputType="email"
+          // outline
+        />
+
+        <TextField
+          label="Email"
+          name="email"
+          inputType="email"
+          iconDefault
+          // placeholder=" "
+        />
+
+        <TextField
+          label="Password"
+          name="email"
+          inputType="password"
+          iconDefault
+          iconPosition="right"
+        />
+
+        <TextField
+          label="Email"
+          name="email"
+          inputType="search"
+          iconDefault
+          iconPosition="right"
+        />
+
+        <TextField
+          label="TextField"
+          name="TextField"
+          icon={<Spinner />}
+          iconPosition="right"
+        />
+
+        <TextField
+          label="Email"
+          name="email"
+          inputType="email"
+          iconDefault
+          disabled
+        />
+
+        <TextField
+          label="Email"
+          name="email"
+          inputType="email"
+          iconDefault
+          error="Error"
+        />
+      </Card>
 
       <Card fullWidth>
         <IconPlusCircle size={25} color="green" />
@@ -144,6 +208,8 @@ const App: React.FC = () => {
       <Separator />
 
       <Card title="Inputs" showTitle fullWidth>
+        <h3>TextField</h3>
+
         <h3>GenericInput Test</h3>
         <GenericInput
           inputType="text"

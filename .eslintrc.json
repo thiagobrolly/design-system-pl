@@ -61,7 +61,8 @@
       "@typescript-eslint/no-empty-function": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "jsx-a11y/label-has-associated-control": "off",
-      "no-unused-expressions": "off"
+      "no-unused-expressions": "off",
+      "no-nested-ternary": "off"
     },
     "settings": {
       "import/resolver": {

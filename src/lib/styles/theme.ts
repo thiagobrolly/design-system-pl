@@ -36,6 +36,7 @@ export const theme = {
 
     // Neutral
     white: '#ffffff',
+    gray_default: '#a8a8a8',
     gray_500: '#ecedef',
     gray_600: '#dfe1e4',
     gray_700: '#d3d6da',

@@ -1,52 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> Renders with error 1`] = `
-.c4 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ecedef;
-  border-radius: 0.2rem;
+  background-color: #ffffff;
+  border-radius: 0.8rem;
   padding: 0 1.6rem;
   border: 0.2rem solid;
   border-color: #ecedef;
+  height: 65px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
-.c4:focus-within {
-  box-shadow: 0 0 0.5rem #215aff;
+.c2:focus-within {
+  border: 0.2rem solid #0f194b;
 }
 
-.c8 {
+.c2:focus-within .icon-wrapper {
+  color: #0f194b;
+}
+
+.c5 {
   color: #000000;
   font-size: 1.6rem;
-  padding: 0.8rem 0;
+  padding-top: 0.7rem;
   padding-left: 0.8rem;
   background: transparent;
   border: 0;
   outline: none;
   width: 100%;
+  -webkit-transition: all .15s linear;
+  transition: all .15s linear;
 }
 
-.c2 {
-  font-size: 1.4rem;
-  color: #000000;
-  cursor: pointer;
+.c5::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.c5::-moz-placeholder {
+  color: transparent;
+}
+
+.c5:-ms-input-placeholder {
+  color: transparent;
+}
+
+.c5::placeholder {
+  color: transparent;
+}
+
+.c5:focus + .label-wrapper,
+.c5:not(:placeholder-shown) + .label-wrapper {
+  top: -2px;
+  left: 10px;
+  background-color: #ffffff;
+  padding: 0 0.5rem;
+}
+
+.c5:focus + .label-wrapper > label,
+.c5:not(:placeholder-shown) + .label-wrapper > label {
+  margin-top: -0.8rem;
+  color: #0f194b;
+  font-weight: 600;
 }
 
 .c6 {
+  pointer-events: none;
+  position: absolute;
+  background-color: transparent;
+  top: calc(50% - 0.8rem);
+  left: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.c8 {
+  font-size: 1.4rem;
+  color: #707070;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 2.5rem;
-  color: #ecedef;
+  color: #a8a8a8;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
 }
 
-.c6 > svg {
+.c4 > svg {
   width: 100%;
 }
 
@@ -56,32 +117,27 @@ exports[`<TextField /> Renders with error 1`] = `
   margin-top: 0.2rem;
 }
 
-.c0 .c3 {
+.c0 {
+  padding-top: 13px;
+}
+
+.c0 .c1 {
   border-color: #fe5454;
 }
 
-.c0 .c5 svg {
-  fill: #fe5454;
-}
-
 .c0 .c7,
-.c0 .c1 {
-  color: #fe5454;
+.c0 .c3 {
+  color: #fe5454 !important;
 }
 
 <div
   class="c0"
 >
-  <label
+  <div
     class="c1 c2"
   >
-    TextField
-  </label>
-  <div
-    class="c3 c4"
-  >
     <div
-      class="c5 c6"
+      class="c3 c4"
     >
       <svg
         data-testid="icon"
@@ -105,10 +161,21 @@ exports[`<TextField /> Renders with error 1`] = `
       </svg>
     </div>
     <input
-      class="c7 c8"
+      autocomplete="off"
+      class="c5"
+      placeholder=" "
       type="text"
       value=""
     />
+    <span
+      class="c6 label-wrapper"
+    >
+      <label
+        class="c7 c8"
+      >
+        TextField
+      </label>
+    </span>
   </div>
   <p
     class="c9"
