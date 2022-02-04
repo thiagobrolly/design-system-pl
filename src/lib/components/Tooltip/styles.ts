@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
+import { TooltipProps } from '.';
 
-import { WrapperProps, ContentProps } from './types';
+type ContentProps = Pick<TooltipProps, 'position'>;
+
+export interface WrapperProps {
+  isOpen?: boolean;
+}
 
 const positionContent = {
   left: () => css`

@@ -7,15 +7,16 @@ export type CardProps = {
   title?: string;
   children?: React.ReactNode;
   fullWidth?: boolean;
-};
+} & React.HTMLAttributes<HTMLElement>;
 
 export const Card = ({
   title = '',
   showTitle,
   children,
   fullWidth = false,
+  ...props
 }: CardProps) => (
-  <S.Wrapper showTitle={showTitle} fullWidth={fullWidth}>
+  <S.Wrapper showTitle={showTitle} fullWidth={fullWidth} {...props}>
     {showTitle && (
       <>
         <Heading bold>{title}</Heading> <Separator color="#f0eff4" />
