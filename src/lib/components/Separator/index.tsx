@@ -1,15 +1,21 @@
 import * as S from './styles';
 
-export interface SeparatorProps {
+export type SeparatorProps = {
   color?: string;
   marginTop?: string;
   marginBottom?: string;
-}
+} & React.HTMLAttributes<HTMLElement>;
 
 export const Separator = ({
   color,
   marginTop,
   marginBottom,
+  ...props
 }: SeparatorProps) => (
-  <S.Wrapper color={color} marginTop={marginTop} marginBottom={marginBottom} />
+  <S.Wrapper
+    color={color}
+    marginTop={marginTop}
+    marginBottom={marginBottom}
+    {...props}
+  />
 );

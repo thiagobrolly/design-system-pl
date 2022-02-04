@@ -9,6 +9,9 @@ export default {
     icon: false,
     fullWidth: false,
   },
+  argTypes: {
+    as: { type: 'symbol' },
+  },
 } as Meta;
 
 export const Primary: Story<ButtonProps> = (args) => <Button {...args} />;
@@ -53,4 +56,8 @@ asLink.args = {
   children: 'Link',
   as: 'a',
   href: '#',
+};
+
+asLink.argTypes = {
+  as: { type: 'string' },
 };
