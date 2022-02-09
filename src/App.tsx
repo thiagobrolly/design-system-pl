@@ -21,6 +21,7 @@ import {
   Card,
   Spinner,
   TextField,
+  SelectLanguage,
 } from './lib';
 
 const App: React.FC = () => {
@@ -258,6 +259,15 @@ const App: React.FC = () => {
           labelArialabel="label-search"
           autocomplete={false}
         />
+      </Card>
+      <Card>
+        <Heading children="SelectLanguage" />
+        <Separator />
+        <div style={{ display: 'flex', height: '150px' }}>
+          <SelectLanguage />
+          <SelectLanguage locale="en-US" />
+          <SelectLanguage locale="es-ES" />
+        </div>
       </Card>
     </Card>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../..';
 
 export const SelectContainer = styled.div`
   position: relative;
@@ -9,12 +10,13 @@ export const DropDownHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const DropDownList = styled.ul`
   position: absolute;
-  background: #ffffff;
-  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border: 0.1rem solid ${theme.color.gray_700};
+  border-radius: 4px;
   z-index: 100;
   right: 0;
   left: 0;
@@ -30,7 +32,7 @@ export const ListItem = styled.li`
   opacity: 0.7;
   transition: 0.2s;
   margin-bottom: 0;
-
+  cursor: pointer;
   &:hover {
     opacity: 1;
   }

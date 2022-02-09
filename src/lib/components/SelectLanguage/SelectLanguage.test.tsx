@@ -51,4 +51,25 @@ describe('<SelectLanguage />', () => {
       }),
     ).toBeInTheDocument();
   });
+  it('dispatches the selected value when changed (after clicking/selecting)', () => {
+    const dispatchFunction = jest.fn();
+    render(<SelectLanguage dispatchSettings={dispatchFunction} />);
+    expect(dispatchFunction).toHaveBeenCalledTimes(1);
+    userEvent.click(
+      screen.getByRole('img', { name: /selectlanguage country flag_pt-br/i }),
+    );
+    userEvent.click(
+      screen.getByRole('img', { name: /language country flag_es-es/i }),
+    );
+    expect(dispatchFunction).toHaveBeenCalled();
+    expect(dispatchFunction).toHaveBeenCalledTimes(2);
+    userEvent.click(
+      screen.getByRole('img', { name: /language country flag_es-es/i }),
+    );
+    userEvent.click(
+      screen.getByRole('img', { name: /language country flag_en-us/i }),
+    );
+    expect(dispatchFunction).toHaveBeenCalled();
+    expect(dispatchFunction).toHaveBeenCalledTimes(3);
+  });
 });

@@ -19,6 +19,7 @@ exports[`<SelectLanguage /> should correctly render the selectLanguage component
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .c2 {
