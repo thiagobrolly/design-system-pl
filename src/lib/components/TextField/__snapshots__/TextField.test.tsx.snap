@@ -28,13 +28,12 @@ exports[`<TextField /> Renders with error 1`] = `
   color: #000000;
   font-size: 1.6rem;
   padding-top: 0.7rem;
-  padding-left: 0.8rem;
   background: transparent;
   border: 0;
   outline: none;
   width: 100%;
-  -webkit-transition: all .15s linear;
-  transition: all .15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
 }
 
 .c5::-webkit-input-placeholder {
@@ -100,11 +99,20 @@ exports[`<TextField /> Renders with error 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 2.5rem;
   color: #a8a8a8;
   -webkit-order: 0;
   -ms-flex-order: 0;
   order: 0;
+  margin-right: 0.8rem;
 }
 
 .c4 > svg {
@@ -115,6 +123,7 @@ exports[`<TextField /> Renders with error 1`] = `
   color: #fe5454;
   font-size: 1.2rem;
   margin-top: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 .c0 {

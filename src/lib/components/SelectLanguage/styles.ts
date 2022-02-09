@@ -15,6 +15,7 @@ export const DropDownHeader = styled.div`
 
 export const DropDownList = styled.ul`
   position: absolute;
+  background-color: ${theme.color.white};
   border: 0.1rem solid ${theme.color.gray_700};
   border-radius: 4px;
   z-index: 100;

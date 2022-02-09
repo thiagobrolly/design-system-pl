@@ -21,7 +21,7 @@ export const SelectLanguage = ({
 }: SelectLanguageProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState({
-    image: undefined,
+    image: '',
     localeValue: '',
   });
 
@@ -51,12 +51,12 @@ export const SelectLanguage = ({
     (localeSelected: string) => {
       for (let i = 0; i < localeOptions.length; i += 1) {
         if (localeSelected === localeOptions[i].localeValue) {
-          setSettingsDispatch(localeOptions[i].localeValue);
           setSelectedImage({
             image: localeOptions[i].image,
             localeValue: localeOptions[i].localeValue,
           });
           setIsOpen(false);
+          setSettingsDispatch(localeOptions[i].localeValue);
           break;
         }
       }

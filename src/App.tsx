@@ -260,9 +260,7 @@ const App: React.FC = () => {
           autocomplete={false}
         />
       </Card>
-      <Card>
-        <Heading children="SelectLanguage" />
-        <Separator />
+      <Card title="Select Language" showTitle>
         <div style={{ display: 'flex', height: '150px' }}>
           <SelectLanguage />
           <SelectLanguage locale="en-US" />

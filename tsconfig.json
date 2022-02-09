@@ -21,6 +21,7 @@
     "outDir": "./dist",
     "declaration": true,
     "declarationDir": "./",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
   },
   "include": [
     "./src/lib",

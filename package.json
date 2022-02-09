@@ -100,7 +100,8 @@
       "!src/lib/*.ts",
       "!src/*.ts",
       "!src/lib/components/Icons/*.tsx",
-      "!src/lib/components/Icons/*.ts"
+      "!src/lib/components/Icons/*.ts",
+      "!src/@types/assets/index.d.ts"
     ]
   }
 }
