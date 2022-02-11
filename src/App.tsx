@@ -22,7 +22,9 @@ import {
   Spinner,
   TextField,
   SelectLanguage,
+  Dropdown,
 } from './lib';
+import { dropdownChildrenMock } from './lib/components/Dropdown';
 
 const App: React.FC = () => {
   const userList = [
@@ -207,6 +209,11 @@ const App: React.FC = () => {
       <Heading children="teste" uppercase />
 
       <Separator />
+      <Card title="Dropdown showcase" showTitle>
+        <Dropdown title="click here for Dropdown abc def">
+          {dropdownChildrenMock}
+        </Dropdown>
+      </Card>
 
       <Card title="Inputs" showTitle fullWidth>
         <h3>TextField</h3>
