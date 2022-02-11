@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import * as Styled from './styles';
+import * as S from './styles';
 import { SearchInputProps } from './types';
 import ResultsContainer from './ResultContainer';
 
 import { IconSearch } from '../Icons';
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-  width = '320px',
   searchInputType = 'outline',
   label,
   defaultErrorMessage,
@@ -56,14 +55,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-    <Styled.MainContainer>
-      <Styled.InputContainer>
-        <Styled.Input
+    <S.Wrapper>
+      <S.InputWrapper>
+        <S.Input
           id={inputId}
           aria-label={inputArialabel}
           name={inputName}
           type="search"
-          width={width}
           searchInputType={searchInputType}
           onBlur={handleBlur}
           onChange={handleChange}
@@ -73,27 +71,24 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           autoComplete={autocomplete ? 'on' : 'off'}
           {...props}
         />
-        <Styled.Label
+        <S.Label
           id={labelId}
           htmlFor={inputId}
           aria-label={labelArialabel}
           errorMessage={errorMessage}
         >
           {label}
-        </Styled.Label>
-        {errorMessage && (
-          <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage>
-        )}
-        <Styled.LeftIconContainer className="iconDiv">
-          <IconSearch size={20} color="rgba(168, 168, 168, 0.47)" />
-        </Styled.LeftIconContainer>
-      </Styled.InputContainer>
+        </S.Label>
+        {errorMessage && <S.ErrorMessage>{errorMessage}</S.ErrorMessage>}
+        <S.LeftIconContainer className="iconDiv">
+          <IconSearch size={16} color="rgba(168, 168, 168, 0.47)" />
+        </S.LeftIconContainer>
+      </S.InputWrapper>
       <ResultsContainer
-        width={width}
         resultList={resultList}
         setWordSearched={setWordSearched}
         setResultList={setResultList}
       />
-    </Styled.MainContainer>
+    </S.Wrapper>
   );
 };

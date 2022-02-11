@@ -108,10 +108,10 @@ const searchInputTheme = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ searchInputType, width, errorMessage }) => css`
+  ${({ searchInputType, errorMessage }) => css`
     ${searchInputTheme[searchInputType || 'filled'](errorMessage)}
     box-sizing: border-box;
-    width: ${width};
+    width: 100%;
     height: 56px;
     border-radius: 10px;
     font-size: 16px;
@@ -125,12 +125,11 @@ export const Input = styled.input<InputProps>`
   `}
 `;
 
-export const MainContainer = styled.div`
-  //margin-top: 16px;
+export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const InputContainer = styled.div`
+export const InputWrapper = styled.div`
   max-width: max-content;
   position: sticky;
 `;

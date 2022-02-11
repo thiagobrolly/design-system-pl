@@ -1,5 +1,6 @@
+import { searchUserDataMock } from './searchUserDataMock';
+
 export interface SearchInputProps {
-  width: string;
   searchInputType: 'filled' | 'outline';
   disabled?: boolean;
   label?: string;
@@ -11,14 +12,13 @@ export interface SearchInputProps {
   inputName?: string;
   labelId: string;
   labelArialabel: string;
-  options: string[];
+  options: typeof searchUserDataMock;
 }
 
 export interface InputProps {
   id?: string;
   name?: string;
   arialabel?: string;
-  width: string;
   searchInputType: 'filled' | 'outline';
   disabled?: boolean;
   errorMessage?: string;

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/theme';
-import { ContainerProps, ResultItemProps } from './types';
+import { ResultItemProps } from './types';
 
-export const Container = styled.ul<ContainerProps>`
+export const Container = styled.ul`
   position: absolute;
   top: 62px;
   z-index: 2;
-  width: ${(props) => props.width};
-  max-height: 300px;
+  width: max-content;
+  max-height: 400px;
   background-color: white;
   border-radius: 10px;
   padding-top: 10px;
