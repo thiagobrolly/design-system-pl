@@ -12,3 +12,4 @@ export { Card } from './components/Card';
 export { Spinner } from './components/Spinner';
 export { TextField } from './components/TextField';
 export { SelectLanguage } from './components/SelectLanguage';
+export { Dropdown } from './components/Dropdown';

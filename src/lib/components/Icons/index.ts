@@ -8,3 +8,4 @@ export { default as IconLock } from './IconLock';
 export { default as IconAlertTriangle } from './IconAlertTriangle';
 export { default as IconEye } from './IconEye';
 export { default as IconClosedEye } from './IconClosedEye';
+export { default as IconArrow } from './IconArrow';
