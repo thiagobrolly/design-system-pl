@@ -70,7 +70,7 @@ export const SelectLanguage = ({
 
   const renderDropDown = () => {
     return (
-      <S.DropDownList id="select-dropdwon_list">
+      <S.DropdownList id="select-dropdwon_list" aria-hidden={!isOpen}>
         {localeOptions.map((option) => (
           <S.ListItem
             onClick={() => onOptionClicked(option.localeValue)}
@@ -84,20 +84,27 @@ export const SelectLanguage = ({
             />
           </S.ListItem>
         ))}
-      </S.DropDownList>
+      </S.DropdownList>
     );
   };
 
   return (
-    <S.SelectContainer id="select-container" role="menu">
-      <S.DropDownHeader id="select-dropdwon_header" onClick={toggling}>
-        <S.ListImage
-          id="select-list_image_header"
-          src={selectedImage.image}
-          alt={`selectlanguage country flag_${selectedImage.localeValue}`}
-        />
-      </S.DropDownHeader>
-      {isOpen && renderDropDown()}
-    </S.SelectContainer>
+    <S.Wrapper isOpen={isOpen}>
+      <S.SelectContainer id="select-container" role="menu">
+        <S.DropdownHeader id="select-dropdwon_header" onClick={toggling}>
+          <S.ListImage
+            id="select-list_image_header"
+            src={selectedImage.image}
+            alt={`selectlanguage country flag_${selectedImage.localeValue}`}
+          />
+        </S.DropdownHeader>
+        {isOpen && renderDropDown()}
+      </S.SelectContainer>
+      <S.Overlay
+        aria-label="dropdown-overlay"
+        aria-hidden={!isOpen}
+        onClick={toggling}
+      />
+    </S.Wrapper>
   );
 };
