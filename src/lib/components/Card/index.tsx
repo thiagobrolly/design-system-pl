@@ -23,7 +23,7 @@ export const Card = ({
           {title}
         </Heading>
         {!!subTitle && <S.SubTitle>{subTitle}</S.SubTitle>}
-        <Separator color="#f0eff4" />
+        <Separator color="#f0eff4" marginBottom="2rem" />
       </>
     )}
 

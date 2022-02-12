@@ -136,7 +136,12 @@ const App: React.FC = () => {
           />
         </div>
         <div style={{ padding: 10 }}>
-          <Checkbox name="category" label="Adventure" labelFor="adventure" />
+          <Checkbox
+            disabled
+            name="category"
+            label="Adventure"
+            labelFor="adventure"
+          />
         </div>
         <div style={{ padding: 10 }}>
           <Checkbox name="category" label="Strategy" labelFor="strategy" />
@@ -217,7 +222,7 @@ const App: React.FC = () => {
       <Heading children="teste" uppercase />
 
       <Separator />
-      <Card title="Dropdown showcase" showTitle>
+      <Card title="Dropdown showcase">
         <Dropdown title="click here for Dropdown abc def">
           {dropdownChildrenMock}
         </Dropdown>
@@ -275,7 +280,7 @@ const App: React.FC = () => {
           autocomplete={false}
         />
       </Card>
-      <Card title="Select Language" showTitle>
+      <Card title="Select Language">
         <div style={{ display: 'flex', height: '150px' }}>
           <SelectLanguage />
           <SelectLanguage locale="en-US" />

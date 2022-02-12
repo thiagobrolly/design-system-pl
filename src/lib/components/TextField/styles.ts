@@ -56,12 +56,12 @@ export const Input = styled.input<IconPositionProps>`
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 30px #e1faff inset;
       transition: background-color 5000s ease-in-out 0s;
-      -webkit-text-fill-color: blue;
+      -webkit-text-fill-color: ${theme.color.gray_800};
       height: fit-content;
       z-index: 9;
       margin: auto;
       border-radius: 4px;
-      padding: 5px;
+      padding: 1rem;
     }
 
     ::placeholder {
