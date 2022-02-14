@@ -1,14 +1,30 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as S from './styles';
-import flagBR from '../../../assets/icon-flag-brazil.svg';
-import flagUS from '../../../assets/icon-flag-eua.svg';
-import flagES from '../../../assets/icon-flag-spain.svg';
+import { IconFlagBrazil, IconFlagEua, IconFlagSpain } from '../Icons';
 
 export const localeOptions = [
-  { id: 0, localeValue: 'pt-BR', image: flagBR },
-  { id: 1, localeValue: 'en-US', image: flagUS },
-  { id: 2, localeValue: 'es-ES', image: flagES },
+  {
+    id: 0,
+    localeValue: 'pt-BR',
+    image: <IconFlagBrazil id="select-list_image_itens_pt-BR" />,
+  },
+  {
+    id: 1,
+    localeValue: 'en-US',
+    image: <IconFlagEua id="select-list_image_itens_en-US" />,
+  },
+  {
+    id: 2,
+    localeValue: 'es-ES',
+    image: <IconFlagSpain id="select-list_image_itens_es-ES" />,
+  },
 ];
+
+type OptionProps = {
+  id: number;
+  localeValue: string;
+  image: JSX.Element;
+};
 
 export type SelectLanguageProps = {
   locale?: 'pt-BR' | 'en-US' | 'es-ES';
@@ -20,9 +36,10 @@ export const SelectLanguage = ({
   dispatchSettings,
 }: SelectLanguageProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState({
-    image: '',
-    localeValue: '',
+  const [selectedImage, setSelectedImage] = useState<OptionProps | undefined>({
+    id: 0,
+    localeValue: 'pt-BR',
+    image: localeOptions[0].image,
   });
 
   const toggling = () => setIsOpen(!isOpen);
@@ -51,10 +68,7 @@ export const SelectLanguage = ({
     (localeSelected: string) => {
       for (let i = 0; i < localeOptions.length; i += 1) {
         if (localeSelected === localeOptions[i].localeValue) {
-          setSelectedImage({
-            image: localeOptions[i].image,
-            localeValue: localeOptions[i].localeValue,
-          });
+          setSelectedImage(localeOptions[i]);
           setIsOpen(false);
           setSettingsDispatch(localeOptions[i].localeValue);
           break;
@@ -77,11 +91,7 @@ export const SelectLanguage = ({
             key={option.id}
             id={`select-list_item_${option.localeValue}`}
           >
-            <S.ListImage
-              id={`select-list_image_itens_${option.localeValue}`}
-              src={option.image}
-              alt={`language country flag_${option.localeValue}`}
-            />
+            {option.image}
           </S.ListItem>
         ))}
       </S.DropdownList>
@@ -92,11 +102,7 @@ export const SelectLanguage = ({
     <S.Wrapper isOpen={isOpen}>
       <S.SelectContainer id="select-container" role="menu">
         <S.DropdownHeader id="select-dropdwon_header" onClick={toggling}>
-          <S.ListImage
-            id="select-list_image_header"
-            src={selectedImage.image}
-            alt={`selectlanguage country flag_${selectedImage.localeValue}`}
-          />
+          {selectedImage?.image}
         </S.DropdownHeader>
         {isOpen && renderDropDown()}
       </S.SelectContainer>

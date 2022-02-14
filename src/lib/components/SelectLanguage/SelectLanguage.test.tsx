@@ -3,72 +3,42 @@ import userEvent from '@testing-library/user-event';
 import { SelectLanguage } from '.';
 
 describe('<SelectLanguage />', () => {
-  it('should correctly render the selectLanguage component', () => {
+  test('should correctly render the selectLanguage component', () => {
     const { container } = render(<SelectLanguage locale="pt-BR" />);
     expect(container.firstChild).toMatchSnapshot();
   });
-  it('should render en-US flag for the selectLanguage by prop', () => {
+  test('should render en-US flag for the selectLanguage by prop', () => {
     render(<SelectLanguage locale="en-US" />);
-    expect(
-      screen.getByRole('img', {
-        name: /selectlanguage country flag_en-us/i,
-      }),
-    ).toBeInTheDocument();
+    expect(screen.getByTitle('flag eua')).toBeInTheDocument();
   });
-  it('should render the default img (pt-br) when empty prop is provided', () => {
+  test('should render the default img (pt-br) when empty prop is provided', () => {
     render(<SelectLanguage />);
-    expect(
-      screen.getByRole('img', {
-        name: /selectlanguage country flag_pt-br/i,
-      }),
-    ).toBeInTheDocument();
+    expect(screen.getByTitle('flag brazil')).toBeInTheDocument();
   });
-  it('should render the en-US flag (after clicking/selecting)', () => {
+  test('should render the en-US flag (after clicking/selecting)', () => {
     render(<SelectLanguage />);
-    userEvent.click(
-      screen.getByRole('img', { name: /selectlanguage country flag_pt-br/i }),
-    );
-    userEvent.click(
-      screen.getByRole('img', { name: /language country flag_en-us/i }),
-    );
-    expect(
-      screen.getByRole('img', {
-        name: /selectlanguage country flag_en-us/i,
-      }),
-    ).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('flag brazil'));
+    userEvent.click(screen.getByTitle('flag eua'));
+    expect(screen.getByTitle('flag eua')).toBeInTheDocument();
   });
-  it('should render the es-ES flag (after clicking/selecting)', () => {
+  test('should render the es-ES flag (after clicking/selecting)', () => {
     render(<SelectLanguage />);
-    userEvent.click(
-      screen.getByRole('img', { name: /selectlanguage country flag_pt-br/i }),
-    );
-    userEvent.click(
-      screen.getByRole('img', { name: /language country flag_es-es/i }),
-    );
-    expect(
-      screen.getByRole('img', {
-        name: /selectlanguage country flag_es-es/i,
-      }),
-    ).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('flag brazil'));
+    userEvent.click(screen.getByTitle('flag spain'));
+    expect(screen.getByTitle('flag spain')).toBeInTheDocument();
   });
-  it('dispatches the selected value when changed (after clicking/selecting)', () => {
+  test('dispatches the selected value when changed (after clicking/selecting)', () => {
     const dispatchFunction = jest.fn();
     render(<SelectLanguage dispatchSettings={dispatchFunction} />);
     expect(dispatchFunction).toHaveBeenCalledTimes(1);
-    userEvent.click(
-      screen.getByRole('img', { name: /selectlanguage country flag_pt-br/i }),
-    );
-    userEvent.click(
-      screen.getByRole('img', { name: /language country flag_es-es/i }),
-    );
+    userEvent.click(screen.getByTitle('flag brazil'));
+    userEvent.click(screen.getByTitle('flag spain'));
+
     expect(dispatchFunction).toHaveBeenCalled();
     expect(dispatchFunction).toHaveBeenCalledTimes(2);
-    userEvent.click(
-      screen.getByRole('img', { name: /language country flag_es-es/i }),
-    );
-    userEvent.click(
-      screen.getByRole('img', { name: /language country flag_en-us/i }),
-    );
+    userEvent.click(screen.getByTitle('flag spain'));
+
+    userEvent.click(screen.getByTitle('flag eua'));
     expect(dispatchFunction).toHaveBeenCalled();
     expect(dispatchFunction).toHaveBeenCalledTimes(3);
   });
