@@ -45,7 +45,7 @@ export const TextField = ({
     !!onInput && onInput(newValue);
   };
   return (
-    <S.Wrapper disabled={disabled} error={!!error} outline={outline}>
+    <S.Wrapper disabled={disabled} error={!!error} outline={outline} {...props}>
       <S.InputWrapper>
         {!iconDefault && !!icon && (
           <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>
@@ -92,10 +92,9 @@ export const TextField = ({
           iconPosition={iconPosition}
           disabled={disabled}
           name={name}
-          autoComplete="off"
+          autoComplete="on"
           placeholder=" "
           {...(label ? { id: name } : {})}
-          {...props}
         />
         {!!label && (
           <S.LabelWrapper
