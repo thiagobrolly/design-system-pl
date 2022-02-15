@@ -6,7 +6,7 @@ export default {
   component: Card,
   args: {
     title: 'Title',
-    showTitle: true,
+    subTitle: 'Sub Title',
     fullWidth: false,
   },
 } as Meta;

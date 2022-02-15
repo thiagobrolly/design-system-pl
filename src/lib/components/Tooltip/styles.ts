@@ -70,7 +70,7 @@ export const Content = styled.div<ContentProps>`
     flex-direction: column;
     background: ${theme.color.white};
     color: ${theme.color.black};
-    margin-top: ${theme.spacings.xsmall};
+    //margin-top: ${theme.spacings.xsmall};
     padding: ${theme.spacings.xxsmall};
     position: absolute;
     z-index: ${theme.layers.alwayOnTop};

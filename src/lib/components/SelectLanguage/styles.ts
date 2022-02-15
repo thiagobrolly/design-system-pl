@@ -23,11 +23,19 @@ export const SelectContainer = styled.div`
 `;
 
 export const DropdownHeader = styled.div`
-  padding: 0.4rem;
+  margin: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  width: 4rem;
+  @media (max-width: 768px) {
+    width: 3rem;
+  }
+  @media (max-width: 480px) {
+    width: 2.5rem;
+  }
 `;
 
 export const DropdownList = styled.ul`
@@ -54,11 +62,8 @@ export const ListItem = styled.li`
   &:hover {
     opacity: 1;
   }
-`;
 
-export const ListImage = styled.img`
   width: 4rem;
-
   @media (max-width: 768px) {
     width: 3rem;
   }

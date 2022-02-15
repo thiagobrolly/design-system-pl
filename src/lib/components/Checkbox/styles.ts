@@ -54,6 +54,13 @@ export const Input = styled.input`
     box-shadow: 0 0 0.5rem ${theme.color.primary};
   }
 
+  &:disabled,
+  &:disabled + label {
+    cursor: not-allowed;
+    border-color: ${theme.color.gray_700};
+    color: ${theme.color.gray_800};
+  }
+
   &:checked {
     border-color: ${theme.color.primary};
     background: ${theme.color.white};

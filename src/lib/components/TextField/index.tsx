@@ -1,4 +1,9 @@
-import React, { useState, InputHTMLAttributes } from 'react';
+import React, {
+  useState,
+  InputHTMLAttributes,
+  forwardRef,
+  ForwardRefRenderFunction,
+} from 'react';
 import { IconUser, IconSearch, IconEye, IconClosedEye } from '../Icons';
 import * as S from './styles';
 
@@ -15,20 +20,26 @@ export type TextFieldProps = {
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const TextField = ({
-  icon,
-  iconPosition = 'left',
-  inputType = 'text',
-  label,
-  name,
-  initialValue = '',
-  error,
-  disabled = false,
-  iconDefault = false,
-  outline = false,
-  onInput,
-  ...props
-}: TextFieldProps) => {
+const TextFieldBase: ForwardRefRenderFunction<
+  HTMLInputElement,
+  TextFieldProps
+> = (
+  {
+    icon,
+    iconPosition = 'left',
+    inputType = 'text',
+    label,
+    name,
+    initialValue = '',
+    error,
+    disabled = false,
+    iconDefault = false,
+    outline = false,
+    onInput,
+    ...props
+  },
+  ref,
+) => {
   const [value, setValue] = useState(initialValue);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -45,7 +56,7 @@ export const TextField = ({
     !!onInput && onInput(newValue);
   };
   return (
-    <S.Wrapper disabled={disabled} error={!!error} outline={outline}>
+    <S.Wrapper disabled={disabled} error={!!error} outline={outline} {...props}>
       <S.InputWrapper>
         {!iconDefault && !!icon && (
           <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>
@@ -92,10 +103,10 @@ export const TextField = ({
           iconPosition={iconPosition}
           disabled={disabled}
           name={name}
-          autoComplete="off"
+          autoComplete="on"
           placeholder=" "
+          ref={ref}
           {...(label ? { id: name } : {})}
-          {...props}
         />
         {!!label && (
           <S.LabelWrapper
@@ -112,3 +123,5 @@ export const TextField = ({
     </S.Wrapper>
   );
 };
+
+export const TextField = forwardRef(TextFieldBase);

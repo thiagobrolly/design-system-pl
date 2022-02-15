@@ -31,21 +31,23 @@ const App: React.FC = () => {
   const [handleOpen, setHandleOpen] = useState(false);
 
   return (
-    <Card fullWidth>
+    <Card fullWidth title="Title" subTitle="Sub-Title">
       <h1>Teste</h1>
 
-      <Card fullWidth>
+      <Card fullWidth style={{ backgroundColor: '#e3e3e3' }}>
         <TextField
-          label="Email"
+          label="Email exemplo"
           name="email"
           inputType="email"
           iconDefault
           outline
+          style={{ marginBottom: 20 }}
         />
         <TextField
           label="Email"
           name="email"
           inputType="email"
+          style={{ marginBottom: 20 }}
           // outline
         />
 
@@ -54,6 +56,7 @@ const App: React.FC = () => {
           name="email"
           inputType="email"
           iconDefault
+          style={{ marginBottom: 20 }}
           // placeholder=" "
         />
 
@@ -63,6 +66,7 @@ const App: React.FC = () => {
           inputType="password"
           iconDefault
           iconPosition="right"
+          style={{ marginBottom: 20 }}
         />
 
         <TextField
@@ -71,6 +75,7 @@ const App: React.FC = () => {
           inputType="search"
           iconDefault
           iconPosition="right"
+          style={{ marginBottom: 20 }}
         />
 
         <TextField
@@ -78,6 +83,7 @@ const App: React.FC = () => {
           name="TextField"
           icon={<Spinner />}
           iconPosition="right"
+          style={{ marginBottom: 20 }}
         />
 
         <TextField
@@ -86,6 +92,7 @@ const App: React.FC = () => {
           inputType="email"
           iconDefault
           disabled
+          style={{ marginBottom: 20 }}
         />
 
         <TextField
@@ -94,6 +101,7 @@ const App: React.FC = () => {
           inputType="email"
           iconDefault
           error="Error"
+          style={{ marginBottom: 20 }}
         />
       </Card>
 
@@ -118,7 +126,12 @@ const App: React.FC = () => {
           />
         </div>
         <div style={{ padding: 10 }}>
-          <Checkbox name="category" label="Adventure" labelFor="adventure" />
+          <Checkbox
+            disabled
+            name="category"
+            label="Adventure"
+            labelFor="adventure"
+          />
         </div>
         <div style={{ padding: 10 }}>
           <Checkbox name="category" label="Strategy" labelFor="strategy" />
@@ -199,13 +212,13 @@ const App: React.FC = () => {
       <Heading children="teste" uppercase />
 
       <Separator />
-      <Card title="Dropdown showcase" showTitle>
+      <Card title="Dropdown showcase">
         <Dropdown title="click here for Dropdown abc def">
           {dropdownChildrenMock}
         </Dropdown>
       </Card>
 
-      <Card title="Inputs" showTitle fullWidth>
+      <Card title="Inputs" fullWidth>
         <h3>TextField</h3>
 
         <h3>GenericInput Test</h3>
@@ -257,7 +270,7 @@ const App: React.FC = () => {
           </SearchInput>
         </div>
       </Card>
-      <Card title="Select Language" showTitle>
+      <Card title="Select Language">
         <div style={{ display: 'flex', height: '150px' }}>
           <SelectLanguage />
           <SelectLanguage locale="en-US" />

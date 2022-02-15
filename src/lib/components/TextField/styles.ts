@@ -20,7 +20,7 @@ export const InputWrapper = styled.div`
   padding: 0 ${theme.spacings.xsmall};
   border: 0.2rem solid;
   border-color: ${theme.color.gray_500};
-  height: 65px;
+  height: 57px;
   position: sticky;
 
   &:focus-within {
@@ -45,23 +45,46 @@ export const Input = styled.input<IconPositionProps>`
 
     transition: all 0.15s linear;
 
+    /* &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      background-color: red;
+      //transition: background-color 5000s ease-in-out 0s;
+    } */
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #e1faff inset;
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: ${theme.color.gray_800};
+      height: fit-content;
+      z-index: 9;
+      margin: auto;
+      border-radius: 4px;
+      padding: 1rem;
+    }
+
     ::placeholder {
       color: transparent;
     }
 
+    &:-webkit-autofill + .label-wrapper,
     &:focus + .label-wrapper,
     &:not(:placeholder-shown) + .label-wrapper {
       top: -2px;
       left: 10px;
       background-color: ${colorInput};
       padding: 0 0.5rem;
+      height: 2px;
     }
 
+    &:-webkit-autofill + .label-wrapper > label,
     &:focus + .label-wrapper > label,
     &:not(:placeholder-shown) + .label-wrapper > label {
-      margin-top: -0.8rem;
+      //margin-top: -0.8rem;
       color: ${theme.color.secondary};
       font-weight: 600;
+      z-index: 99;
     }
   `}
 `;
@@ -82,7 +105,7 @@ export const LabelWrapper = styled.span<IconPositionProps>`
 
 export const Label = styled.label`
   font-size: ${theme.font.size.small};
-  color: ${theme.color.title};
+  color: ${theme.color.gray_600};
 `;
 
 export const Icon = styled.div<IconPositionProps>`
@@ -141,7 +164,7 @@ const wrapperModifiers = {
 
   outline: () => css`
     ${Input} {
-      padding-top: 1.5rem;
+      padding-top: 1rem;
       &:focus + .label-wrapper,
       &:not(:placeholder-shown) + .label-wrapper {
         background-color: transparent;
@@ -149,8 +172,9 @@ const wrapperModifiers = {
 
       &:focus + .label-wrapper > label,
       &:not(:placeholder-shown) + .label-wrapper > label {
-        margin-top: 0.7rem;
+        margin-top: 2.4rem;
         font-weight: normal;
+        font-size: ${theme.font.size.xsmall};
       }
 
       &:focus + .icon-wrapper,
@@ -161,11 +185,11 @@ const wrapperModifiers = {
     }
 
     ${Icon} {
-      padding-top: 10px;
+      padding-top: 0.5rem;
     }
 
     ${LabelWrapper} {
-      top: calc(50% - 3px);
+      top: calc(50% - 5px);
     }
   `,
 };
@@ -174,7 +198,6 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ disabled, error, outline }) => css`
     ${!!error && wrapperModifiers.error()}
     ${disabled && wrapperModifiers.disabled()}
-    ${outline && wrapperModifiers.outline()}
-    padding-top: 13px;
+    ${outline && wrapperModifiers.outline()} //padding-top: 13px;
   `}
 `;
