@@ -16,9 +16,6 @@ const SvgIconFlagSpain = ({
     y={0}
     viewBox="0 0 55.2 38.4"
     width={size}
-    style={{
-      enableBackground: 'new 0 0 55.2 38.4',
-    }}
     xmlSpace="preserve"
     {...props}
   >

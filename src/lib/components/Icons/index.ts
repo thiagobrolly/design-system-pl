@@ -10,5 +10,5 @@ export { default as IconEye } from './IconEye';
 export { default as IconClosedEye } from './IconClosedEye';
 export { default as IconArrow } from './IconArrow';
 export { default as IconFlagBrazil } from './IconFlagBrazil';
-export { default as IconFlagEua } from './IconFlagEua';
+export { default as IconFlagUsa } from './IconFlagUsa';
 export { default as IconFlagSpain } from './IconFlagSpain';

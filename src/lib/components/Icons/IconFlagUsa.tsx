@@ -15,7 +15,7 @@ const SvgIconFlagEua = ({
     width={size}
     {...props}
   >
-    <title>flag eua</title>
+    <title>flag usa</title>
     <path
       data-name="Caminho 3857"
       d="M38.859 25.377a1.81 1.81 0 0 1-1.81 1.809H1.809A1.808 1.808 0 0 1 0 25.377V1.807A1.81 1.81 0 0 1 1.809 0h35.24a1.812 1.812 0 0 1 1.81 1.807Z"

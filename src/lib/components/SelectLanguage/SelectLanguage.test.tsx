@@ -9,7 +9,7 @@ describe('<SelectLanguage />', () => {
   });
   test('should render en-US flag for the selectLanguage by prop', () => {
     render(<SelectLanguage locale="en-US" />);
-    expect(screen.getByTitle('flag eua')).toBeInTheDocument();
+    expect(screen.getByTitle('flag usa')).toBeInTheDocument();
   });
   test('should render the default img (pt-br) when empty prop is provided', () => {
     render(<SelectLanguage />);
@@ -18,8 +18,8 @@ describe('<SelectLanguage />', () => {
   test('should render the en-US flag (after clicking/selecting)', () => {
     render(<SelectLanguage />);
     userEvent.click(screen.getByTitle('flag brazil'));
-    userEvent.click(screen.getByTitle('flag eua'));
-    expect(screen.getByTitle('flag eua')).toBeInTheDocument();
+    userEvent.click(screen.getByTitle('flag usa'));
+    expect(screen.getByTitle('flag usa')).toBeInTheDocument();
   });
   test('should render the es-ES flag (after clicking/selecting)', () => {
     render(<SelectLanguage />);
@@ -38,7 +38,7 @@ describe('<SelectLanguage />', () => {
     expect(dispatchFunction).toHaveBeenCalledTimes(2);
     userEvent.click(screen.getByTitle('flag spain'));
 
-    userEvent.click(screen.getByTitle('flag eua'));
+    userEvent.click(screen.getByTitle('flag usa'));
     expect(dispatchFunction).toHaveBeenCalled();
     expect(dispatchFunction).toHaveBeenCalledTimes(3);
   });

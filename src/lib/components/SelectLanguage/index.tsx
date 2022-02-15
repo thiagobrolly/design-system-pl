@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as S from './styles';
-import { IconFlagBrazil, IconFlagEua, IconFlagSpain } from '../Icons';
+import { IconFlagBrazil, IconFlagUsa, IconFlagSpain } from '../Icons';
 
 export const localeOptions = [
   {
@@ -11,7 +11,7 @@ export const localeOptions = [
   {
     id: 1,
     localeValue: 'en-US',
-    image: <IconFlagEua id="select-list_image_itens_en-US" />,
+    image: <IconFlagUsa id="select-list_image_itens_en-US" />,
   },
   {
     id: 2,
