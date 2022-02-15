@@ -1,4 +1,9 @@
-import React, { useState, InputHTMLAttributes } from 'react';
+import React, {
+  useState,
+  InputHTMLAttributes,
+  forwardRef,
+  ForwardRefRenderFunction,
+} from 'react';
 import { IconUser, IconSearch, IconEye, IconClosedEye } from '../Icons';
 import * as S from './styles';
 
@@ -15,20 +20,26 @@ export type TextFieldProps = {
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const TextField = ({
-  icon,
-  iconPosition = 'left',
-  inputType = 'text',
-  label,
-  name,
-  initialValue = '',
-  error,
-  disabled = false,
-  iconDefault = false,
-  outline = false,
-  onInput,
-  ...props
-}: TextFieldProps) => {
+const TextFieldBase: ForwardRefRenderFunction<
+  HTMLInputElement,
+  TextFieldProps
+> = (
+  {
+    icon,
+    iconPosition = 'left',
+    inputType = 'text',
+    label,
+    name,
+    initialValue = '',
+    error,
+    disabled = false,
+    iconDefault = false,
+    outline = false,
+    onInput,
+    ...props
+  },
+  ref,
+) => {
   const [value, setValue] = useState(initialValue);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -94,6 +105,7 @@ export const TextField = ({
           name={name}
           autoComplete="on"
           placeholder=" "
+          ref={ref}
           {...(label ? { id: name } : {})}
         />
         {!!label && (
@@ -111,3 +123,5 @@ export const TextField = ({
     </S.Wrapper>
   );
 };
+
+export const TextField = forwardRef(TextFieldBase);
