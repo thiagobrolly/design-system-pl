@@ -257,7 +257,7 @@ const App: React.FC = () => {
           labelArialabel="label-password"
         />
       </Card>
-      <Card title="Search Input Test" showTitle fullWidth>
+      <Card title="Search Input Test" fullWidth>
         <div style={{ width: 600, padding: 10 }}>
           <SearchInput
             outline

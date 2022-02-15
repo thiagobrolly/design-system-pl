@@ -6,7 +6,7 @@ import {
 } from '../../../utils/mocks/fetchDataMock';
 
 export default {
-  title: 'Form/SearchInput',
+  title: 'Components/SearchInput',
   component: SearchInput,
   args: {
     disabled: false,
