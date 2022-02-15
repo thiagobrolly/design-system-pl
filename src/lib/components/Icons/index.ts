@@ -9,3 +9,6 @@ export { default as IconAlertTriangle } from './IconAlertTriangle';
 export { default as IconEye } from './IconEye';
 export { default as IconClosedEye } from './IconClosedEye';
 export { default as IconArrow } from './IconArrow';
+export { default as IconFlagBrazil } from './IconFlagBrazil';
+export { default as IconFlagUsa } from './IconFlagUsa';
+export { default as IconFlagSpain } from './IconFlagSpain';
