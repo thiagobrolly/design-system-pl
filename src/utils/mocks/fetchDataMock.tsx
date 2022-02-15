@@ -27,13 +27,23 @@ export const searchUserDataMock = [
   'Matheus Morais10',
 ];
 
-// export type searchUserDataMockProps = string[];
+export const fetchDataMock = (searchPhrase: string) => {
+  const searchResult = searchUserDataMock.filter((option) =>
+    option.toLowerCase().includes(searchPhrase.toLowerCase()),
+  );
+  if (searchResult.length > 0) {
+    return true;
+  }
+  return false;
+};
 
-// export type searchUserDataMockProps = {
-//   id: string;
-//   name: string;
-//   email: string;
-// }[];
+export const childrenMock = (
+  <>
+    <p>
+      Sucesso. Aqui deve-se passar o children dinâmico e corretamente filtrado
+    </p>
+  </>
+);
 
 // export const searchUserDataMock = [
 //   { id: '01', name: 'Manoel Pereira', email: 'manoel@paylivre.com' },

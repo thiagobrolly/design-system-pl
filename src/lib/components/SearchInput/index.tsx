@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
 import * as S from './styles';
-import { SearchInputProps } from './types';
-import ResultsContainer from './ResultContainer';
-
 import { IconSearch } from '../Icons';
 
-export const SearchInput: React.FC<SearchInputProps> = ({
-  searchInputType = 'outline',
+export type SearchInputProps = {
+  fetchData: (value: string) => boolean;
+  children: React.ReactNode;
+  outline?: boolean;
+  disabled?: boolean;
+  name?: string;
+  label?: string;
+  initialValue?: string;
+  errorMessage?: string;
+  readyOnly?: boolean;
+  autocomplete?: boolean;
+};
+
+export const SearchInput = ({
+  fetchData,
+  outline = false,
   label,
-  defaultErrorMessage,
+  initialValue = '',
+  errorMessage = 'Registro não encontrado',
   readyOnly,
   autocomplete,
-  inputId,
-  inputArialabel,
-  inputName,
-  labelId,
-  labelArialabel,
-  options,
+  name,
+  children,
   ...props
-}) => {
-  const [resultList, setResultList] = useState<Array<string>>([]);
-  const [wordSearched, setWordSearched] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+}: SearchInputProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState(initialValue);
+  const [currentErrorMessage, setCurrentErrorMessage] = useState('');
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value) {
@@ -31,26 +39,22 @@ export const SearchInput: React.FC<SearchInputProps> = ({
     }
   };
 
-  const filterResult = (searchPhrase: string) => {
-    return options.filter((option) =>
-      option.toLowerCase().includes(searchPhrase.toLowerCase()),
-    );
-  };
-
+  // Sets the value. Sets the error msg (if no entry was found).
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setWordSearched(e.target.value);
-    if (e.target.value.length >= 3) {
-      const searchResponse = filterResult(e.target.value);
-      if (searchResponse.length > 0) {
-        setResultList(searchResponse);
-        setErrorMessage('');
+    const newValue = e.target.value;
+    setValue(newValue);
+    if (newValue.length >= 3) {
+      const foundData = !!fetchData && fetchData(newValue);
+      if (foundData) {
+        setCurrentErrorMessage('');
+        setIsOpen(true);
       } else {
-        setErrorMessage(defaultErrorMessage);
-        setResultList([]);
+        setCurrentErrorMessage(errorMessage);
+        setIsOpen(false);
       }
     } else {
-      setResultList([]);
-      setErrorMessage('');
+      setCurrentErrorMessage('');
+      setIsOpen(false);
     }
   };
 
@@ -58,37 +62,33 @@ export const SearchInput: React.FC<SearchInputProps> = ({
     <S.Wrapper>
       <S.InputWrapper>
         <S.Input
-          id={inputId}
-          aria-label={inputArialabel}
-          name={inputName}
+          {...(name ? { id: name } : { id: 'search-input-defaultID' })}
           type="search"
-          searchInputType={searchInputType}
+          outline={outline}
           onBlur={handleBlur}
           onChange={handleChange}
-          value={wordSearched}
-          errorMessage={errorMessage}
+          value={value}
+          errorMessage={currentErrorMessage}
           readOnly={readyOnly}
           autoComplete={autocomplete ? 'on' : 'off'}
           {...props}
         />
         <S.Label
-          id={labelId}
-          htmlFor={inputId}
-          aria-label={labelArialabel}
-          errorMessage={errorMessage}
+          htmlFor={name || 'search-input-defaultID'}
+          errorMessage={currentErrorMessage}
         >
           {label}
         </S.Label>
-        {errorMessage && <S.ErrorMessage>{errorMessage}</S.ErrorMessage>}
+        {currentErrorMessage && (
+          <S.ErrorMessage>{currentErrorMessage}</S.ErrorMessage>
+        )}
         <S.LeftIconContainer className="iconDiv">
           <IconSearch size={16} color="rgba(168, 168, 168, 0.47)" />
         </S.LeftIconContainer>
       </S.InputWrapper>
-      <ResultsContainer
-        resultList={resultList}
-        setWordSearched={setWordSearched}
-        setResultList={setResultList}
-      />
+      {isOpen && (
+        <S.DropdownList aria-label="dropdown-list">{children}</S.DropdownList>
+      )}
     </S.Wrapper>
   );
 };

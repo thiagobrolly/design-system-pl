@@ -1,39 +1,56 @@
 import { Meta, Story } from '@storybook/react';
-import { SearchInput } from '.';
-import { SearchInputProps } from './types';
-import { searchUserDataMock } from './searchUserDataMock';
+import { SearchInput, SearchInputProps } from '.';
+import {
+  fetchDataMock,
+  childrenMock,
+} from '../../../utils/mocks/fetchDataMock';
 
 export default {
   title: 'Form/SearchInput',
   component: SearchInput,
   args: {
     disabled: false,
+    label: 'Buscar usuário',
   },
 } as Meta;
 
 export const Filled: Story<SearchInputProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args} />
+    <SearchInput {...args}>{childrenMock}</SearchInput>
   </div>
 );
 export const Outline: Story<SearchInputProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args} />
+    <SearchInput {...args}>{childrenMock}</SearchInput>
+  </div>
+);
+export const FilledDisabled: Story<SearchInputProps> = (args) => (
+  <div style={{ maxWidth: 500, padding: 15 }}>
+    <SearchInput {...args}>{childrenMock}</SearchInput>
+  </div>
+);
+
+export const OutlineDisabled: Story<SearchInputProps> = (args) => (
+  <div style={{ maxWidth: 500, padding: 15 }}>
+    <SearchInput {...args}>{childrenMock}</SearchInput>
   </div>
 );
 
 Filled.args = {
-  searchInputType: 'filled',
-  label: 'Buscar usuário',
-  inputId: 'searchInput-filled',
-  defaultErrorMessage: 'Registro não encontrado',
-  options: searchUserDataMock,
+  outline: false,
+  fetchData: fetchDataMock,
 };
 
 Outline.args = {
-  searchInputType: 'outline',
-  label: 'Buscar usuário',
-  inputId: 'searchInput-outline',
-  defaultErrorMessage: 'Registro não encontrado',
-  options: searchUserDataMock,
+  outline: true,
+  fetchData: fetchDataMock,
+};
+
+FilledDisabled.args = {
+  disabled: true,
+};
+
+OutlineDisabled.args = {
+  outline: true,
+  disabled: true,
 };

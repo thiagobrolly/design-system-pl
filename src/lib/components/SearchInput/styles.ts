@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
+import { SearchInputProps } from '.';
 import { theme } from '../../styles/theme';
-import { InputProps, LabelProps } from './types';
+
+type InputProps = Pick<SearchInputProps, 'outline' | 'errorMessage'>;
+type LabelProps = Pick<SearchInputProps, 'errorMessage'>;
 
 const searchInputTheme = {
   filled: (errorMessage: string | undefined) => css`
@@ -108,8 +111,8 @@ const searchInputTheme = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ searchInputType, errorMessage }) => css`
-    ${searchInputTheme[searchInputType || 'filled'](errorMessage)}
+  ${({ outline, errorMessage }) => css`
+    ${searchInputTheme[outline ? 'outline' : 'filled'](errorMessage)}
     box-sizing: border-box;
     width: 100%;
     height: 56px;
@@ -130,7 +133,7 @@ export const Wrapper = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  max-width: max-content;
+  min-width: 35vw;
   position: sticky;
 `;
 
@@ -163,4 +166,35 @@ export const ErrorMessage = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: ${theme.color.error};
+`;
+
+export const DropdownList = styled.div`
+  position: absolute;
+  background-color: ${theme.color.white};
+  box-shadow: 0px 3px 10px 0px ${theme.color.gray_500};
+  border-radius: 1rem;
+  z-index: ${theme.layers.alwayOnTop};
+  left: 0;
+  padding: 24px 16px;
+  margin-top: 4px;
+  width: max-content;
+  max-height: 40rem;
+  // scrollbar
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${theme.color.secondary_400};
+  }
+  ::-webkit-scrollbar-corner {
+    border-radius: 1rem;
+  }
 `;

@@ -25,7 +25,7 @@ import {
   Dropdown,
 } from './lib';
 import { dropdownChildrenMock } from './lib/components/Dropdown';
-import { searchUserDataMock } from './lib/components/SearchInput/searchUserDataMock';
+import { fetchDataMock, childrenMock } from './utils/mocks/fetchDataMock';
 
 const App: React.FC = () => {
   const [handleOpen, setHandleOpen] = useState(false);
@@ -247,16 +247,14 @@ const App: React.FC = () => {
       <Card title="Search Input Test" showTitle fullWidth>
         <div style={{ width: 600, padding: 10 }}>
           <SearchInput
-            searchInputType="outline"
-            label="Buscar"
-            options={searchUserDataMock}
-            defaultErrorMessage="Registro não encontrado"
-            inputId="form_searchInput"
-            inputArialabel="input-search"
-            labelId="form_search-label"
-            labelArialabel="label-search"
+            outline
+            fetchData={fetchDataMock}
+            label="Buscar aqui"
+            errorMessage="Registro não encontrado"
             autocomplete={false}
-          />
+          >
+            {childrenMock}
+          </SearchInput>
         </div>
       </Card>
       <Card title="Select Language" showTitle>
