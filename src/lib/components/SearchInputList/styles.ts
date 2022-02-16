@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import { SearchInputProps } from '.';
+import { SearchInputListProps } from '.';
 import { theme } from '../../styles/theme';
 
-type InputProps = Pick<SearchInputProps, 'outline' | 'errorMessage'>;
-type LabelProps = Pick<SearchInputProps, 'errorMessage'>;
+type InputProps = Pick<SearchInputListProps, 'outline' | 'errorMessage'>;
+type LabelProps = Pick<SearchInputListProps, 'errorMessage'>;
 
-const searchInputTheme = {
+const searchInputListTheme = {
   filled: (errorMessage: string | undefined) => css`
     background-color: ${theme.color.white};
     color: rgba(0, 0, 0, 0.87);
@@ -112,7 +112,7 @@ const searchInputTheme = {
 
 export const Input = styled.input<InputProps>`
   ${({ outline, errorMessage }) => css`
-    ${searchInputTheme[outline ? 'outline' : 'filled'](errorMessage)}
+    ${searchInputListTheme[outline ? 'outline' : 'filled'](errorMessage)}
     box-sizing: border-box;
     width: 100%;
     height: 56px;

@@ -1,38 +1,38 @@
 import { Meta, Story } from '@storybook/react';
-import { SearchInput, SearchInputProps } from '.';
+import { SearchInputList, SearchInputListProps } from '.';
 import {
   fetchDataMock,
   childrenMock,
 } from '../../../utils/mocks/fetchDataMock';
 
 export default {
-  title: 'Components/SearchInput',
-  component: SearchInput,
+  title: 'Components/SearchInputList',
+  component: SearchInputList,
   args: {
     disabled: false,
     label: 'Buscar usuário',
   },
 } as Meta;
 
-export const Filled: Story<SearchInputProps> = (args) => (
+export const Filled: Story<SearchInputListProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args}>{childrenMock}</SearchInput>
+    <SearchInputList {...args}>{childrenMock}</SearchInputList>
   </div>
 );
-export const Outline: Story<SearchInputProps> = (args) => (
+export const Outline: Story<SearchInputListProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args}>{childrenMock}</SearchInput>
+    <SearchInputList {...args}>{childrenMock}</SearchInputList>
   </div>
 );
-export const FilledDisabled: Story<SearchInputProps> = (args) => (
+export const FilledDisabled: Story<SearchInputListProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args}>{childrenMock}</SearchInput>
+    <SearchInputList {...args}>{childrenMock}</SearchInputList>
   </div>
 );
 
-export const OutlineDisabled: Story<SearchInputProps> = (args) => (
+export const OutlineDisabled: Story<SearchInputListProps> = (args) => (
   <div style={{ maxWidth: 500, padding: 15 }}>
-    <SearchInput {...args}>{childrenMock}</SearchInput>
+    <SearchInputList {...args}>{childrenMock}</SearchInputList>
   </div>
 );
 

@@ -1,16 +1,28 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SearchInput } from '.';
+import { SearchInputList } from '.';
 
-describe('<SearchInput />', () => {
-  test('should correctly render the SearchInput component', () => {
+describe('<SearchInputList />', () => {
+  const fetchDataMock = jest.fn();
+  test('should correctly render the SearchInputList component', () => {
     render(
-      <SearchInput label="Buscar algo" name="buscar-usuario" autocomplete />,
+      <SearchInputList
+        label="Buscar algo"
+        name="buscar-usuario"
+        autocomplete
+        fetchData={fetchDataMock}
+      >
+        <p>Sucesso</p>
+      </SearchInputList>,
     );
     expect(screen.getByLabelText(/buscar algo/i));
   });
-  test('renders the SearchInput: outline correct styles', () => {
-    render(<SearchInput outline label="Buscar algo" />);
+  test('renders the SearchInputList: outline correct styles', () => {
+    render(
+      <SearchInputList outline label="Buscar algo" fetchData={fetchDataMock}>
+        <p>Sucesso</p>
+      </SearchInputList>,
+    );
     const inputElement = screen.getByLabelText(/buscar algo/i);
     expect(inputElement).toHaveStyle('background-color: rgb(255,255,255)');
     expect(inputElement).toHaveStyle('color: rgba(0,0,0,0.74)');
@@ -18,7 +30,11 @@ describe('<SearchInput />', () => {
 
   test('Changes its value when typing', async () => {
     const fetchData = jest.fn();
-    render(<SearchInput fetchData={fetchData} label="Buscar algo" />);
+    render(
+      <SearchInputList fetchData={fetchData} label="Buscar algo">
+        <p>Sucesso</p>
+      </SearchInputList>,
+    );
 
     const inputElement = screen.getByLabelText(/buscar algo/i);
     const text = 'This is my new text';
@@ -32,7 +48,11 @@ describe('<SearchInput />', () => {
     expect(fetchData).toHaveBeenCalledWith(text);
   });
   test('Correct handleBlur behavior', () => {
-    render(<SearchInput label="buscar algo" />);
+    render(
+      <SearchInputList label="buscar algo" fetchData={fetchDataMock}>
+        <p>Sucesso</p>
+      </SearchInputList>,
+    );
     const inputElement = screen.getByLabelText(/buscar algo/i);
 
     fireEvent.focus(inputElement);
@@ -51,11 +71,9 @@ describe('<SearchInput />', () => {
       return false;
     });
     render(
-      <SearchInput
-        fetchData={fetchData}
-        label="Buscar algo"
-        children={<p>Sucesso</p>}
-      />,
+      <SearchInputList fetchData={fetchData} label="Buscar algo">
+        <p>Sucesso</p>
+      </SearchInputList>,
     );
     const inputElement = screen.getByLabelText(/buscar algo/i);
     let text = 'This';

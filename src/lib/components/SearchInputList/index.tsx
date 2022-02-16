@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import { IconSearch } from '../Icons';
 
-export type SearchInputProps = {
+export type SearchInputListProps = {
   fetchData: (value: string) => boolean;
   children: React.ReactNode;
   outline?: boolean;
@@ -15,7 +15,7 @@ export type SearchInputProps = {
   autocomplete?: boolean;
 };
 
-export const SearchInput = ({
+export const SearchInputList = ({
   fetchData,
   outline = false,
   label,
@@ -26,7 +26,7 @@ export const SearchInput = ({
   name,
   children,
   ...props
-}: SearchInputProps) => {
+}: SearchInputListProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState(initialValue);
   const [currentErrorMessage, setCurrentErrorMessage] = useState('');

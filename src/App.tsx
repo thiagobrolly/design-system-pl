@@ -14,7 +14,7 @@ import {
   Heading,
   GenericInput,
   PasswordInput,
-  SearchInput,
+  SearchInputList,
   Tooltip,
   Modal,
   Checkbox,
@@ -259,7 +259,7 @@ const App: React.FC = () => {
       </Card>
       <Card title="Search Input Test" fullWidth>
         <div style={{ width: 600, padding: 10 }}>
-          <SearchInput
+          <SearchInputList
             outline
             fetchData={fetchDataMock}
             label="Buscar aqui"
@@ -267,7 +267,7 @@ const App: React.FC = () => {
             autocomplete={false}
           >
             {childrenMock}
-          </SearchInput>
+          </SearchInputList>
         </div>
       </Card>
       <Card title="Select Language">
