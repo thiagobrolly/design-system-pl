@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
+import { SearchInputListProps } from '.';
 import { theme } from '../../styles/theme';
-import { InputProps, LabelProps } from './types';
 
-const searchInputTheme = {
+type InputProps = Pick<SearchInputListProps, 'outline' | 'errorMessage'>;
+type LabelProps = Pick<SearchInputListProps, 'errorMessage'>;
+
+const searchInputListTheme = {
   filled: (errorMessage: string | undefined) => css`
     background-color: ${theme.color.white};
     color: rgba(0, 0, 0, 0.87);
@@ -108,10 +111,10 @@ const searchInputTheme = {
 };
 
 export const Input = styled.input<InputProps>`
-  ${({ searchInputType, width, errorMessage }) => css`
-    ${searchInputTheme[searchInputType || 'filled'](errorMessage)}
+  ${({ outline, errorMessage }) => css`
+    ${searchInputListTheme[outline ? 'outline' : 'filled'](errorMessage)}
     box-sizing: border-box;
-    width: ${width};
+    width: 100%;
     height: 56px;
     border-radius: 10px;
     font-size: 16px;
@@ -125,13 +128,12 @@ export const Input = styled.input<InputProps>`
   `}
 `;
 
-export const MainContainer = styled.div`
-  //margin-top: 16px;
+export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const InputContainer = styled.div`
-  max-width: max-content;
+export const InputWrapper = styled.div`
+  min-width: 35vw;
   position: sticky;
 `;
 
@@ -164,4 +166,35 @@ export const ErrorMessage = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: ${theme.color.error};
+`;
+
+export const DropdownList = styled.div`
+  position: absolute;
+  background-color: ${theme.color.white};
+  box-shadow: 0px 3px 10px 0px ${theme.color.gray_500};
+  border-radius: 1rem;
+  z-index: ${theme.layers.alwayOnTop};
+  left: 0;
+  padding: 24px 16px;
+  margin-top: 4px;
+  width: max-content;
+  max-height: 40rem;
+  // scrollbar
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${theme.color.secondary_400};
+  }
+  ::-webkit-scrollbar-corner {
+    border-radius: 1rem;
+  }
 `;

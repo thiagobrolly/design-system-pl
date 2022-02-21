@@ -14,7 +14,7 @@ import {
   Heading,
   GenericInput,
   PasswordInput,
-  SearchInput,
+  SearchInputList,
   Tooltip,
   Modal,
   Checkbox,
@@ -25,19 +25,9 @@ import {
   Dropdown,
 } from './lib';
 import { dropdownChildrenMock } from './lib/components/Dropdown';
+import { fetchDataMock, childrenMock } from './utils/mocks/fetchDataMock';
 
 const App: React.FC = () => {
-  const userList = [
-    'Manoel Pereira',
-    'Diego Arend',
-    'Hugo Gitz',
-    'Derickson Loss',
-    'Thiago Sousa',
-    'Tatiani da Silva',
-    'Mateus Junges',
-    'Matheus Morais',
-  ];
-
   const [handleOpen, setHandleOpen] = useState(false);
 
   return (
@@ -266,19 +256,19 @@ const App: React.FC = () => {
           labelId="form_passwordInput-label"
           labelArialabel="label-password"
         />
-        <h3>SearchInput Test</h3>
-        <SearchInput
-          searchInputType="outline"
-          width="600px"
-          label="Buscar"
-          options={userList}
-          defaultErrorMessage="Registro não encontrado"
-          inputId="form_searchInput"
-          inputArialabel="input-search"
-          labelId="form_search-label"
-          labelArialabel="label-search"
-          autocomplete={false}
-        />
+      </Card>
+      <Card title="Search Input Test" fullWidth>
+        <div style={{ width: 600, padding: 10 }}>
+          <SearchInputList
+            outline
+            fetchData={fetchDataMock}
+            label="Buscar aqui"
+            errorMessage="Registro não encontrado"
+            autocomplete={false}
+          >
+            {childrenMock}
+          </SearchInputList>
+        </div>
       </Card>
       <Card title="Select Language">
         <div style={{ display: 'flex', height: '150px' }}>

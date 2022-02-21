@@ -4,7 +4,7 @@ export { Button } from './components/Button';
 export { Heading } from './components/Heading';
 export { GenericInput } from './components/GenericInput';
 export { PasswordInput } from './components/PasswordInput';
-export { SearchInput } from './components/SearchInput';
+export { SearchInputList } from './components/SearchInputList';
 export { Tooltip } from './components/Tooltip';
 export { Modal } from './components/Modal';
 export { Checkbox } from './components/Checkbox';
