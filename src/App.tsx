@@ -7,6 +7,7 @@ import {
   IconAlertTriangle,
   IconEye,
   IconClosedEye,
+  IconClose,
 } from './lib/components/Icons';
 import {
   Button,
@@ -30,34 +31,55 @@ import { fetchDataMock, childrenMock } from './utils/mocks/fetchDataMock';
 const App: React.FC = () => {
   const [handleOpen, setHandleOpen] = useState(false);
 
+  const [functionalities, setFunctionalities] = useState({});
+
+  const handleCheck = (e) => {
+    const { name, checked, value } = e.target;
+    const data = functionalities[name] || {};
+
+    data[value] = checked;
+    setFunctionalities({ ...functionalities, [name]: data });
+
+    // console.log(e.target.value);
+  };
+
+  // console.log('*** functionalities', functionalities);
+
   return (
-    <Card fullWidth title="Title" subTitle="Sub-Title">
+    <Card size="fullWidth" title="Title" subTitle="Sub-Title">
       <h1>Teste</h1>
 
-      <Card fullWidth style={{ backgroundColor: '#e3e3e3' }}>
+      <Card style={{ backgroundColor: '#e3e3e3', width: 300 }}>
+        <TextField label="Default" name="name" style={{ marginBottom: 20 }} />
         <TextField
-          label="Email exemplo"
+          label="Icon Left"
           name="email"
           inputType="email"
           iconDefault
-          outline
           style={{ marginBottom: 20 }}
         />
         <TextField
-          label="Email"
+          label="Icon Right"
           name="email"
           inputType="email"
+          iconDefault
+          iconPosition="right"
           style={{ marginBottom: 20 }}
-          // outline
+        />
+        <TextField
+          label="Icon External"
+          name="TextField"
+          icon={<Spinner />}
+          style={{ marginBottom: 20 }}
+          outline
         />
 
         <TextField
-          label="Email"
+          label="Default"
           name="email"
           inputType="email"
-          iconDefault
+          outline
           style={{ marginBottom: 20 }}
-          // placeholder=" "
         />
 
         <TextField
@@ -70,19 +92,10 @@ const App: React.FC = () => {
         />
 
         <TextField
-          label="Email"
-          name="email"
+          label="Search"
+          name="search"
           inputType="search"
           iconDefault
-          iconPosition="right"
-          style={{ marginBottom: 20 }}
-        />
-
-        <TextField
-          label="TextField"
-          name="TextField"
-          icon={<Spinner />}
-          iconPosition="right"
           style={{ marginBottom: 20 }}
         />
 
@@ -105,7 +118,7 @@ const App: React.FC = () => {
         />
       </Card>
 
-      <Card fullWidth>
+      <Card size="fullWidth">
         <IconPlusCircle size={25} color="green" />
         <IconUser size={25} color="green" />
         <IconSearch size={25} color="green" />
@@ -113,6 +126,7 @@ const App: React.FC = () => {
         <IconAlertTriangle size={25} color="green" />
         <IconEye size={25} color="green" />
         <IconClosedEye size={25} color="green" />
+        <IconClose size={20} color="green" />
         <Spinner />
       </Card>
 
@@ -122,19 +136,29 @@ const App: React.FC = () => {
             name="category"
             label="Action"
             labelFor="action"
-            isChecked
+            value="action"
+            // isChecked
+            onChange={handleCheck}
           />
         </div>
         <div style={{ padding: 10 }}>
           <Checkbox
-            disabled
+            // disabled
             name="category"
             label="Adventure"
             labelFor="adventure"
+            value="adventure"
+            onChange={handleCheck}
           />
         </div>
         <div style={{ padding: 10 }}>
-          <Checkbox name="category" label="Strategy" labelFor="strategy" />
+          <Checkbox
+            name="category"
+            label="Strategy"
+            labelFor="strategy"
+            value="strategy"
+            onChange={handleCheck}
+          />
         </div>
       </>
 
@@ -142,7 +166,23 @@ const App: React.FC = () => {
         <span>Content</span>
       </Tooltip>
 
-      <Card fullWidth>
+      <Button onClick={() => setHandleOpen(true)}>Open modal</Button>
+
+      <Modal
+        isOpen={handleOpen}
+        viewCloseButton
+        onRequestClose={setHandleOpen}
+        shouldCloseOnOverlayClick
+        // shouldCloseOnEscClick={false}
+      >
+        <div style={{ width: '880px', height: '500px' }}>Content</div>
+
+        <button type="button" onClick={() => setHandleOpen(false)}>
+          Click
+        </button>
+      </Modal>
+
+      <Card size="fullWidth">
         <div
           style={{
             display: 'flex',
@@ -199,16 +239,6 @@ const App: React.FC = () => {
         </div>
       </Card>
 
-      <Button onClick={() => setHandleOpen(true)}>Open modal</Button>
-      <Modal
-        shouldCloseOnOverlayClick
-        isOpen={handleOpen}
-        onRequestClose={setHandleOpen}
-        viewCloseButton
-      >
-        Teste Modal
-      </Modal>
-
       <Heading children="teste" uppercase />
 
       <Separator />
@@ -218,7 +248,7 @@ const App: React.FC = () => {
         </Dropdown>
       </Card>
 
-      <Card title="Inputs" fullWidth>
+      <Card title="Inputs" size="fullWidth">
         <h3>TextField</h3>
 
         <h3>GenericInput Test</h3>
@@ -257,7 +287,7 @@ const App: React.FC = () => {
           labelArialabel="label-password"
         />
       </Card>
-      <Card title="Search Input Test" fullWidth>
+      <Card title="Search Input Test" size="fullWidth">
         <div style={{ width: 600, padding: 10 }}>
           <SearchInputList
             outline

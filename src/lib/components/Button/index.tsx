@@ -12,6 +12,11 @@ export type ButtonProps = {
   size?: 'small' | 'medium' | 'large';
   icon?: boolean;
   fullWidth?: boolean;
+  margin?: string;
+  marginTop?: string;
+  marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
   as?: React.ElementType;
 } & ButtonTypes;
 
@@ -21,6 +26,11 @@ export const Button = ({
   icon = false,
   fullWidth = false,
   size = 'medium',
+  margin = '',
+  marginTop = '',
+  marginBottom = '',
+  marginLeft = '',
+  marginRight = '',
   ...props
 }: ButtonProps) => (
   <S.Button
@@ -28,6 +38,11 @@ export const Button = ({
     size={size}
     appearance={appearance}
     icon={icon}
+    margin={margin}
+    marginTop={marginTop}
+    marginBottom={marginBottom}
+    marginLeft={marginLeft}
+    marginRight={marginRight}
     {...props}
   >
     {icon && <IconPlusCircle aria-label="icon plus" color="CurrentColor" />}

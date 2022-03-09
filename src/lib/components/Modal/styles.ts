@@ -1,33 +1,69 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 type OverlayProps = {
-  isOpen: boolean;
   shouldCloseOnOverlayClick?: boolean;
 };
 
-export const Overlay = styled.div<OverlayProps>`
+type ModalProps = {
+  shouldCloseOnEscClick: boolean;
+  isOpen: boolean;
+};
+
+const modalModifiers = {
+  open: () => css`
+    opacity: 1;
+    visibility: visible;
+
+    ${Content} {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  `,
+
+  close: () => css`
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    ${Content} {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+  `,
+};
+
+export const Modal = styled.div<ModalProps>`
   position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: ${theme.layers.modal};
+  transition: ${theme.transition.default};
+
+  ${({ isOpen }) => css`
+    ${isOpen && modalModifiers.open()}
+    ${!isOpen && modalModifiers.close()}
+  `}
+`;
+
+export const Overlay = styled.div<OverlayProps>`
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeModal 380ms ease-in-out 1;
-  @keyframes fadeIn {
-    from {
-      background-color: rgba(0, 0, 0, 0);
-    }
-    to {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  }
+  z-index: ${theme.layers.overlay};
 `;
 
-export const Container = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,32 +71,38 @@ export const Container = styled.div`
   background-color: #fff;
   color: #1e1d24;
   border-radius: 8px;
-  animation: slideIn 350ms cubic-bezier(0.42, 0, 0.21, 1) 1;
+  z-index: 99999;
+  transition: ${theme.transition.default};
+  /* animation: slideIn 0.5s ease-in-out;
 
   @keyframes slideIn {
     from {
-      transform: translateY(-120px);
-      opacity: 0;
-    }
-    25% {
+      transform: translateY(-150px);
       opacity: 0;
     }
     to {
       transform: translateY(0);
       opacity: 1;
     }
-  }
+  } */
 `;
 
 export const Close = styled.button`
-  cursor: pointer;
   align-self: flex-end;
   margin-bottom: 10px;
-  color: #1e1d24;
+  color: ${theme.color.primary};
   background: transparent;
   border: 0;
-  font-size: 16px;
+  transition: 0.3s;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
   &:hover {
-    color: rgba(0, 0, 0, 0.7);
+    background-color: ${theme.color.gray_500};
   }
 `;

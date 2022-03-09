@@ -8,13 +8,13 @@ export default {
   component: Modal,
   args: {
     shouldCloseOnOverlayClick: false,
+    shouldCloseOnEscClick: true,
     children: 'Modal',
     viewCloseButton: false,
   },
 } as Meta;
 
 export const StartsOpen: Story<ModalProps> = (args) => <Modal {...args} />;
-export const CloseButton: Story<ModalProps> = (args) => <Modal {...args} />;
 
 export const StartsClosed: Story<ModalProps> = (args) => {
   const [isOpen, setOpen] = useState(args.isOpen);
@@ -38,10 +38,5 @@ StartsOpen.args = {
 
 StartsClosed.args = {
   isOpen: false,
-  viewCloseButton: true,
-};
-
-CloseButton.args = {
-  isOpen: true,
   viewCloseButton: true,
 };

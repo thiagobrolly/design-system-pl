@@ -12,3 +12,4 @@ export { default as IconArrow } from './IconArrow';
 export { default as IconFlagBrazil } from './IconFlagBrazil';
 export { default as IconFlagUsa } from './IconFlagUsa';
 export { default as IconFlagSpain } from './IconFlagSpain';
+export { default as IconClose } from './IconClose';

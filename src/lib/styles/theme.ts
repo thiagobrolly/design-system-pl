@@ -53,7 +53,7 @@ export const theme = {
   font: {
     family: {
       default: 'Avenir Next LT Pro Regular, Arial, Helvetica, sans-serif',
-      defaultBold: 'Avenir Next LT Pro Bold',
+      defaultBold: 'Avenir Next LT Pro Bold, Arial, Helvetica, sans-serif',
       defaultItalico: 'Avenir Next LT Pro It',
       primary: "'Open Sans', sans-serif",
       secondary: "'Montserrat', sans-serif",

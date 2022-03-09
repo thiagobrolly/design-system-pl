@@ -125,8 +125,18 @@ const buttonTheme = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  ${({ appearance, size, fullWidth, icon }) => css`
-    display: inline-flex;
+  ${({
+    appearance,
+    size,
+    fullWidth,
+    icon,
+    margin,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
+  }) => css`
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: ${theme.spacings.xsmall};
@@ -136,7 +146,11 @@ export const Button = styled.button<ButtonProps>`
     border-radius: ${theme.border.radius};
     text-decoration: none;
     width: fit-content;
-
+    margin: ${margin};
+    margin-top: ${marginTop};
+    margin-bottom: ${marginBottom};
+    margin-left: ${marginLeft};
+    margin-right: ${marginRight};
     cursor: pointer;
     ${buttonTheme[appearance!]()}
     ${buttonModifiers[size!]()}

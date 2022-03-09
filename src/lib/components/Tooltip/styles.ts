@@ -75,6 +75,7 @@ export const Content = styled.div<ContentProps>`
     position: absolute;
     z-index: ${theme.layers.alwayOnTop};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    top: 27px;
 
     ${positionContent[position!]()}
   `}
