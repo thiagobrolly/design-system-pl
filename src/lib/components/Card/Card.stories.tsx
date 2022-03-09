@@ -7,7 +7,12 @@ export default {
   args: {
     title: 'Title',
     subTitle: 'Sub Title',
-    fullWidth: false,
+    size: 'medium',
+    margin: '',
+    marginTop: '',
+    marginBottom: '',
+    marginLeft: '',
+    marginRight: '',
   },
 } as Meta;
 

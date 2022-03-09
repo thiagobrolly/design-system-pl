@@ -8,6 +8,11 @@ export default {
     disabled: false,
     icon: false,
     fullWidth: false,
+    margin: '',
+    marginTop: '',
+    marginBottom: '',
+    marginLeft: '',
+    marginRight: '',
   },
   argTypes: {
     as: { type: 'symbol' },

@@ -4,7 +4,13 @@ import React, {
   forwardRef,
   ForwardRefRenderFunction,
 } from 'react';
-import { IconUser, IconSearch, IconEye, IconClosedEye } from '../Icons';
+import {
+  IconUser,
+  IconSearch,
+  IconEye,
+  IconClosedEye,
+  IconClose,
+} from '../Icons';
 import * as S from './styles';
 
 export type TextFieldProps = {
@@ -56,18 +62,38 @@ const TextFieldBase: ForwardRefRenderFunction<
     !!onInput && onInput(newValue);
   };
   return (
-    <S.Wrapper disabled={disabled} error={!!error} outline={outline} {...props}>
+    <S.Wrapper
+      className="wrapper-input"
+      disabled={disabled}
+      error={!!error}
+      outline={outline}
+      inputType={inputType}
+      {...props}
+    >
       <S.InputWrapper>
         {!iconDefault && !!icon && (
           <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>
         )}
 
         {iconDefault && (
-          <S.Icon iconPosition={iconPosition} className="icon-wrapper">
+          <S.Icon
+            iconPosition={iconPosition}
+            icon={!!icon}
+            className="icon-wrapper"
+          >
             {inputType === 'email' ? (
-              <IconUser size={5} color="currentColor" />
+              <IconUser size={20} color="currentColor" />
             ) : inputType === 'search' ? (
-              <IconSearch size={20} color="currentColor" />
+              value.length === 0 ? (
+                <IconSearch size={20} color="currentColor" />
+              ) : (
+                <IconClose
+                  size={16}
+                  color="currentColor"
+                  className="search-clear"
+                  onClick={() => setValue('')}
+                />
+              )
             ) : inputType === 'password' ? (
               showPassword ? (
                 <IconEye
@@ -103,9 +129,13 @@ const TextFieldBase: ForwardRefRenderFunction<
           iconPosition={iconPosition}
           disabled={disabled}
           name={name}
-          autoComplete="on"
+          // autoComplete="on"
           placeholder=" "
           ref={ref}
+          className="input"
+          iconDefault={iconDefault}
+          icon={icon}
+          inputType={inputType}
           {...(label ? { id: name } : {})}
         />
         {!!label && (
@@ -114,6 +144,7 @@ const TextFieldBase: ForwardRefRenderFunction<
             iconPosition={iconPosition}
             iconDefault={iconDefault}
             icon={icon}
+            inputType={inputType}
           >
             <S.Label htmlFor={name}>{label}</S.Label>
           </S.LabelWrapper>

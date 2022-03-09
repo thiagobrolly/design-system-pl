@@ -5,14 +5,14 @@ export default {
   title: 'Components/Checkbox',
   component: Checkbox,
   args: {},
-  argTypes: {
-    onCheck: { action: 'checked' },
-  },
+  // argTypes: {
+  //   onclick: { action: 'checked' },
+  // },
 } as Meta;
 
 export const Default: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
 Default.args = {
-  isChecked: false,
+  // isChecked: false,
   label: '',
   labelFor: '',
 };
@@ -24,7 +24,7 @@ export const Example: Story<CheckboxProps> = (args) => (
         name="category"
         label="Action"
         labelFor="action"
-        isChecked
+        // isChecked
         {...args}
       />
     </div>
