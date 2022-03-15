@@ -1,8 +1,8 @@
 import React, {
   useState,
   InputHTMLAttributes,
-  forwardRef,
-  ForwardRefRenderFunction,
+  // forwardRef,
+  // ForwardRefRenderFunction,
 } from 'react';
 import {
   IconUser,
@@ -14,7 +14,10 @@ import {
 import * as S from './styles';
 
 export type TextFieldProps = {
-  onInput?: (value: string) => void;
+  onInput?: (
+    value: string | ReadonlyArray<string> | number | undefined,
+  ) => void;
+  handleClear?: () => void;
   label?: string;
   initialValue?: string;
   icon?: React.ReactNode;
@@ -26,26 +29,22 @@ export type TextFieldProps = {
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const TextFieldBase: ForwardRefRenderFunction<
-  HTMLInputElement,
-  TextFieldProps
-> = (
-  {
-    icon,
-    iconPosition = 'left',
-    inputType = 'text',
-    label,
-    name,
-    initialValue = '',
-    error,
-    disabled = false,
-    iconDefault = false,
-    outline = false,
-    onInput,
-    ...props
-  },
-  ref,
-) => {
+export const TextField = ({
+  icon,
+  iconPosition = 'left',
+  inputType = 'text',
+  label,
+  name,
+  initialValue = '',
+  autoComplete = 'on',
+  error,
+  disabled = false,
+  iconDefault = false,
+  outline = false,
+  onInput,
+  handleClear,
+  ...props
+}: TextFieldProps) => {
   const [value, setValue] = useState(initialValue);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -55,12 +54,17 @@ const TextFieldBase: ForwardRefRenderFunction<
     }
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
     setValue(newValue);
-
     !!onInput && onInput(newValue);
   };
+
+  const handelete = () => {
+    !!handleClear && handleClear();
+    setValue('');
+  };
+
   return (
     <S.Wrapper
       className="wrapper-input"
@@ -91,7 +95,7 @@ const TextFieldBase: ForwardRefRenderFunction<
                   size={16}
                   color="currentColor"
                   className="search-clear"
-                  onClick={() => setValue('')}
+                  onClick={handelete}
                 />
               )
             ) : inputType === 'password' ? (
@@ -124,14 +128,14 @@ const TextFieldBase: ForwardRefRenderFunction<
                 : 'password'
               : inputType
           }
-          onChange={onChange}
+          onChange={handleChange}
           value={value}
           iconPosition={iconPosition}
           disabled={disabled}
           name={name}
-          // autoComplete="on"
+          autoComplete={autoComplete}
           placeholder=" "
-          ref={ref}
+          // ref={ref}
           className="input"
           iconDefault={iconDefault}
           icon={icon}
@@ -154,5 +158,3 @@ const TextFieldBase: ForwardRefRenderFunction<
     </S.Wrapper>
   );
 };
-
-export const TextField = forwardRef(TextFieldBase);
