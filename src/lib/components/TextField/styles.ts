@@ -63,6 +63,11 @@ export const Input = styled.input<IconPositionProps>`
 
     padding-top: 1rem;
 
+    // hide eye password Microsoft Edge
+    ::-ms-reveal {
+      display: none;
+    }
+
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 30px #e1faff inset;
       transition: background-color 5000s ease-in-out 0s;
