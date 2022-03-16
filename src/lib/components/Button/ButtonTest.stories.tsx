@@ -8,6 +8,7 @@ export default {
     disabled: false,
     icon: false,
     fullWidth: false,
+    linkStyle: false,
     margin: '',
     marginTop: '',
     marginBottom: '',
@@ -65,4 +66,14 @@ asLink.args = {
 
 asLink.argTypes = {
   as: { type: 'string' },
+};
+
+export const LinkChildren: Story<ButtonProps> = (args) => (
+  <Button {...args}>
+    <a href="/">Link</a>
+  </Button>
+);
+LinkChildren.args = {
+  appearance: 'secondary',
+  linkStyle: true,
 };
