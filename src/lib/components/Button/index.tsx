@@ -17,6 +17,7 @@ export type ButtonProps = {
   marginBottom?: string;
   marginLeft?: string;
   marginRight?: string;
+  linkStyle?: boolean;
   as?: React.ElementType;
 } & ButtonTypes;
 
@@ -31,6 +32,7 @@ export const Button = ({
   marginBottom = '',
   marginLeft = '',
   marginRight = '',
+  linkStyle = false,
   ...props
 }: ButtonProps) => (
   <S.Button
@@ -38,6 +40,7 @@ export const Button = ({
     size={size}
     appearance={appearance}
     icon={icon}
+    linkStyle={linkStyle}
     margin={margin}
     marginTop={marginTop}
     marginBottom={marginBottom}

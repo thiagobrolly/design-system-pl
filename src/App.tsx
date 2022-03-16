@@ -48,8 +48,11 @@ const App: React.FC = () => {
   return (
     <Card size="fullWidth" title="Title" subTitle="Sub-Title">
       <h1>Teste</h1>
+      <Button appearance="outline" linkStyle disabled>
+        <a href="/">Teste</a>
+      </Button>
 
-      <Card style={{ backgroundColor: '#e3e3e3', width: 300 }}>
+      <Card style={{ backgroundColor: '#e3e3e3' }}>
         <TextField label="Default" name="name" style={{ marginBottom: 20 }} />
         <TextField
           label="Icon Left"
@@ -191,6 +194,9 @@ const App: React.FC = () => {
             marginBottom: '10px',
           }}
         >
+          <Button appearance="outline" linkStyle disabled>
+            <a href="/">Teste</a>
+          </Button>
           <Button appearance="primary" children="Primary" />
           <Button appearance="primary" children="Primary" icon />
           <Button appearance="primary" children="Primary" disabled />

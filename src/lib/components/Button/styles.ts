@@ -45,6 +45,7 @@ const buttonTheme = {
     }
 
     &:disabled {
+      pointer-events: none;
       cursor: not-allowed;
       color: ${theme.color.gray_800};
     }
@@ -62,6 +63,7 @@ const buttonTheme = {
       background: ${theme.color.secondary_100};
     }
     &:disabled {
+      pointer-events: none;
       cursor: not-allowed;
       color: ${theme.color.white};
       background: ${theme.color.gray_800};
@@ -81,6 +83,7 @@ const buttonTheme = {
       border-color: ${theme.color.gray_800};
     }
     &:disabled {
+      pointer-events: none;
       cursor: not-allowed;
       color: ${theme.color.gray_800};
       border-color: ${theme.color.gray_800};
@@ -99,6 +102,7 @@ const buttonTheme = {
       filter: brightness(100%); // color default
     }
     &:disabled {
+      pointer-events: none;
       cursor: not-allowed;
       color: ${theme.color.white};
       background: ${theme.color.gray_800};
@@ -117,6 +121,7 @@ const buttonTheme = {
       filter: brightness(100%); // color default
     }
     &:disabled {
+      pointer-events: none;
       cursor: not-allowed;
       color: ${theme.color.white};
       background: ${theme.color.gray_800};
@@ -135,11 +140,12 @@ export const Button = styled.button<ButtonProps>`
     marginBottom,
     marginLeft,
     marginRight,
+    linkStyle,
   }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: ${theme.spacings.xsmall};
+    padding: ${linkStyle ? '0' : theme.spacings.xsmall};
     font-weight: ${theme.font.weight.regular};
     text-align: center;
     transition: background 0.3s, filter 0.3s;
@@ -153,8 +159,23 @@ export const Button = styled.button<ButtonProps>`
     margin-right: ${marginRight};
     cursor: pointer;
     ${buttonTheme[appearance!]()}
-    ${buttonModifiers[size!]()}
+    ${!linkStyle && buttonModifiers[size!]()}
     ${!!fullWidth && buttonModifiers.fullWidth()}
     ${!!icon && buttonModifiers.withIcon()}
+
+    > span {
+      width: fit-content;
+      height: fit-content;
+
+      > a {
+        text-decoration: none;
+        color: currentColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: ${theme.border.radius};
+        ${buttonModifiers[size!]()}
+      }
+    }
   `}
 `;
