@@ -2,31 +2,6 @@ import { useState } from 'react';
 import { IconArrow } from '../Icons';
 import * as S from './styles';
 
-export const dropdownChildrenMock = (
-  <>
-    <p>teste1</p>
-    <span>
-      teste2 zzzzzzzzzzzz sd sodkaso koaskdoa ko asdas as das daasdasd
-    </span>
-    <p>teste3</p>
-    <p>teste4</p>
-    <p>teste5</p>
-    <p>teste6</p>
-    <p>teste7</p>
-    <p>teste8</p>
-    <p>teste9</p>
-    <p>teste10</p>
-    <p>teste11</p>
-    <p>teste12</p>
-    <p>teste13</p>
-    <p>teste14</p>
-    <p>teste15</p>
-    <p>teste16</p>
-    <p>teste17</p>
-    <p>teste18</p>
-  </>
-);
-
 export type DropdownProps = {
   title?: string;
   children?: React.ReactNode;

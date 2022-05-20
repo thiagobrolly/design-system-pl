@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
-import { Dropdown, dropdownChildrenMock } from '.';
+import { Dropdown } from '.';
+import { dropdownChildrenMock } from '../../../utils/mocks/dropdownChildrenMock';
 
 describe('<Dropdown />', () => {
   test('should correctly render the dropdown component', () => {

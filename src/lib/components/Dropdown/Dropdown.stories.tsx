@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import { Dropdown, dropdownChildrenMock } from '.';
+import { Dropdown } from '.';
+import { dropdownChildrenMock } from '../../../utils/mocks/dropdownChildrenMock';
 
 export default {
   title: 'Components/Dropdown',

@@ -24,7 +24,7 @@ import {
   SelectLanguage,
   Dropdown,
 } from './lib';
-import { dropdownChildrenMock } from './lib/components/Dropdown';
+import { dropdownChildrenMock } from './utils/mocks/dropdownChildrenMock';
 import { fetchDataMock, childrenMock } from './utils/mocks/fetchDataMock';
 
 const App: React.FC = () => {
